@@ -1,58 +1,56 @@
 ﻿---
 title: "Week 2 Worklog"
-date: 2024-01-01
+date: 2026-04-26
 weight: 1
 chapter: false
 pre: " <b> 1.2. </b> "
 ---
-{{% notice warning %}} 
-â ï¸ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
+{{% notice warning %}}
+⚠️ **Note:** The following information is for reference only. Please **do not copy verbatim** for your own report, including this warning.
 {{% /notice %}}
 
+### Week 2 Objectives (26/04/2026 - 30/04/2026):
 
-### Week 2 Objectives:
+* Strengthen AWS fundamentals across IAM, EC2, VPC, RDS, CloudWatch, CLI, Backup, and migration.
+* Practice end-to-end implementation with security and cost awareness.
+* Build operational mindset: monitoring, alerting, backup/restore, and cleanup discipline.
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
+### Daily Worklog:
 
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| Day | Activities | Outcome |
+| --- | --- | --- |
+| **26/04/2026** | IAM lab (User, Group, Policy, Role), detailed EC2 learning, plus VPC & Site-to-Site VPN workshop. | Built strong base on access control and cloud network architecture. |
+| **27/04/2026** | RDS workshop (deploy app with RDS endpoint, snapshot/restore) and AWS Budgets workshop. | Connected app to managed DB and improved cost governance skills. |
+| **28/04/2026** | CloudWatch workshop (Metrics, Logs, Insights, Alarms, Dashboard) and Hybrid DNS with Route 53 Resolver. | Completed full monitoring flow and understood enterprise DNS integration model. |
+| **29/04/2026** | AWS CLI workshop (EC2/S3/SNS/IAM/VPC via commands) and AWS Backup workshop (backup plan, vault notifications, restore test with Lambda). | Improved CLI productivity and learned practical backup/restore validation workflow. |
+| **30/04/2026** | VM Import/Export workshop and Docker application deployment workshop (image build, compose, ECR/Docker Hub). | Understood two-way VM migration and containerized deployment pattern on AWS. |
 
+### Key Difficulties:
+
+* Initially confused between IAM Role and IAM User usage contexts.
+* Not fully comfortable with IAM Policy JSON design at first.
+* Networking workshops (VPC/VPN/Hybrid DNS) had many dependent steps and were easy to misconfigure.
+* Risk of leftover resources in non-default regions causing unexpected charges.
+* CLI parameter/ARN usage was error-prone in early attempts.
+
+### How I Addressed Them:
+
+* Broke each workshop into strict step-by-step checklists.
+* Used CloudWatch logs and Reachability Analyzer for structured troubleshooting.
+* Applied immediate cleanup after each lab and cross-region resource checks.
+* Configured multi-threshold AWS Budgets alerts (50/80/100).
+* Kept reusable CLI command notes and profile-based configuration.
 
 ### Week 2 Achievements:
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Completed major practical workshops scheduled for the week.
+* Improved hands-on capability in infrastructure, monitoring, backup, and automation.
+* Strengthened IAM security mindset and cloud cost control habits.
+* Increased confidence moving from console-based workflows to CLI-driven operations.
 
-* Successfully created and configured an AWS Free Tier account.
+### Lessons Learned:
 
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
-
+* IAM understanding is foundational before scaling to advanced AWS services.
+* Monitoring and backup are only meaningful when restore is regularly tested.
+* Cost control must run in parallel with technical implementation from day one.
+* A standard workflow (deploy -> validate -> cleanup) reduces operational risk significantly.

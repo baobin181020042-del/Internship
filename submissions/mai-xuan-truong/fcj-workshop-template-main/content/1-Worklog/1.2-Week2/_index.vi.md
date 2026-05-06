@@ -1,60 +1,56 @@
 ﻿---
-title: "Worklog Tuáº§n 2"
-date: 2024-01-01
+title: "Worklog Tuần 2"
+date: 2026-04-26
 weight: 1
 chapter: false
 pre: " <b> 1.2. </b> "
 ---
 {{% notice warning %}}
-â ï¸ **LÆ°u Ă½:** CĂ¡c thĂ´ng tin dÆ°á»›i Ä‘Ă¢y chá»‰ nháº±m má»¥c Ä‘Ă­ch tham kháº£o, vui lĂ²ng **khĂ´ng sao chĂ©p nguyĂªn vÄƒn** cho bĂ i bĂ¡o cĂ¡o cá»§a báº¡n ká»ƒ cáº£ warning nĂ y.
+⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
 {{% /notice %}}
 
+### Mục tiêu tuần 2 (26/04/2026 - 30/04/2026):
 
-### Má»¥c tiĂªu tuáº§n 2:
+* Củng cố nền tảng AWS về IAM, EC2, VPC, RDS, Monitoring, CLI và Backup.
+* Làm workshop theo hướng thực hành end-to-end, vừa triển khai vừa tự kiểm soát chi phí.
+* Tăng khả năng vận hành thực tế: bảo mật quyền truy cập, phân tích logs, cảnh báo và backup/restore.
 
-* Káº¿t ná»‘i, lĂ m quen vá»›i cĂ¡c thĂ nh viĂªn trong First Cloud AI Journey.
-* Hiá»ƒu dá»‹ch vá»¥ AWS cÆ¡ báº£n, cĂ¡ch dĂ¹ng console & CLI.
+### Nhật ký công việc theo ngày:
 
-### CĂ¡c cĂ´ng viá»‡c cáº§n triá»ƒn khai trong tuáº§n nĂ y:
-| Thá»© | CĂ´ng viá»‡c                                                                                                                                                                                   | NgĂ y báº¯t Ä‘áº§u | NgĂ y hoĂ n thĂ nh | Nguá»“n tĂ i liá»‡u                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - LĂ m quen vá»›i cĂ¡c thĂ nh viĂªn FCJ <br> - Äá»c vĂ  lÆ°u Ă½ cĂ¡c ná»™i quy, quy Ä‘á»‹nh táº¡i Ä‘Æ¡n vá»‹ thá»±c táº­p                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - TĂ¬m hiá»ƒu AWS vĂ  cĂ¡c loáº¡i dá»‹ch vá»¥ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Táº¡o AWS Free Tier account <br> - TĂ¬m hiá»ƒu AWS Console & AWS CLI <br> - **Thá»±c hĂ nh:** <br>&emsp; + Táº¡o AWS account <br>&emsp; + CĂ i AWS CLI & cáº¥u hĂ¬nh <br> &emsp; + CĂ¡ch sá»­ dá»¥ng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - TĂ¬m hiá»ƒu EC2 cÆ¡ báº£n: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - CĂ¡c cĂ¡ch remote SSH vĂ o EC2 <br> - TĂ¬m hiá»ƒu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thá»±c hĂ nh:** <br>&emsp; + Táº¡o EC2 instance <br>&emsp; + Káº¿t ná»‘i SSH <br>&emsp; + Gáº¯n EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| Ngày | Nội dung thực hiện | Kết quả |
+| --- | --- | --- |
+| **26/04/2026** | Học **Lab 02 IAM**: IAM User, Group, Policy, Role; best practices. Đồng thời học chi tiết **EC2**: Instance, AMI, Key Pair, Security Group, Elastic IP, quy trình launch và bảo mật. Thực hành thêm workshop **VPC + Site-to-Site VPN** (VPC, subnet, route table, IGW, NAT, SG/NACL, flow logs, tunnel VPN). | Nắm rõ kiến trúc truy cập IAM và nền tảng hạ tầng EC2/VPC/VPN. |
+| **27/04/2026** | Workshop **Amazon RDS**: tạo DB subnet group, cấu hình security group tách biệt EC2/RDS, tạo MySQL RDS, kết nối app qua endpoint, thực hành snapshot/restore. Làm workshop **AWS Budgets**: Cost Budget, Usage Budget, tìm hiểu RI/Savings Plans Budget và cơ chế cảnh báo. | Kết nối thành công ứng dụng với RDS, hiểu rõ cách kiểm soát chi phí bằng budgets nhiều ngưỡng. |
+| **28/04/2026** | Workshop **Amazon CloudWatch**: Metrics, Logs, Logs Insights, Metric Filter, Alarms qua SNS, Dashboard theo dõi tập trung. Thực hành thêm workshop **Hybrid DNS với Route 53 Resolver**: Outbound/Inbound Endpoint, Resolver Rules, tích hợp DNS giữa môi trường “on-prem” mô phỏng và AWS. | Thiết lập được luồng giám sát đầy đủ metric-log-alarm-dashboard và hiểu mô hình DNS hybrid doanh nghiệp. |
+| **29/04/2026** | Workshop **AWS CLI**: cài đặt, profile, thao tác EC2/S3/SNS/IAM/VPC bằng lệnh, tạo EC2 bằng CLI và dọn tài nguyên. Làm thêm workshop **AWS Backup**: backup plan, vault, tag-based assignment, SNS notifications, kiểm thử restore tự động bằng Lambda và kiểm tra CloudWatch Logs. | Tăng tốc thao tác AWS bằng CLI, hiểu tư duy vận hành backup chuyên nghiệp có kiểm thử restore. |
+| **30/04/2026** | Workshop **VM Import/Export**: tạo VM Ubuntu local, export VMDK, upload S3, tạo role `vmimport`, import thành AMI, launch EC2 từ AMI; chiều ngược lại export instance/image về lại môi trường on-prem. Thực hành thêm workshop **Deploy Application on Docker**: build image, network, docker run, docker compose, push image lên ECR/Docker Hub. | Hiểu quy trình migration VM hai chiều và nền tảng container hóa ứng dụng trên AWS. |
 
+### Khó khăn gặp phải trong tuần 2:
 
-### Káº¿t quáº£ Ä‘áº¡t Ä‘Æ°á»£c tuáº§n 2:
+* Ban đầu khó phân biệt rõ **IAM Role** và **IAM User** trong ngữ cảnh cấp quyền thực tế.
+* Chưa quen đọc/viết **IAM Policy JSON**, dễ nhầm scope quyền.
+* Workshop mạng (VPC/VPN/Hybrid DNS) có nhiều thành phần nên dễ sai thứ tự cấu hình.
+* Khi làm RDS/Aurora và nhiều workshop liên tiếp, dễ sót tài nguyên ở region khác gây phát sinh chi phí.
+* Với AWS CLI, lúc đầu khó nhớ đầy đủ tham số lệnh và ARN khi thao tác dịch vụ phức tạp.
 
-* Hiá»ƒu AWS lĂ  gĂ¬ vĂ  náº¯m Ä‘Æ°á»£c cĂ¡c nhĂ³m dá»‹ch vá»¥ cÆ¡ báº£n: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+### Cách xử lý:
 
-* ÄĂ£ táº¡o vĂ  cáº¥u hĂ¬nh AWS Free Tier account thĂ nh cĂ´ng.
+* Tách từng workshop thành checklist nhỏ theo đúng thứ tự thao tác.
+* Dùng CloudWatch Logs/Reachability Analyzer để debug thay vì đoán lỗi.
+* Áp dụng quy tắc “xong bài nào dọn bài đó” + kiểm tra tài nguyên theo từng region.
+* Đặt ngưỡng cảnh báo AWS Budgets nhiều mức (50/80/100%) để phát hiện sớm.
+* Dùng profile CLI riêng và lưu các lệnh mẫu quan trọng để tái sử dụng.
 
-* LĂ m quen vá»›i AWS Management Console vĂ  biáº¿t cĂ¡ch tĂ¬m, truy cáº­p, sá»­ dá»¥ng dá»‹ch vá»¥ tá»« giao diá»‡n web.
+### Kết quả đạt được tuần 2:
 
-* CĂ i Ä‘áº·t vĂ  cáº¥u hĂ¬nh AWS CLI trĂªn mĂ¡y tĂ­nh bao gá»“m:
-  * Access Key
-  * Secret Key
-  * Region máº·c Ä‘á»‹nh
-  * ...
+* Hoàn thành chuỗi workshop thực hành trọng tâm của tuần.
+* Cải thiện rõ khả năng triển khai hạ tầng, giám sát, backup và automation trên AWS.
+* Nâng cao ý thức bảo mật quyền truy cập IAM và kiểm soát chi phí cloud.
+* Tự tin hơn khi chuyển từ thao tác console sang thao tác CLI/script.
 
-* Sá»­ dá»¥ng AWS CLI Ä‘á»ƒ thá»±c hiá»‡n cĂ¡c thao tĂ¡c cÆ¡ báº£n nhÆ°:
+### Bài học rút ra:
 
-  * Kiá»ƒm tra thĂ´ng tin tĂ i khoáº£n & cáº¥u hĂ¬nh
-  * Láº¥y danh sĂ¡ch region
-  * Xem dá»‹ch vá»¥ EC2
-  * Táº¡o vĂ  quáº£n lĂ½ key pair
-  * Kiá»ƒm tra thĂ´ng tin dá»‹ch vá»¥ Ä‘ang cháº¡y
-  * ...
-
-* CĂ³ kháº£ nÄƒng káº¿t ná»‘i giá»¯a giao diá»‡n web vĂ  CLI Ä‘á»ƒ quáº£n lĂ½ tĂ i nguyĂªn AWS song song.
-* ...
-
-
-
+* IAM là nền tảng phải nắm chắc trước khi đi sâu dịch vụ khác.
+* Monitoring và Backup chỉ có ý nghĩa khi có kiểm thử khôi phục và cảnh báo chủ động.
+* Kiểm soát chi phí cần làm song song với kỹ thuật ngay từ đầu, không để đến cuối tháng.
+* Quy trình chuẩn (triển khai -> kiểm thử -> dọn tài nguyên) giúp giảm rủi ro vận hành thực tế.
