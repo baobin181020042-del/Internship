@@ -1,5 +1,5 @@
 ﻿---
-title: "Worklog Tuáº§n 6"
+title: "Worklog Tuần 6"
 date: 2024-01-01
 weight: 1
 chapter: false
@@ -54,6 +54,7 @@ pre: " <b> 1.6. </b> "
 
 * CĂ³ kháº£ nÄƒng káº¿t ná»‘i giá»¯a giao diá»‡n web vĂ  CLI Ä‘á»ƒ quáº£n lĂ½ tĂ i nguyĂªn AWS song song.
 * ...
+
 
 
 

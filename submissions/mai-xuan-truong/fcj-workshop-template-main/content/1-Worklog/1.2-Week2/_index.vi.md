@@ -54,3 +54,4 @@ pre: " <b> 1.2. </b> "
 * Monitoring và Backup chỉ có ý nghĩa khi có kiểm thử khôi phục và cảnh báo chủ động.
 * Kiểm soát chi phí cần làm song song với kỹ thuật ngay từ đầu, không để đến cuối tháng.
 * Quy trình chuẩn (triển khai -> kiểm thử -> dọn tài nguyên) giúp giảm rủi ro vận hành thực tế.
+

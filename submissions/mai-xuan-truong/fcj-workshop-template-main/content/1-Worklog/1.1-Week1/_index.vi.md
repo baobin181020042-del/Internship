@@ -40,3 +40,4 @@ pre: " <b> 1.1. </b> "
 * Sau mỗi lab liên quan đến RDS/Aurora, cần rà soát tài nguyên ở **tất cả region đã truy cập**, không chỉ region mặc định.
 * Nên bật và theo dõi AWS Budgets sớm để phát hiện chi phí bất thường ngay trong ngày.
 * Worklog càng ghi chi tiết theo ngày thì càng dễ tổng hợp tiến độ và báo cáo với mentor.
+
