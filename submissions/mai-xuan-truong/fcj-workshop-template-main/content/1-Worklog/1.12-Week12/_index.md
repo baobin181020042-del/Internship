@@ -1,58 +1,215 @@
-﻿---
-title: "Week 12 Worklog"
+---
+title: "Week 12"
 date: 2024-01-01
-weight: 2
+weight: 12
 chapter: false
 pre: " <b> 1.12. </b> "
 ---
-{{% notice warning %}} 
-â ï¸ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
 
+**Timeline:** 24/6 → 10/7 (extended final summary period)
 
-### Week 12 Objectives:
+> IRMS was completed by a five-member team. The notes below focus on my individual contribution while collaborating with the team.
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
+## Day 1 - 24/6: Deploying frontend to S3
 
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+**Work completed:** I worked on deploying frontend to s3 as my individual contribution while coordinating with the five-member IRMS team. My focus was the AWS, integration, deployment, testing, or documentation part related to this task.
 
+I also recorded the concrete checks I performed, the integration points I verified, and the issues I needed to report back to teammates. This made the entry reflect my own internship work instead of describing the whole project as if it was completed by one person.
 
-### Week 12 Achievements:
+**Knowledge gained:** I learned how deploying frontend to s3 connects to the wider IRMS architecture and how collaboration affects integration quality.
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+**Result:** The task produced a concrete contribution for my assigned scope and helped the team move to the next implementation step.
 
-* Successfully created and configured an AWS Free Tier account.
+**Difficulty and lesson:** The main challenge was keeping my part aligned with the team implementation. The lesson was to communicate changes early and verify integration points carefully.
 
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
+## Day 2 - 25/6: Configuring CloudFront
 
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
+**Work completed:** I worked on configuring cloudfront as my individual contribution while coordinating with the five-member IRMS team. My focus was the AWS, integration, deployment, testing, or documentation part related to this task.
 
-* Used AWS CLI to perform basic operations such as:
+I also recorded the concrete checks I performed, the integration points I verified, and the issues I needed to report back to teammates. This made the entry reflect my own internship work instead of describing the whole project as if it was completed by one person.
 
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
+**Knowledge gained:** I learned how configuring cloudfront connects to the wider IRMS architecture and how collaboration affects integration quality.
 
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+**Result:** The task produced a concrete contribution for my assigned scope and helped the team move to the next implementation step.
 
+**Difficulty and lesson:** The main challenge was keeping my part aligned with the team implementation. The lesson was to communicate changes early and verify integration points carefully.
+
+## Day 3 - 26/6: CloudFront invalidation
+
+**Work completed:** I worked on cloudfront invalidation as my individual contribution while coordinating with the five-member IRMS team. My focus was the AWS, integration, deployment, testing, or documentation part related to this task.
+
+I also recorded the concrete checks I performed, the integration points I verified, and the issues I needed to report back to teammates. This made the entry reflect my own internship work instead of describing the whole project as if it was completed by one person.
+
+**Knowledge gained:** I learned how cloudfront invalidation connects to the wider IRMS architecture and how collaboration affects integration quality.
+
+**Result:** The task produced a concrete contribution for my assigned scope and helped the team move to the next implementation step.
+
+**Difficulty and lesson:** The main challenge was keeping my part aligned with the team implementation. The lesson was to communicate changes early and verify integration points carefully.
+
+## Day 4 - 27/6: Team end-to-end testing
+
+**Work completed:** I worked on team end-to-end testing as my individual contribution while coordinating with the five-member IRMS team. My focus was the AWS, integration, deployment, testing, or documentation part related to this task.
+
+I also recorded the concrete checks I performed, the integration points I verified, and the issues I needed to report back to teammates. This made the entry reflect my own internship work instead of describing the whole project as if it was completed by one person.
+
+**Knowledge gained:** I learned how team end-to-end testing connects to the wider IRMS architecture and how collaboration affects integration quality.
+
+**Result:** The task produced a concrete contribution for my assigned scope and helped the team move to the next implementation step.
+
+**Difficulty and lesson:** The main challenge was keeping my part aligned with the team implementation. The lesson was to communicate changes early and verify integration points carefully.
+
+## Day 5 - 28/6: Cost analysis
+
+**Work completed:** I worked on cost analysis as my individual contribution while coordinating with the five-member IRMS team. My focus was the AWS, integration, deployment, testing, or documentation part related to this task.
+
+I also recorded the concrete checks I performed, the integration points I verified, and the issues I needed to report back to teammates. This made the entry reflect my own internship work instead of describing the whole project as if it was completed by one person.
+
+**Knowledge gained:** I learned how cost analysis connects to the wider IRMS architecture and how collaboration affects integration quality.
+
+**Result:** The task produced a concrete contribution for my assigned scope and helped the team move to the next implementation step.
+
+**Difficulty and lesson:** The main challenge was keeping my part aligned with the team implementation. The lesson was to communicate changes early and verify integration points carefully.
+
+## Day 6 - 29/6: Preparing cleanup checklist
+
+**Work completed:** I worked on preparing cleanup checklist as my individual contribution while coordinating with the five-member IRMS team. My focus was the AWS, integration, deployment, testing, or documentation part related to this task.
+
+I also recorded the concrete checks I performed, the integration points I verified, and the issues I needed to report back to teammates. This made the entry reflect my own internship work instead of describing the whole project as if it was completed by one person.
+
+**Knowledge gained:** I learned how preparing cleanup checklist connects to the wider IRMS architecture and how collaboration affects integration quality.
+
+**Result:** The task produced a concrete contribution for my assigned scope and helped the team move to the next implementation step.
+
+**Difficulty and lesson:** The main challenge was keeping my part aligned with the team implementation. The lesson was to communicate changes early and verify integration points carefully.
+
+## Day 7 - 30/6: Editing infrastructure workshop sections
+
+**Work completed:** I worked on editing infrastructure workshop sections as my individual contribution while coordinating with the five-member IRMS team. My focus was the AWS, integration, deployment, testing, or documentation part related to this task.
+
+I also recorded the concrete checks I performed, the integration points I verified, and the issues I needed to report back to teammates. This made the entry reflect my own internship work instead of describing the whole project as if it was completed by one person.
+
+**Knowledge gained:** I learned how editing infrastructure workshop sections connects to the wider IRMS architecture and how collaboration affects integration quality.
+
+**Result:** The task produced a concrete contribution for my assigned scope and helped the team move to the next implementation step.
+
+**Difficulty and lesson:** The main challenge was keeping my part aligned with the team implementation. The lesson was to communicate changes early and verify integration points carefully.
+
+## Day 8 - 1/7: Editing AWS backend workshop content
+
+**Work completed:** I worked on editing aws backend workshop content as my individual contribution while coordinating with the five-member IRMS team. My focus was the AWS, integration, deployment, testing, or documentation part related to this task.
+
+I also recorded the concrete checks I performed, the integration points I verified, and the issues I needed to report back to teammates. This made the entry reflect my own internship work instead of describing the whole project as if it was completed by one person.
+
+**Knowledge gained:** I learned how editing aws backend workshop content connects to the wider IRMS architecture and how collaboration affects integration quality.
+
+**Result:** The task produced a concrete contribution for my assigned scope and helped the team move to the next implementation step.
+
+**Difficulty and lesson:** The main challenge was keeping my part aligned with the team implementation. The lesson was to communicate changes early and verify integration points carefully.
+
+## Day 9 - 2/7: Editing deployment and frontend integration content
+
+**Work completed:** I worked on editing deployment and frontend integration content as my individual contribution while coordinating with the five-member IRMS team. My focus was the AWS, integration, deployment, testing, or documentation part related to this task.
+
+I also recorded the concrete checks I performed, the integration points I verified, and the issues I needed to report back to teammates. This made the entry reflect my own internship work instead of describing the whole project as if it was completed by one person.
+
+**Knowledge gained:** I learned how editing deployment and frontend integration content connects to the wider IRMS architecture and how collaboration affects integration quality.
+
+**Result:** The task produced a concrete contribution for my assigned scope and helped the team move to the next implementation step.
+
+**Difficulty and lesson:** The main challenge was keeping my part aligned with the team implementation. The lesson was to communicate changes early and verify integration points carefully.
+
+## Day 10 - 3/7: Synchronizing bilingual content
+
+**Work completed:** I worked on synchronizing bilingual content as my individual contribution while coordinating with the five-member IRMS team. My focus was the AWS, integration, deployment, testing, or documentation part related to this task.
+
+I also recorded the concrete checks I performed, the integration points I verified, and the issues I needed to report back to teammates. This made the entry reflect my own internship work instead of describing the whole project as if it was completed by one person.
+
+**Knowledge gained:** I learned how synchronizing bilingual content connects to the wider IRMS architecture and how collaboration affects integration quality.
+
+**Result:** The task produced a concrete contribution for my assigned scope and helped the team move to the next implementation step.
+
+**Difficulty and lesson:** The main challenge was keeping my part aligned with the team implementation. The lesson was to communicate changes early and verify integration points carefully.
+
+## Day 11 - 4/7: Reviewing IRMS proposal
+
+**Work completed:** I worked on reviewing irms proposal as my individual contribution while coordinating with the five-member IRMS team. My focus was the AWS, integration, deployment, testing, or documentation part related to this task.
+
+I also recorded the concrete checks I performed, the integration points I verified, and the issues I needed to report back to teammates. This made the entry reflect my own internship work instead of describing the whole project as if it was completed by one person.
+
+**Knowledge gained:** I learned how reviewing irms proposal connects to the wider IRMS architecture and how collaboration affects integration quality.
+
+**Result:** The task produced a concrete contribution for my assigned scope and helped the team move to the next implementation step.
+
+**Difficulty and lesson:** The main challenge was keeping my part aligned with the team implementation. The lesson was to communicate changes early and verify integration points carefully.
+
+## Day 12 - 5/7: Editing personal worklog
+
+**Work completed:** I worked on editing personal worklog as my individual contribution while coordinating with the five-member IRMS team. My focus was the AWS, integration, deployment, testing, or documentation part related to this task.
+
+I also recorded the concrete checks I performed, the integration points I verified, and the issues I needed to report back to teammates. This made the entry reflect my own internship work instead of describing the whole project as if it was completed by one person.
+
+**Knowledge gained:** I learned how editing personal worklog connects to the wider IRMS architecture and how collaboration affects integration quality.
+
+**Result:** The task produced a concrete contribution for my assigned scope and helped the team move to the next implementation step.
+
+**Difficulty and lesson:** The main challenge was keeping my part aligned with the team implementation. The lesson was to communicate changes early and verify integration points carefully.
+
+## Day 13 - 6/7: Building and checking Hugo
+
+**Work completed:** I worked on building and checking hugo as my individual contribution while coordinating with the five-member IRMS team. My focus was the AWS, integration, deployment, testing, or documentation part related to this task.
+
+I also recorded the concrete checks I performed, the integration points I verified, and the issues I needed to report back to teammates. This made the entry reflect my own internship work instead of describing the whole project as if it was completed by one person.
+
+**Knowledge gained:** I learned how building and checking hugo connects to the wider IRMS architecture and how collaboration affects integration quality.
+
+**Result:** The task produced a concrete contribution for my assigned scope and helped the team move to the next implementation step.
+
+**Difficulty and lesson:** The main challenge was keeping my part aligned with the team implementation. The lesson was to communicate changes early and verify integration points carefully.
+
+## Day 14 - 7/7: Final functional check
+
+**Work completed:** I worked on final functional check as my individual contribution while coordinating with the five-member IRMS team. My focus was the AWS, integration, deployment, testing, or documentation part related to this task.
+
+I also recorded the concrete checks I performed, the integration points I verified, and the issues I needed to report back to teammates. This made the entry reflect my own internship work instead of describing the whole project as if it was completed by one person.
+
+**Knowledge gained:** I learned how final functional check connects to the wider IRMS architecture and how collaboration affects integration quality.
+
+**Result:** The task produced a concrete contribution for my assigned scope and helped the team move to the next implementation step.
+
+**Difficulty and lesson:** The main challenge was keeping my part aligned with the team implementation. The lesson was to communicate changes early and verify integration points carefully.
+
+## Day 15 - 8/7: Cleaning up test resources
+
+**Work completed:** I worked on cleaning up test resources as my individual contribution while coordinating with the five-member IRMS team. My focus was the AWS, integration, deployment, testing, or documentation part related to this task.
+
+I also recorded the concrete checks I performed, the integration points I verified, and the issues I needed to report back to teammates. This made the entry reflect my own internship work instead of describing the whole project as if it was completed by one person.
+
+**Knowledge gained:** I learned how cleaning up test resources connects to the wider IRMS architecture and how collaboration affects integration quality.
+
+**Result:** The task produced a concrete contribution for my assigned scope and helped the team move to the next implementation step.
+
+**Difficulty and lesson:** The main challenge was keeping my part aligned with the team implementation. The lesson was to communicate changes early and verify integration points carefully.
+
+## Day 16 - 9/7: Finalizing the report
+
+**Work completed:** I worked on finalizing the report as my individual contribution while coordinating with the five-member IRMS team. My focus was the AWS, integration, deployment, testing, or documentation part related to this task.
+
+I also recorded the concrete checks I performed, the integration points I verified, and the issues I needed to report back to teammates. This made the entry reflect my own internship work instead of describing the whole project as if it was completed by one person.
+
+**Knowledge gained:** I learned how finalizing the report connects to the wider IRMS architecture and how collaboration affects integration quality.
+
+**Result:** The task produced a concrete contribution for my assigned scope and helped the team move to the next implementation step.
+
+**Difficulty and lesson:** The main challenge was keeping my part aligned with the team implementation. The lesson was to communicate changes early and verify integration points carefully.
+
+## Day 17 - 10/7: Personal project summary
+
+**Work completed:** I worked on personal project summary as my individual contribution while coordinating with the five-member IRMS team. My focus was the AWS, integration, deployment, testing, or documentation part related to this task.
+
+I also recorded the concrete checks I performed, the integration points I verified, and the issues I needed to report back to teammates. This made the entry reflect my own internship work instead of describing the whole project as if it was completed by one person.
+
+**Knowledge gained:** I learned how personal project summary connects to the wider IRMS architecture and how collaboration affects integration quality.
+
+**Result:** The task produced a concrete contribution for my assigned scope and helped the team move to the next implementation step.
+
+**Difficulty and lesson:** The main challenge was keeping my part aligned with the team implementation. The lesson was to communicate changes early and verify integration points carefully.

@@ -6,120 +6,55 @@ chapter: false
 pre: " <b> 4.1. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
+## Chuyên đề Thứ 7: Tối Ưu Hóa Bản Thân và Làm Chủ Công Nghệ AI
 
-# Bài thu hoạch “GenAI-powered App-DB Modernization workshop”
+**Thời gian:** Thứ 7, ngày 09/05/2026
+**Địa điểm:** Tham gia offline tại địa điểm tổ chức
+**Vai trò:** Người tham dự offline
 
-### Mục Đích Của Sự Kiện
+## Mục đích của sự kiện
 
-- Chia sẻ best practices trong thiết kế ứng dụng hiện đại
-- Giới thiệu phương pháp DDD và event-driven architecture
-- Hướng dẫn lựa chọn compute services phù hợp
-- Giới thiệu công cụ AI hỗ trợ development lifecycle
+- Chia sẻ các phương pháp khoa học để tối ưu hóa việc học và rèn luyện kỷ luật bản thân.
+- Nâng cao kỹ năng làm việc với AI thông qua các kỹ thuật Prompt Engineering nâng cao.
+- Giải quyết các vấn đề tâm lý, tư duy nghề nghiệp và thúc đẩy sinh viên/người đi làm trẻ bước ra khỏi vùng an toàn.
 
-### Danh Sách Diễn Giả
+## Danh sách diễn giả
 
-- **Jignesh Shah** - Director, Open Source Databases
-- **Erica Liu** - Sr. GTM Specialist, AppMod
-- **Fabrianne Effendi** - Assc. Specialist SA, Serverless Amazon Web Services
+- Huỳnh Hoàng Long - chia sẻ về tâm lý học và cơ chế Dopamine.
+- Thịnh Nguyễn - AI Engineer.
+- Khang Nguyễn - khách hàng của AWS Việt Nam / Cloud Kinetics.
+- Thảo - chuyên gia chia sẻ về phương pháp tối ưu hóa năng suất.
 
-### Nội Dung Nổi Bật
+## Nội dung nổi bật
 
-#### Đưa ra các ảnh hưởng tiêu cực của kiến trúc ứng dụng cũ
+### Cách "nghiện" học như nghiện mạng xã hội
 
-- Thời gian release sản phẩm lâu → Mất doanh thu/bỏ lỡ cơ hội
-- Hoạt động kém hiệu quả → Mất năng suất, tốn kém chi phí
-- Không tuân thủ các quy định về bảo mật → Mất an ninh, uy tín
+Diễn giả giải thích cơ chế dopamine và reward loop khi con người lướt mạng xã hội hoặc chơi game. Tôi học được cách áp dụng gamification vào học tập bằng cách chia nhỏ mục tiêu thành các level, đặt phần thưởng nhỏ và tạo cảm giác hoàn thành liên tục.
 
-#### Chuyển đổi sang kiến trúc ứng dụng mới - Microservice Architecture
+### Automated Prompt AI Engineer
 
-Chuyển đổi thành hệ thống modular – từng chức năng là một **dịch vụ độc lập** giao tiếp với nhau qua **sự kiện** với 3 trụ cột cốt lõi:
+Nội dung nhấn mạnh việc viết prompt không nên chỉ dựa vào cảm tính. Một AI Engineer cần biết xây dựng pipeline để đánh giá, tối ưu prompt, cung cấp context, dùng few-shot prompting và giảm hiện tượng hallucination của LLM.
 
-- **Queue Management**: Xử lý tác vụ bất đồng bộ
-- **Caching Strategy:** Tối ưu performance
-- **Message Handling:** Giao tiếp linh hoạt giữa services
+### Sao chưa đi làm?
 
-#### Domain-Driven Design (DDD)
+Phần chia sẻ này tập trung vào rào cản tâm lý của sinh viên: đợi hoàn hảo mới bắt đầu, sợ sai, sợ thiếu kinh nghiệm. Bài học tôi nhận được là cần chủ động apply, đi phỏng vấn và cọ xát thực tế để trưởng thành nhanh hơn.
 
-- **Phương pháp 4 bước**: Xác định domain events → sắp xếp timeline → identify actors → xác định bounded contexts
-- **Case study bookstore**: Minh họa cách áp dụng DDD thực tế
-- **Context mapping**: 7 patterns tích hợp bounded contexts
+### BMAD Method
 
-#### Event-Driven Architecture
+Diễn giả giới thiệu cách chuyển từ phụ thuộc vào cảm hứng sang xây dựng hành vi nhỏ, duy trì bằng hành động và kỷ luật. Đây là góc nhìn rất hữu ích để quản lý việc học AWS, làm project và hoàn thiện báo cáo đúng hạn.
 
-- **3 patterns tích hợp**: Publish/Subscribe, Point-to-point, Streaming
-- **Lợi ích**: Loose coupling, scalability, resilience
-- **So sánh sync vs async**: Hiểu rõ trade-offs (sự đánh đổi)
+## Những gì học được
 
-#### Compute Evolution
+- Biết cách hệ thống hóa và tối ưu prompt, chuyển từ việc dùng AI như chatbot thông thường sang tư duy dùng AI có quy trình.
+- Hiểu hơn về dopamine, reward loop và cách tự thiết kế thói quen học tập để duy trì động lực.
+- Nhận ra việc trì hoãn vì chờ bản thân hoàn hảo là một rào cản lớn trong phát triển nghề nghiệp.
 
-- **Shared Responsibility Model**: Từ EC2 → ECS → Fargate → Lambda
-- **Serverless benefits**: No server management, auto-scaling, pay-for-value
-- **Functions vs Containers**: Criteria lựa chọn phù hợp
+## Ứng dụng vào công việc
 
-#### Amazon Q Developer
+- Áp dụng kỹ thuật prompt rõ context và có ví dụ khi dùng AI hỗ trợ code/tài liệu.
+- Chia nhỏ các task học công nghệ như AWS, SAM, CloudFront hoặc Workshop thành milestone nhỏ để dễ hoàn thành.
+- Cập nhật portfolio/CV và chủ động tìm cơ hội thực tập/công việc thay vì chờ đến khi cảm thấy hoàn toàn sẵn sàng.
 
-- **SDLC automation**: Từ planning đến maintenance
-- **Code transformation**: Java upgrade, .NET modernization
-- **AWS Transform agents**: VMware, Mainframe, .NET migration
+## Trải nghiệm trong event
 
-### Những Gì Học Được
-
-#### Tư Duy Thiết Kế
-
-- **Business-first approach**: Luôn bắt đầu từ business domain, không phải technology
-- **Ubiquitous language**: Importance của common vocabulary giữa business và tech teams
-- **Bounded contexts**: Cách identify và manage complexity trong large systems
-
-#### Kiến Trúc Kỹ Thuật
-
-- **Event storming technique**: Phương pháp thực tế để mô hình hóa quy trình kinh doanh
-- Sử dụng **Event-driven communication** thay vì synchronous calls
-- **Integration patterns**: Hiểu khi nào dùng sync, async, pub/sub, streaming
-- **Compute spectrum**: Criteria chọn từ VM → containers → serverless
-
-#### Chiến Lược Hiện Đại Hóa
-
-- **Phased approach**: Không rush, phải có roadmap rõ ràng
-- **7Rs framework**: Nhiều con đường khác nhau tùy thuộc vào đặc điểm của mỗi ứng dụng
-- **ROI measurement**: Cost reduction + business agility
-
-### Ứng Dụng Vào Công Việc
-
-- **Áp dụng DDD** cho project hiện tại: Event storming sessions với business team
-- **Refactor microservices**: Sử dụng bounded contexts để identify service boundaries
-- **Implement event-driven patterns**: Thay thế một số sync calls bằng async messaging
-- **Serverless adoption**: Pilot AWS Lambda cho một số use cases phù hợp
-- **Try Amazon Q Developer**: Integrate vào development workflow để boost productivity
-
-### Trải nghiệm trong event
-
-Tham gia workshop **“GenAI-powered App-DB Modernization”** là một trải nghiệm rất bổ ích, giúp tôi có cái nhìn toàn diện về cách hiện đại hóa ứng dụng và cơ sở dữ liệu bằng các phương pháp và công cụ hiện đại. Một số trải nghiệm nổi bật:
-
-#### Học hỏi từ các diễn giả có chuyên môn cao
-- Các diễn giả đến từ AWS và các tổ chức công nghệ lớn đã chia sẻ **best practices** trong thiết kế ứng dụng hiện đại.
-- Qua các case study thực tế, tôi hiểu rõ hơn cách áp dụng **Domain-Driven Design (DDD)** và **Event-Driven Architecture** vào các project lớn.
-
-#### Trải nghiệm kỹ thuật thực tế
-- Tham gia các phiên trình bày về **event storming** giúp tôi hình dung cách **mô hình hóa quy trình kinh doanh** thành các domain events.
-- Học cách **phân tách microservices** và xác định **bounded contexts** để quản lý sự phức tạp của hệ thống lớn.
-- Hiểu rõ trade-offs giữa **synchronous và asynchronous communication** cũng như các pattern tích hợp như **pub/sub, point-to-point, streaming**.
-
-#### Ứng dụng công cụ hiện đại
-- Trực tiếp tìm hiểu về **Amazon Q Developer**, công cụ AI hỗ trợ SDLC từ lập kế hoạch đến maintenance.
-- Học cách **tự động hóa code transformation** và pilot serverless với **AWS Lambda**, từ đó nâng cao năng suất phát triển.
-
-#### Kết nối và trao đổi
-- Workshop tạo cơ hội trao đổi trực tiếp với các chuyên gia, đồng nghiệp và team business, giúp **nâng cao ngôn ngữ chung (ubiquitous language)** giữa business và tech.
-- Qua các ví dụ thực tế, tôi nhận ra tầm quan trọng của **business-first approach**, luôn bắt đầu từ nhu cầu kinh doanh thay vì chỉ tập trung vào công nghệ.
-
-#### Bài học rút ra
-- Việc áp dụng DDD và event-driven patterns giúp giảm **coupling**, tăng **scalability** và **resilience** cho hệ thống.
-- Chiến lược hiện đại hóa cần **phased approach** và đo lường **ROI**, không nên vội vàng chuyển đổi toàn bộ hệ thống.
-- Các công cụ AI như Amazon Q Developer có thể **boost productivity** nếu được tích hợp vào workflow phát triển hiện tại.
-
-#### Một số hình ảnh khi tham gia sự kiện
-* Thêm các hình ảnh của các bạn tại đây
-> Tổng thể, sự kiện không chỉ cung cấp kiến thức kỹ thuật mà còn giúp tôi thay đổi cách tư duy về thiết kế ứng dụng, hiện đại hóa hệ thống và phối hợp hiệu quả hơn giữa các team.
+Dù là một buổi chia sẻ cuối tuần, năng lượng từ các diễn giả rất tích cực. Sự kiện không chỉ nói về kỹ thuật AI mà còn kết hợp tâm lý học hành vi, năng suất cá nhân và định hướng nghề nghiệp. Tôi nhận ra trong kỷ nguyên AI, người học công nghệ không chỉ cần biết công cụ mà còn cần kỷ luật, khả năng tự học và tâm lý vững vàng.

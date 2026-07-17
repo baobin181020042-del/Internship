@@ -1,58 +1,83 @@
-﻿---
-title: "Week 4 Worklog"
+---
+title: "Week 4"
 date: 2024-01-01
-weight: 1
+weight: 4
 chapter: false
 pre: " <b> 1.4. </b> "
 ---
-{{% notice warning %}} 
-â ï¸ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
 
+**Timeline:** 7/5 → 12/5 (6 days)
 
-### Week 4 Objectives:
+> IRMS was completed by a five-member team. The notes below focus on my individual contribution while collaborating with the team.
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
+## Day 1 - 7/5: Team discussion and IRMS topic selection
 
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+**Work completed:** I joined the five-member team discussion to select IRMS as the project topic. My individual contribution was evaluating the AWS serverless direction and identifying suitable services such as API Gateway, Lambda, DynamoDB, S3, and CloudFront.
 
+I also recorded the concrete checks I performed, the integration points I verified, and the issues I needed to report back to teammates. This made the entry reflect my own internship work instead of describing the whole project as if it was completed by one person.
 
-### Week 4 Achievements:
+**Knowledge gained:** I learned how to select a topic based on team capability, internship timeline, and realistic AWS demo scope.
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+**Result:** The team agreed on IRMS, and I took primary responsibility for AWS infrastructure, deployment, and testing.
 
-* Successfully created and configured an AWS Free Tier account.
+**Difficulty and lesson:** The initial scope was broad. The lesson was to divide responsibilities clearly so the project did not look like one person owned everything.
 
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
+## Day 2 - 8/5: Collaborative requirement analysis
 
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
+**Work completed:** I collaborated with the team to analyze user roles such as Admin, Security Manager, Security Analyst, and Viewer. I focused on authentication, authorization, and how APIs should be protected by Cognito.
 
-* Used AWS CLI to perform basic operations such as:
+I also recorded the concrete checks I performed, the integration points I verified, and the issues I needed to report back to teammates. This made the entry reflect my own internship work instead of describing the whole project as if it was completed by one person.
 
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
+**Knowledge gained:** I learned how to convert business requirements into technical functions, especially RBAC and secure API access.
 
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+**Result:** We produced an MVP requirement list and I identified the infrastructure items I needed to prepare.
 
+**Difficulty and lesson:** The challenge was that security features could expand quickly. I learned to keep the MVP practical before adding advanced features.
+
+## Day 3 - 9/5: Contributing to serverless architecture design
+
+**Work completed:** I joined the architecture design work for IRMS. I proposed using CloudFront for frontend delivery, API Gateway as the entry point, Lambda for business logic, and DynamoDB for core data.
+
+I also recorded the concrete checks I performed, the integration points I verified, and the issues I needed to report back to teammates. This made the entry reflect my own internship work instead of describing the whole project as if it was completed by one person.
+
+**Knowledge gained:** I learned how serverless services work together and why this model fits a low-cost internship project.
+
+**Result:** We had an initial architecture that the team could use to divide backend, frontend, and documentation tasks.
+
+**Difficulty and lesson:** The lesson was that an architecture diagram must show service responsibilities, not only list AWS services.
+
+## Day 4 - 10/5: Assisting DynamoDB data design
+
+**Work completed:** I worked with teammates responsible for business logic to identify data for Incident, Timeline, Users, and EvidenceMetadata. My focus was checking how Lambda would read and write DynamoDB based on access patterns.
+
+I also recorded the concrete checks I performed, the integration points I verified, and the issues I needed to report back to teammates. This made the entry reflect my own internship work instead of describing the whole project as if it was completed by one person.
+
+**Knowledge gained:** I learned to design DynamoDB around access patterns instead of relational database habits.
+
+**Result:** We produced a draft data model for API design and later Lambda implementation.
+
+**Difficulty and lesson:** The challenge was balancing simplicity with dashboard query needs, so I documented items to test later.
+
+## Day 5 - 11/5: API design contribution
+
+**Work completed:** I participated in reviewing endpoints for incident, timeline, evidence, report, and alert flows. My individual focus was checking methods, paths, and how API Gateway would map requests to Lambda.
+
+I also recorded the concrete checks I performed, the integration points I verified, and the issues I needed to report back to teammates. This made the entry reflect my own internship work instead of describing the whole project as if it was completed by one person.
+
+**Knowledge gained:** I learned that a stable API contract helps backend and frontend work in parallel with fewer mismatches.
+
+**Result:** We had an initial endpoint table and response convention for later API testing.
+
+**Difficulty and lesson:** The lesson was to agree on naming early because changing paths after frontend integration costs time.
+
+## Day 6 - 12/5: Preparing proposal content for my scope
+
+**Work completed:** I worked with the team on the IRMS proposal. I wrote and reviewed the parts related to AWS architecture, service mapping, serverless deployment, and cloud operation flow.
+
+I also recorded the concrete checks I performed, the integration points I verified, and the issues I needed to report back to teammates. This made the entry reflect my own internship work instead of describing the whole project as if it was completed by one person.
+
+**Knowledge gained:** I learned how to present my technical contribution inside a shared team proposal.
+
+**Result:** The proposal had clearer architecture and AWS service sections, which later supported the workshop documentation.
+
+**Difficulty and lesson:** I needed to avoid writing as if one person did everything, so I adjusted the wording to reflect a team project.

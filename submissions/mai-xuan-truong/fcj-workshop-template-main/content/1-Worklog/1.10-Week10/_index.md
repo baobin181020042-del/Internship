@@ -1,58 +1,83 @@
-﻿---
-title: "Week 10 Worklog"
+---
+title: "Week 10"
 date: 2024-01-01
-weight: 2
+weight: 10
 chapter: false
 pre: " <b> 1.10. </b> "
 ---
-{{% notice warning %}} 
-â ï¸ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
 
+**Timeline:** 12/6 → 17/6 (6 days)
 
-### Week 10 Objectives:
+> IRMS was completed by a five-member team. The notes below focus on my individual contribution while collaborating with the team.
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
+## Day 1 - 12/6: Assisting React + Vite setup
 
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+**Work completed:** I worked on assisting react + vite setup as my individual contribution while coordinating with the five-member IRMS team. My focus was the AWS, integration, deployment, testing, or documentation part related to this task.
 
+I also recorded the concrete checks I performed, the integration points I verified, and the issues I needed to report back to teammates. This made the entry reflect my own internship work instead of describing the whole project as if it was completed by one person.
 
-### Week 10 Achievements:
+**Knowledge gained:** I learned how assisting react + vite setup connects to the wider IRMS architecture and how collaboration affects integration quality.
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+**Result:** The task produced a concrete contribution for my assigned scope and helped the team move to the next implementation step.
 
-* Successfully created and configured an AWS Free Tier account.
+**Difficulty and lesson:** The main challenge was keeping my part aligned with the team implementation. The lesson was to communicate changes early and verify integration points carefully.
 
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
+## Day 2 - 13/6: Integrating dashboard with APIs
 
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
+**Work completed:** I worked on integrating dashboard with apis as my individual contribution while coordinating with the five-member IRMS team. My focus was the AWS, integration, deployment, testing, or documentation part related to this task.
 
-* Used AWS CLI to perform basic operations such as:
+I also recorded the concrete checks I performed, the integration points I verified, and the issues I needed to report back to teammates. This made the entry reflect my own internship work instead of describing the whole project as if it was completed by one person.
 
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
+**Knowledge gained:** I learned how integrating dashboard with apis connects to the wider IRMS architecture and how collaboration affects integration quality.
 
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+**Result:** The task produced a concrete contribution for my assigned scope and helped the team move to the next implementation step.
 
+**Difficulty and lesson:** The main challenge was keeping my part aligned with the team implementation. The lesson was to communicate changes early and verify integration points carefully.
+
+## Day 3 - 14/6: Integrating Incident List and Detail
+
+**Work completed:** I worked on integrating incident list and detail as my individual contribution while coordinating with the five-member IRMS team. My focus was the AWS, integration, deployment, testing, or documentation part related to this task.
+
+I also recorded the concrete checks I performed, the integration points I verified, and the issues I needed to report back to teammates. This made the entry reflect my own internship work instead of describing the whole project as if it was completed by one person.
+
+**Knowledge gained:** I learned how integrating incident list and detail connects to the wider IRMS architecture and how collaboration affects integration quality.
+
+**Result:** The task produced a concrete contribution for my assigned scope and helped the team move to the next implementation step.
+
+**Difficulty and lesson:** The main challenge was keeping my part aligned with the team implementation. The lesson was to communicate changes early and verify integration points carefully.
+
+## Day 4 - 15/6: Integrating frontend actions
+
+**Work completed:** I worked on integrating frontend actions as my individual contribution while coordinating with the five-member IRMS team. My focus was the AWS, integration, deployment, testing, or documentation part related to this task.
+
+I also recorded the concrete checks I performed, the integration points I verified, and the issues I needed to report back to teammates. This made the entry reflect my own internship work instead of describing the whole project as if it was completed by one person.
+
+**Knowledge gained:** I learned how integrating frontend actions connects to the wider IRMS architecture and how collaboration affects integration quality.
+
+**Result:** The task produced a concrete contribution for my assigned scope and helped the team move to the next implementation step.
+
+**Difficulty and lesson:** The main challenge was keeping my part aligned with the team implementation. The lesson was to communicate changes early and verify integration points carefully.
+
+## Day 5 - 16/6: Supporting Stitch AI UI integration
+
+**Work completed:** I worked on supporting stitch ai ui integration as my individual contribution while coordinating with the five-member IRMS team. My focus was the AWS, integration, deployment, testing, or documentation part related to this task.
+
+I also recorded the concrete checks I performed, the integration points I verified, and the issues I needed to report back to teammates. This made the entry reflect my own internship work instead of describing the whole project as if it was completed by one person.
+
+**Knowledge gained:** I learned how supporting stitch ai ui integration connects to the wider IRMS architecture and how collaboration affects integration quality.
+
+**Result:** The task produced a concrete contribution for my assigned scope and helped the team move to the next implementation step.
+
+**Difficulty and lesson:** The main challenge was keeping my part aligned with the team implementation. The lesson was to communicate changes early and verify integration points carefully.
+
+## Day 6 - 17/6: Local frontend testing
+
+**Work completed:** I worked on local frontend testing as my individual contribution while coordinating with the five-member IRMS team. My focus was the AWS, integration, deployment, testing, or documentation part related to this task.
+
+I also recorded the concrete checks I performed, the integration points I verified, and the issues I needed to report back to teammates. This made the entry reflect my own internship work instead of describing the whole project as if it was completed by one person.
+
+**Knowledge gained:** I learned how local frontend testing connects to the wider IRMS architecture and how collaboration affects integration quality.
+
+**Result:** The task produced a concrete contribution for my assigned scope and helped the team move to the next implementation step.
+
+**Difficulty and lesson:** The main challenge was keeping my part aligned with the team implementation. The lesson was to communicate changes early and verify integration points carefully.

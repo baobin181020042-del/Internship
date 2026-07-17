@@ -1,44 +1,38 @@
-﻿---
-title: "Chia sáº», Ä‘Ă³ng gĂ³p Ă½ kiáº¿n"
+---
+title: "Chia sẻ, đóng góp ý kiến"
 date: 2024-01-01
 weight: 7
 chapter: false
 pre: " <b> 7. </b> "
 ---
-{{% notice warning %}}
-â ï¸ **LÆ°u Ă½:** CĂ¡c thĂ´ng tin dÆ°á»›i Ä‘Ă¢y chá»‰ nháº±m má»¥c Ä‘Ă­ch tham kháº£o, vui lĂ²ng **khĂ´ng sao chĂ©p nguyĂªn vÄƒn** cho bĂ i bĂ¡o cĂ¡o cá»§a báº¡n ká»ƒ cáº£ warning nĂ y.
-{{% /notice %}}
 
->Táº¡i Ä‘Ă¢y báº¡n cĂ³ thá»ƒ tá»± do Ä‘Ă³ng gĂ³p Ă½ kiáº¿n cĂ¡ nhĂ¢n vá» nhá»¯ng tráº£i nghiá»‡m khi tham gia chÆ°Æ¡ng trĂ¬nh First Cloud AI Journey, giĂºp team FCJ cáº£i thiá»‡n nhá»¯ng váº¥n Ä‘á» cĂ²n thiáº¿u sĂ³t dá»±a trĂªn cĂ¡c háº¡ng má»¥c sau:
+Phần này là những chia sẻ cá nhân của tôi sau quá trình tham gia chương trình **First Cloud AI Journey** và thực hiện dự án thực tập IRMS. Nhìn chung, đây là một trải nghiệm có giá trị vì tôi không chỉ học thêm dịch vụ AWS, mà còn được rèn luyện cách làm việc nhóm, cách viết tài liệu và cách hoàn thiện một sản phẩm theo quy trình rõ ràng hơn.
 
-### ÄĂ¡nh giĂ¡ chung
+## 1. Môi trường học tập và thực tập
 
-**1. MĂ´i trÆ°á»ng lĂ m viá»‡c**  
-MĂ´i trÆ°á»ng lĂ m viá»‡c ráº¥t thĂ¢n thiá»‡n vĂ  cá»Ÿi má»Ÿ. CĂ¡c thĂ nh viĂªn trong FCJ luĂ´n sáºµn sĂ ng há»— trá»£ khi mĂ¬nh gáº·p khĂ³ khÄƒn, ká»ƒ cáº£ ngoĂ i giá» lĂ m viá»‡c. KhĂ´ng gian lĂ m viá»‡c gá»n gĂ ng, thoáº£i mĂ¡i, giĂºp mĂ¬nh táº­p trung tá»‘t hÆ¡n. Tuy nhiĂªn, mĂ¬nh nghÄ© cĂ³ thá»ƒ bá»• sung thĂªm má»™t sá»‘ buá»•i giao lÆ°u hoáº·c team bonding Ä‘á»ƒ má»i ngÆ°á»i hiá»ƒu nhau hÆ¡n.
+Môi trường thực tập khá cởi mở, phù hợp với sinh viên đang trong giai đoạn học và thử nghiệm. Tôi có không gian để tự tìm hiểu, làm sai, sửa lỗi và rút kinh nghiệm. Điều tôi đánh giá cao là chương trình không chỉ yêu cầu hoàn thành nội dung, mà còn khuyến khích trình bày lại quá trình làm việc thông qua Worklog, Proposal và Workshop.
 
-**2. Sá»± há»— trá»£ cá»§a mentor / team admin**  
-Mentor hÆ°á»›ng dáº«n ráº¥t chi tiáº¿t, giáº£i thĂ­ch rĂµ rĂ ng khi mĂ¬nh chÆ°a hiá»ƒu vĂ  luĂ´n khuyáº¿n khĂ­ch mĂ¬nh Ä‘áº·t cĂ¢u há»i. Team admin há»— trá»£ cĂ¡c thá»§ tá»¥c, tĂ i liá»‡u vĂ  táº¡o Ä‘iá»u kiá»‡n Ä‘á»ƒ mĂ¬nh lĂ m viá»‡c thuáº­n lá»£i. MĂ¬nh Ä‘Ă¡nh giĂ¡ cao viá»‡c mentor cho phĂ©p mĂ¬nh thá»­ vĂ  tá»± xá»­ lĂ½ váº¥n Ä‘á» thay vĂ¬ chá»‰ Ä‘Æ°a Ä‘Ă¡p Ă¡n.
+Nếu có thể cải thiện, tôi nghĩ chương trình có thể bổ sung thêm một số buổi review định kỳ theo nhóm nhỏ. Việc review sớm sẽ giúp sinh viên phát hiện lỗi trong tài liệu, cấu trúc website hoặc cách trình bày trước khi dồn nhiều việc về giai đoạn cuối.
 
-**3. Sá»± phĂ¹ há»£p giá»¯a cĂ´ng viá»‡c vĂ  chuyĂªn ngĂ nh há»c**  
-CĂ´ng viá»‡c mĂ¬nh Ä‘Æ°á»£c giao phĂ¹ há»£p vá»›i kiáº¿n thá»©c mĂ¬nh Ä‘Ă£ há»c á»Ÿ trÆ°á»ng, Ä‘á»“ng thá»i má»Ÿ rá»™ng thĂªm nhá»¯ng máº£ng má»›i mĂ  mĂ¬nh chÆ°a tá»«ng Ä‘Æ°á»£c tiáº¿p cáº­n. Nhá» váº­y, mĂ¬nh vá»«a cá»§ng cá»‘ kiáº¿n thá»©c ná»n táº£ng, vá»«a há»c thĂªm ká»¹ nÄƒng thá»±c táº¿.
+## 2. Sự hỗ trợ từ mentor và team
 
-**4. CÆ¡ há»™i há»c há»i & phĂ¡t triá»ƒn ká»¹ nÄƒng**  
-Trong quĂ¡ trĂ¬nh thá»±c táº­p, mĂ¬nh há»c Ä‘Æ°á»£c nhiá»u ká»¹ nÄƒng má»›i nhÆ° sá»­ dá»¥ng cĂ´ng cá»¥ quáº£n lĂ½ dá»± Ă¡n, ká»¹ nÄƒng lĂ m viá»‡c nhĂ³m, vĂ  cáº£ cĂ¡ch giao tiáº¿p chuyĂªn nghiá»‡p trong mĂ´i trÆ°á»ng cĂ´ng ty. Mentor cÅ©ng chia sáº» nhiá»u kinh nghiá»‡m thá»±c táº¿ giĂºp mĂ¬nh Ä‘á»‹nh hÆ°á»›ng tá»‘t hÆ¡n cho sá»± nghiá»‡p.
+Mentor và các anh/chị hỗ trợ đã giúp tôi định hướng khi gặp vấn đề trong quá trình làm với AWS. Thay vì chỉ đưa đáp án, mọi người thường gợi ý hướng kiểm tra để tôi tự tìm nguyên nhân, ví dụ đọc log, kiểm tra region, xem lại permission hoặc đối chiếu resource name. Cách hỗ trợ này giúp tôi nhớ lỗi lâu hơn và hiểu bản chất vấn đề tốt hơn.
 
-**5. VÄƒn hĂ³a & tinh tháº§n Ä‘á»“ng Ä‘á»™i**  
-VÄƒn hĂ³a cĂ´ng ty ráº¥t tĂ­ch cá»±c: má»i ngÆ°á»i tĂ´n trá»ng láº«n nhau, lĂ m viá»‡c nghiĂªm tĂºc nhÆ°ng váº«n vui váº». Khi cĂ³ dá»± Ă¡n gáº¥p, má»i ngÆ°á»i cĂ¹ng nhau cá»‘ gáº¯ng, há»— trá»£ khĂ´ng phĂ¢n biá»‡t vá»‹ trĂ­. Äiá»u nĂ y giĂºp mĂ¬nh cáº£m tháº¥y mĂ¬nh lĂ  má»™t pháº§n cá»§a táº­p thá»ƒ, dĂ¹ chá»‰ lĂ  thá»±c táº­p sinh.
+Tôi cũng học được nhiều từ các bạn trong nhóm. Vì IRMS là dự án nhóm 5 thành viên, mỗi người phụ trách một phần khác nhau nên việc trao đổi thường xuyên là rất cần thiết. Qua đó, tôi hiểu hơn rằng một sản phẩm hoàn chỉnh không chỉ cần code chạy được, mà còn cần tích hợp ổn định, tài liệu rõ ràng và cách phân chia trách nhiệm hợp lý.
 
-**6. ChĂ­nh sĂ¡ch / phĂºc lá»£i cho thá»±c táº­p sinh**  
-CĂ´ng ty cĂ³ há»— trá»£ phá»¥ cáº¥p thá»±c táº­p vĂ  táº¡o Ä‘iá»u kiá»‡n vá» thá»i gian linh hoáº¡t khi cáº§n thiáº¿t. NgoĂ i ra, viá»‡c Ä‘Æ°á»£c tham gia cĂ¡c buá»•i Ä‘Ă o táº¡o ná»™i bá»™ lĂ  má»™t Ä‘iá»ƒm cá»™ng lá»›n.
+## 3. Nội dung công việc và kiến thức nhận được
 
+Nội dung thực tập phù hợp với định hướng cloud và backend/infrastructure mà tôi muốn phát triển. Trong quá trình làm IRMS, tôi được tiếp xúc với nhiều dịch vụ AWS như Cognito, API Gateway, Lambda, DynamoDB, S3, EventBridge, SNS, CloudFront và AWS SAM. Đây là những kiến thức thực tế hơn so với việc chỉ đọc lý thuyết.
 
-### Má»™t sá»‘ cĂ¢u há»i khĂ¡c
-- Äiá»u báº¡n **hĂ i lĂ²ng nháº¥t** trong thá»i gian thá»±c táº­p?  
-- Äiá»u báº¡n nghÄ© cĂ´ng ty **cáº§n cáº£i thiá»‡n** cho cĂ¡c thá»±c táº­p sinh sau?  
-- Náº¿u giá»›i thiá»‡u cho báº¡n bĂ¨, báº¡n cĂ³ **khuyĂªn há» thá»±c táº­p á»Ÿ Ä‘Ă¢y khĂ´ng**? VĂ¬ sao?  
+Bên cạnh kỹ thuật, tôi cũng cải thiện kỹ năng viết báo cáo. Việc chuyển nội dung từ ghi chú cá nhân sang Worklog/Workshop giúp tôi học cách viết ngắn gọn, rõ ý, có cấu trúc và tránh đưa thông tin nhạy cảm vào tài liệu.
 
+## 4. Góp ý đề xuất
 
-### Äá» xuáº¥t & mong muá»‘n
-- Báº¡n cĂ³ Ä‘á» xuáº¥t gĂ¬ Ä‘á»ƒ cáº£i thiá»‡n tráº£i nghiá»‡m trong ká»³ thá»±c táº­p?  
-- Báº¡n cĂ³ muá»‘n tiáº¿p tá»¥c chÆ°Æ¡ng trĂ¬nh nĂ y trong tÆ°Æ¡ng lai?
-- GĂ³p Ă½ khĂ¡c (tá»± do chia sáº»):
+- Nên có checklist mẫu cho từng phần báo cáo để sinh viên dễ tự kiểm tra trước khi nộp.
+- Nên có một buổi hướng dẫn riêng về cách viết Worklog và Workshop sao cho không bị giống nhật ký cá nhân.
+- Nên khuyến khích các nhóm review chéo tài liệu, vì người ngoài đọc sẽ dễ phát hiện chỗ thiếu hoặc khó hiểu.
+- Có thể bổ sung thêm ví dụ về cách trình bày đóng góp cá nhân trong dự án nhóm để tránh viết như một người làm toàn bộ dự án.
+
+## 5. Cảm nhận chung
+
+Sau kỳ thực tập, tôi cảm thấy mình tự tin hơn khi làm việc với AWS và hiểu rõ hơn cách một dự án cloud được triển khai từ đầu đến cuối. Dù vẫn còn nhiều điểm cần học thêm, tôi thấy đây là nền tảng tốt để tiếp tục phát triển theo hướng cloud engineering, backend/serverless và technical documentation.

@@ -1,58 +1,83 @@
-﻿---
-title: "Week 7 Worklog"
+---
+title: "Week 7"
 date: 2024-01-01
-weight: 1
+weight: 7
 chapter: false
 pre: " <b> 1.7. </b> "
 ---
-{{% notice warning %}} 
-â ï¸ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
 
+**Timeline:** 25/5 → 30/5 (6 days)
 
-### Week 7 Objectives:
+> IRMS was completed by a five-member team. The notes below focus on my individual contribution while collaborating with the team.
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
+## Day 1 - 25/5: Configuring EventBridge rules
 
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+**Work completed:** I worked on configuring eventbridge rules as my individual contribution while coordinating with the five-member IRMS team. My focus was the AWS, integration, deployment, testing, or documentation part related to this task.
 
+I also recorded the concrete checks I performed, the integration points I verified, and the issues I needed to report back to teammates. This made the entry reflect my own internship work instead of describing the whole project as if it was completed by one person.
 
-### Week 7 Achievements:
+**Knowledge gained:** I learned how configuring eventbridge rules connects to the wider IRMS architecture and how collaboration affects integration quality.
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+**Result:** The task produced a concrete contribution for my assigned scope and helped the team move to the next implementation step.
 
-* Successfully created and configured an AWS Free Tier account.
+**Difficulty and lesson:** The main challenge was keeping my part aligned with the team implementation. The lesson was to communicate changes early and verify integration points carefully.
 
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
+## Day 2 - 26/5: Integrating SNS notification
 
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
+**Work completed:** I worked on integrating sns notification as my individual contribution while coordinating with the five-member IRMS team. My focus was the AWS, integration, deployment, testing, or documentation part related to this task.
 
-* Used AWS CLI to perform basic operations such as:
+I also recorded the concrete checks I performed, the integration points I verified, and the issues I needed to report back to teammates. This made the entry reflect my own internship work instead of describing the whole project as if it was completed by one person.
 
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
+**Knowledge gained:** I learned how integrating sns notification connects to the wider IRMS architecture and how collaboration affects integration quality.
 
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+**Result:** The task produced a concrete contribution for my assigned scope and helped the team move to the next implementation step.
 
+**Difficulty and lesson:** The main challenge was keeping my part aligned with the team implementation. The lesson was to communicate changes early and verify integration points carefully.
+
+## Day 3 - 27/5: Reviewing Secrets Manager usage
+
+**Work completed:** I worked on reviewing secrets manager usage as my individual contribution while coordinating with the five-member IRMS team. My focus was the AWS, integration, deployment, testing, or documentation part related to this task.
+
+I also recorded the concrete checks I performed, the integration points I verified, and the issues I needed to report back to teammates. This made the entry reflect my own internship work instead of describing the whole project as if it was completed by one person.
+
+**Knowledge gained:** I learned how reviewing secrets manager usage connects to the wider IRMS architecture and how collaboration affects integration quality.
+
+**Result:** The task produced a concrete contribution for my assigned scope and helped the team move to the next implementation step.
+
+**Difficulty and lesson:** The main challenge was keeping my part aligned with the team implementation. The lesson was to communicate changes early and verify integration points carefully.
+
+## Day 4 - 28/5: Assisting Gemini AI integration
+
+**Work completed:** I worked on assisting gemini ai integration as my individual contribution while coordinating with the five-member IRMS team. My focus was the AWS, integration, deployment, testing, or documentation part related to this task.
+
+I also recorded the concrete checks I performed, the integration points I verified, and the issues I needed to report back to teammates. This made the entry reflect my own internship work instead of describing the whole project as if it was completed by one person.
+
+**Knowledge gained:** I learned how assisting gemini ai integration connects to the wider IRMS architecture and how collaboration affects integration quality.
+
+**Result:** The task produced a concrete contribution for my assigned scope and helped the team move to the next implementation step.
+
+**Difficulty and lesson:** The main challenge was keeping my part aligned with the team implementation. The lesson was to communicate changes early and verify integration points carefully.
+
+## Day 5 - 29/5: Internal API testing
+
+**Work completed:** I worked on internal api testing as my individual contribution while coordinating with the five-member IRMS team. My focus was the AWS, integration, deployment, testing, or documentation part related to this task.
+
+I also recorded the concrete checks I performed, the integration points I verified, and the issues I needed to report back to teammates. This made the entry reflect my own internship work instead of describing the whole project as if it was completed by one person.
+
+**Knowledge gained:** I learned how internal api testing connects to the wider IRMS architecture and how collaboration affects integration quality.
+
+**Result:** The task produced a concrete contribution for my assigned scope and helped the team move to the next implementation step.
+
+**Difficulty and lesson:** The main challenge was keeping my part aligned with the team implementation. The lesson was to communicate changes early and verify integration points carefully.
+
+## Day 6 - 30/5: Assisting backend fixes
+
+**Work completed:** I worked on assisting backend fixes as my individual contribution while coordinating with the five-member IRMS team. My focus was the AWS, integration, deployment, testing, or documentation part related to this task.
+
+I also recorded the concrete checks I performed, the integration points I verified, and the issues I needed to report back to teammates. This made the entry reflect my own internship work instead of describing the whole project as if it was completed by one person.
+
+**Knowledge gained:** I learned how assisting backend fixes connects to the wider IRMS architecture and how collaboration affects integration quality.
+
+**Result:** The task produced a concrete contribution for my assigned scope and helped the team move to the next implementation step.
+
+**Difficulty and lesson:** The main challenge was keeping my part aligned with the team implementation. The lesson was to communicate changes early and verify integration points carefully.

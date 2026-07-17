@@ -1,42 +1,69 @@
-﻿---
-title: "Week 1 Worklog"
-date: 2026-04-20
+---
+title: "Week 1"
+date: 2024-01-01
 weight: 1
 chapter: false
 pre: " <b> 1.1. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Note:** The following information is for reference only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
 
-### Week 1 Objectives (20/04/2026 - 25/04/2026):
+**Timeline:** 20/4 → 25/4 (6 days)
 
-* Create and activate an AWS account for hands-on practice.
-* Complete core tasks in the credit-earning program.
-* Learn cost control basics and resource checks across regions.
-* Start writing and publishing weekly worklog on GitHub.
+## Day 1 - 20/4: AWS account setup
 
-### Daily Worklog:
+**Work completed:** Prepared an AWS account for the internship. During registration, the account was suspended, so I could not use the console immediately.
 
-| Day | Activities | Outcome |
-| --- | --- | --- |
-| Day 1 (20/04/2026) | Tried creating an AWS account. Account was **suspended**, so onboarding could not continue. | Account creation failed; identified account verification as the main blocker. |
-| Day 2 (21/04/2026) | Continued account setup troubleshooting. After multiple attempts, used a rented phone number for verification and finally activated the account. Started the 5-task challenge for 100$ credit and completed **EC2**, **AWS Budgets**, and **AWS Lambda**. | AWS account activated; 3/5 tasks completed. |
-| Day 3 (22/04/2026) | Continued with remaining tasks: **RDS Database** and **Amazon Bedrock**. | Completed all 5 tasks planned for the week. |
-| Day 4 (23/04/2026) | Studied how to write a proper worklog: structure, daily progress format, issue logging, and lessons learned section. | Established a clear format for writing internship worklogs. |
-| Day 5 (24/04/2026) | Checked billing and found unexpected charge on **Relational Database Service: 8.78$** even after deleting main resources. Audited all services and discovered leftover Aurora/RDS resources in **N. California** region. Deleted them immediately. | Stopped extra cost leakage; learned to validate resources in every region used during labs. |
-| Day 6 (25/04/2026) | Practiced writing Week 1 worklog and uploaded updates to GitHub. | Completed Week 1 worklog and prepared for Week 2. |
+**Knowledge gained:** Learned that AWS accounts require billing information, phone verification, and risk checks before normal usage is allowed.
 
-### Week 1 Achievements:
+**Result:** Documented the registration steps, errors, and follow-up actions for the next day.
 
-* Successfully activated AWS account after resolving initial suspension issue.
-* Completed the 5-task credit track (EC2, AWS Budgets, AWS Lambda, RDS Database, Amazon Bedrock).
-* Built initial habit for billing review and cross-region resource cleanup.
-* Finished and published Week 1 worklog on GitHub.
+**Difficulty and lesson:** The main challenge was handling new AWS concepts carefully. The lesson was to verify configuration, permissions, region, and cost before moving to the next task.
 
-### Key Lessons Learned:
+## Day 2 - 21/4: Account completion and first AWS tasks
 
-* Validate account status early to avoid wasting setup time in the first days.
-* After RDS/Aurora labs, always audit resources in **all visited regions**, not only the default one.
-* Enable and monitor AWS Budgets early to catch abnormal charges quickly.
-* Detailed daily notes make weekly reporting and mentor check-ins much easier.
+**Work completed:** Continued resolving the AWS account issue, then started the first learning tasks for credits. The services covered included EC2, AWS Budgets, and AWS Lambda.
+
+**Knowledge gained:** Learned how to use the AWS Console, locate services, create basic resources, and monitor budgets to avoid unexpected charges.
+
+**Result:** The account became usable for basic labs. Several resource creation and cleanup actions were completed successfully.
+
+**Difficulty and lesson:** The main challenge was handling new AWS concepts carefully. The lesson was to verify configuration, permissions, region, and cost before moving to the next task.
+
+## Day 3 - 22/4: RDS and Amazon Bedrock practice
+
+**Work completed:** Completed additional tasks related to Amazon RDS and Amazon Bedrock, focusing on managed databases and generative AI services on AWS.
+
+**Knowledge gained:** Understood the difference between self-managed databases and Amazon RDS, and gained an initial view of foundation models in Bedrock.
+
+**Result:** Completed the main practice steps and gained experience reviewing configurations before creating billable resources.
+
+**Difficulty and lesson:** The main challenge was handling new AWS concepts carefully. The lesson was to verify configuration, permissions, region, and cost before moving to the next task.
+
+## Day 4 - 23/4: Worklog writing practice
+
+**Work completed:** Studied how to write an internship worklog and how to present weekly and daily progress in a Hugo Workshop website.
+
+**Knowledge gained:** Learned to organize entries by work completed, knowledge gained, outcomes, difficulties, and lessons instead of writing informal diary notes.
+
+**Result:** Created a consistent writing structure for later internship weeks.
+
+**Difficulty and lesson:** The main challenge was handling new AWS concepts carefully. The lesson was to verify configuration, permissions, region, and cost before moving to the next task.
+
+## Day 5 - 24/4: Cost review and resource cleanup
+
+**Work completed:** Reviewed the Billing Dashboard after the first labs and found charges from RDS/Aurora because resources were still running in another region.
+
+**Knowledge gained:** Learned that AWS resources are region-scoped, and checking only one region can miss billable resources elsewhere.
+
+**Result:** Removed unnecessary resources and documented a cost-checking routine after each practice session.
+
+**Difficulty and lesson:** The main challenge was handling new AWS concepts carefully. The lesson was to verify configuration, permissions, region, and cost before moving to the next task.
+
+## Day 6 - 25/4: Publishing the worklog to GitHub
+
+**Work completed:** Practiced publishing worklog content to GitHub and checked how the Hugo website renders Markdown files under the content directory.
+
+**Knowledge gained:** Learned how front matter, weight, title, and folder structure affect the sidebar and page ordering.
+
+**Result:** Produced the first worklog version that could be rendered on the website.
+
+**Difficulty and lesson:** The main challenge was handling new AWS concepts carefully. The lesson was to verify configuration, permissions, region, and cost before moving to the next task.

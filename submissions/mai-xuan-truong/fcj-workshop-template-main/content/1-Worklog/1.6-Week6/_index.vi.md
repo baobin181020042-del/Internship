@@ -1,60 +1,83 @@
-﻿---
-title: "Worklog Tuần 6"
+---
+title: "Tuần 6"
 date: 2024-01-01
-weight: 1
+weight: 6
 chapter: false
 pre: " <b> 1.6. </b> "
 ---
-{{% notice warning %}}
-â ï¸ **LÆ°u Ă½:** CĂ¡c thĂ´ng tin dÆ°á»›i Ä‘Ă¢y chá»‰ nháº±m má»¥c Ä‘Ă­ch tham kháº£o, vui lĂ²ng **khĂ´ng sao chĂ©p nguyĂªn vÄƒn** cho bĂ i bĂ¡o cĂ¡o cá»§a báº¡n ká»ƒ cáº£ warning nĂ y.
-{{% /notice %}}
 
+**Mốc thời gian:** 19/5 → 24/5 (6 ngày)
 
-### Má»¥c tiĂªu tuáº§n 6:
+> Dự án IRMS được thực hiện bởi nhóm 5 thành viên. Các ghi chú dưới đây tập trung vào phần đóng góp cá nhân của tôi trong quá trình phối hợp với nhóm.
 
-* Káº¿t ná»‘i, lĂ m quen vá»›i cĂ¡c thĂ nh viĂªn trong First Cloud AI Journey.
-* Hiá»ƒu dá»‹ch vá»¥ AWS cÆ¡ báº£n, cĂ¡ch dĂ¹ng console & CLI.
+## Ngày 1 - 19/5: Hỗ trợ Lambda Incident CRUD
 
-### CĂ¡c cĂ´ng viá»‡c cáº§n triá»ƒn khai trong tuáº§n nĂ y:
-| Thá»© | CĂ´ng viá»‡c                                                                                                                                                                                   | NgĂ y báº¯t Ä‘áº§u | NgĂ y hoĂ n thĂ nh | Nguá»“n tĂ i liá»‡u                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - LĂ m quen vá»›i cĂ¡c thĂ nh viĂªn FCJ <br> - Äá»c vĂ  lÆ°u Ă½ cĂ¡c ná»™i quy, quy Ä‘á»‹nh táº¡i Ä‘Æ¡n vá»‹ thá»±c táº­p                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - TĂ¬m hiá»ƒu AWS vĂ  cĂ¡c loáº¡i dá»‹ch vá»¥ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Táº¡o AWS Free Tier account <br> - TĂ¬m hiá»ƒu AWS Console & AWS CLI <br> - **Thá»±c hĂ nh:** <br>&emsp; + Táº¡o AWS account <br>&emsp; + CĂ i AWS CLI & cáº¥u hĂ¬nh <br> &emsp; + CĂ¡ch sá»­ dá»¥ng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - TĂ¬m hiá»ƒu EC2 cÆ¡ báº£n: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - CĂ¡c cĂ¡ch remote SSH vĂ o EC2 <br> - TĂ¬m hiá»ƒu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thá»±c hĂ nh:** <br>&emsp; + Táº¡o EC2 instance <br>&emsp; + Káº¿t ná»‘i SSH <br>&emsp; + Gáº¯n EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+**Công việc đã thực hiện:** Tôi hỗ trợ phần kết nối Lambda với DynamoDB cho luồng Incident CRUD, trong khi các bạn khác xử lý nghiệp vụ chi tiết. Tôi tập trung kiểm tra permission, environment variable và response format.
 
+Tôi không phụ trách toàn bộ nghiệp vụ CRUD, nhưng hỗ trợ phần tích hợp Lambda với DynamoDB và API Gateway. Tôi kiểm tra event đầu vào, response trả ra, status code và log để đảm bảo frontend có thể gọi được về sau.
 
-### Káº¿t quáº£ Ä‘áº¡t Ä‘Æ°á»£c tuáº§n 6:
-* Hiá»ƒu AWS lĂ  gĂ¬ vĂ  náº¯m Ä‘Æ°á»£c cĂ¡c nhĂ³m dá»‹ch vá»¥ cÆ¡ báº£n: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+**Kiến thức đã học:** Lambda cần tương tác DynamoDB rõ ràng và trả response phù hợp cho API Gateway.
 
-* ÄĂ£ táº¡o vĂ  cáº¥u hĂ¬nh AWS Free Tier account thĂ nh cĂ´ng.
+**Kết quả đạt được:** CRUD chạy thử được ở mức API/backend.
 
-* LĂ m quen vá»›i AWS Management Console vĂ  biáº¿t cĂ¡ch tĂ¬m, truy cáº­p, sá»­ dá»¥ng dá»‹ch vá»¥ tá»« giao diá»‡n web.
+**Khó khăn và bài học:** Input validation và lỗi permission là hai điểm cần kiểm tra sớm.
 
-* CĂ i Ä‘áº·t vĂ  cáº¥u hĂ¬nh AWS CLI trĂªn mĂ¡y tĂ­nh bao gá»“m:
-  * Access Key
-  * Secret Key
-  * Region máº·c Ä‘á»‹nh
-  * ...
+## Ngày 2 - 20/5: Hỗ trợ Timeline backend
 
-* Sá»­ dá»¥ng AWS CLI Ä‘á»ƒ thá»±c hiá»‡n cĂ¡c thao tĂ¡c cÆ¡ báº£n nhÆ°:
+**Công việc đã thực hiện:** Tôi hỗ trợ kiểm tra cách timeline được ghi vào DynamoDB và cách API trả về lịch sử xử lý. Nhóm cùng thống nhất các field cần có cho audit trail.
 
-  * Kiá»ƒm tra thĂ´ng tin tĂ i khoáº£n & cáº¥u hĂ¬nh
-  * Láº¥y danh sĂ¡ch region
-  * Xem dá»‹ch vá»¥ EC2
-  * Táº¡o vĂ  quáº£n lĂ½ key pair
-  * Kiá»ƒm tra thĂ´ng tin dá»‹ch vá»¥ Ä‘ang cháº¡y
-  * ...
+Tôi test thử việc ghi timeline theo incidentId và kiểm tra dữ liệu trong DynamoDB sau mỗi thao tác. Khi thấy field chưa nhất quán, tôi ghi lại để nhóm chỉnh lại schema trước khi tích hợp frontend.
 
-* CĂ³ kháº£ nÄƒng káº¿t ná»‘i giá»¯a giao diá»‡n web vĂ  CLI Ä‘á»ƒ quáº£n lĂ½ tĂ i nguyĂªn AWS song song.
-* ...
+**Kiến thức đã học:** Timeline giúp theo dõi quá trình xử lý incident minh bạch hơn.
 
+**Kết quả đạt được:** Timeline có thể ghi nhận các bước xử lý cơ bản.
 
+**Khó khăn và bài học:** Cần sắp xếp dữ liệu theo thời gian để frontend hiển thị dễ đọc.
 
+## Ngày 3 - 21/5: Tích hợp Evidence Upload
 
+**Công việc đã thực hiện:** Tôi phụ trách chính việc kiểm tra luồng presigned URL và metadata evidence giữa Lambda, S3 và DynamoDB. Các bạn frontend/backend cùng phối hợp để xác nhận flow.
+
+Tôi tập trung vào luồng kỹ thuật: gọi Lambda lấy presigned URL, upload file lên S3 và lưu metadata. Tôi test bằng file mẫu, kiểm tra object key trên S3 và đối chiếu metadata trong DynamoDB.
+
+**Kiến thức đã học:** File storage và metadata storage nên tách riêng để hệ thống dễ mở rộng.
+
+**Kết quả đạt được:** Evidence upload có flow kỹ thuật rõ ràng để test tiếp trên frontend.
+
+**Khó khăn và bài học:** Content type, object key và CORS là các điểm dễ lỗi.
+
+## Ngày 4 - 22/5: Hỗ trợ Report Generation
+
+**Công việc đã thực hiện:** Tôi hỗ trợ kiểm tra dữ liệu đầu vào cho report API, đặc biệt là incident, timeline và evidence metadata. Phần trình bày report được nhóm cùng review.
+
+Tôi hỗ trợ phần lấy dữ liệu từ các nguồn cần thiết cho report và kiểm tra response API có đủ thông tin hay không. Tôi cũng góp ý không nên đưa quá nhiều trường kỹ thuật vào report vì người xem cần phần tóm tắt rõ ràng.
+
+**Kiến thức đã học:** Report nên tổng hợp đủ thông tin xử lý sự cố nhưng không đưa dữ liệu dư thừa.
+
+**Kết quả đạt được:** API report có dữ liệu đầu vào ổn định hơn.
+
+**Khó khăn và bài học:** Cần phân biệt dữ liệu phục vụ điều tra và dữ liệu nên hiển thị trong report.
+
+## Ngày 5 - 23/5: Tích hợp Alert Handler với EventBridge
+
+**Công việc đã thực hiện:** Tôi tham gia thiết kế luồng event-driven cho Alert Handler. Trọng tâm cá nhân là EventBridge rule, event mẫu và cách Lambda nhận event để tạo incident.
+
+Tôi tạo event mẫu để mô phỏng cảnh báo và kiểm tra cách EventBridge chuyển event sang Lambda. Phần này giúp nhóm có thể demo luồng tự động tạo incident mà không phụ thuộc hoàn toàn vào nguồn event thật.
+
+**Kiến thức đã học:** EventBridge giúp hệ thống phản ứng với security event mà không cần polling.
+
+**Kết quả đạt được:** Có luồng alert tự động ở mức demo để nhóm tiếp tục test.
+
+**Khó khăn và bài học:** Event pattern cần đơn giản và dễ mô phỏng trong môi trường thực tập.
+
+## Ngày 6 - 24/5: Debug backend và CloudWatch
+
+**Công việc đã thực hiện:** Tôi rà soát log CloudWatch cho các Lambda đã tích hợp, ghi lại lỗi thường gặp và trao đổi với nhóm để sửa response/permission.
+
+Tôi dùng CloudWatch Logs để xem lỗi của từng Lambda sau khi gọi API. Tôi ghi lại lỗi theo nhóm như thiếu permission, sai environment variable, response format sai hoặc dữ liệu DynamoDB chưa đúng.
+
+**Kiến thức đã học:** CloudWatch log là công cụ quan trọng khi debug serverless backend.
+
+**Kết quả đạt được:** Một số lỗi IAM và format response được phát hiện sớm.
+
+**Khó khăn và bài học:** Log cần đủ context để biết lỗi đến từ API, Lambda hay DynamoDB.

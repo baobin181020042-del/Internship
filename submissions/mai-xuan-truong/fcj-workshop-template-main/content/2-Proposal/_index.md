@@ -1,115 +1,146 @@
 ---
 title: "Proposal"
-date: 2024-01-01
+date: 2026-07-03
 weight: 2
 chapter: false
 pre: " <b> 2. </b> "
 ---
+
 {{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
+⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
 {{% /notice %}}
 
-In this section, you need to summarize the contents of the workshop that you **plan** to conduct.
+# IRMS — Incident Response Management System
 
-# IoT Weather Platform for Lab Research
-## A Unified AWS Serverless Solution for Real-Time Weather Monitoring
+## Project Proposal
 
 ### 1. Executive Summary
-The IoT Weather Platform is designed for the ITea Lab team in Ho Chi Minh City to enhance weather data collection and analysis. It supports up to 5 weather stations, with potential scalability to 10-15, utilizing Raspberry Pi edge devices with ESP32 sensors to transmit data via MQTT. The platform leverages AWS Serverless services to deliver real-time monitoring, predictive analytics, and cost efficiency, with access restricted to 5 lab members via Amazon Cognito.
+
+IRMS (Incident Response Management System) is a SaaS platform for managing and handling cybersecurity incidents, built entirely on AWS Serverless architecture. The project is implemented by a team of 5 members in the AWS internship program at FCAJ, with the goal of building a practical product that can be applied in enterprise environments.
+
+The system helps Security teams standardize the full incident response workflow: detection, classification, assignment, investigation, evidence storage, and reporting. It replaces the current manual workflow using Email, Excel, Zalo, or informal chat channels. IRMS also integrates automated threat detection through Amazon GuardDuty and AI-assisted recommendations using Google Gemini API.
 
 ### 2. Problem Statement
-### What’s the Problem?
-Current weather stations require manual data collection, becoming unmanageable with multiple units. There is no centralized system for real-time data or analytics, and third-party platforms are costly and overly complex.
 
-### The Solution
-The platform uses AWS IoT Core to ingest MQTT data, AWS Lambda and API Gateway for processing, Amazon S3 for storage (including a data lake), and AWS Glue Crawlers and ETL jobs to extract, transform, and load data from the S3 data lake to another S3 bucket for analysis. AWS Amplify with Next.js provides the web interface, and Amazon Cognito ensures secure access. Similar to Thingsboard and CoreIoT, users can register new devices and manage connections, though this platform operates on a smaller scale and is designed for private use. Key features include real-time dashboards, trend analysis, and low operational costs.
+In small and medium-sized businesses in Vietnam, when security incidents occur, such as a public S3 bucket, brute-force SSH attack, or phishing email, Security teams often handle them through informal channels like Email, Excel, Zalo, or Telegram.
 
-### Benefits and Return on Investment
-The solution establishes a foundational resource for lab members to develop a larger IoT platform, serving as a study resource, and provides a data foundation for AI enthusiasts for model training or analysis. It reduces manual reporting for each station via a centralized platform, simplifying management and maintenance, and improves data reliability. Monthly costs are $0.66 USD per the AWS Pricing Calculator, with a 12-month total of $7.92 USD. All IoT equipment costs are covered by the existing weather station setup, eliminating additional development expenses. The break-even period of 6-12 months is achieved through significant time savings from reduced manual work.
+This creates several practical issues: there is no centralized history for lookup, no clear way to track response progress, investigation evidence can be lost, and periodic reports are difficult to produce for risk assessment.
+
+IRMS solves this problem by standardizing the whole process into a single web application, running on AWS with near-zero cost during the demo phase.
 
 ### 3. Solution Architecture
-The platform employs a serverless AWS architecture to manage data from 5 Raspberry Pi-based stations, scalable to 15. Data is ingested via AWS IoT Core, stored in an S3 data lake, and processed by AWS Glue Crawlers and ETL jobs to transform and load it into another S3 bucket for analysis. Lambda and API Gateway handle additional processing, while Amplify with Next.js hosts the dashboard, secured by Cognito. The architecture is detailed below:
 
-![IoT Weather Station Architecture](/images/2-Proposal/edge_architecture.jpeg)
+The system follows a Serverless-first model and does not use EC2, RDS, or VPC in order to optimize cost and reduce operational complexity.
 
-![IoT Weather Platform Architecture](/images/2-Proposal/platform_architecture.jpeg)
+![IRMS Solution Architecture](/images/2-Proposal/IRMS_architecture_v10.drawio.png)
 
-### AWS Services Used
-- **AWS IoT Core**: Ingests MQTT data from 5 stations, scalable to 15.
-- **AWS Lambda**: Processes data and triggers Glue jobs (two functions).
-- **Amazon API Gateway**: Facilitates web app communication.
-- **Amazon S3**: Stores raw data in a data lake and processed outputs (two buckets).
-- **AWS Glue**: Crawlers catalog data, and ETL jobs transform and load it.
-- **AWS Amplify**: Hosts the Next.js web interface.
-- **Amazon Cognito**: Secures access for lab users.
+#### Global/Edge Layer (outside Region)
 
-### Component Design
-- **Edge Devices**: Raspberry Pi collects and filters sensor data, sending it to IoT Core.
-- **Data Ingestion**: AWS IoT Core receives MQTT messages from the edge devices.
-- **Data Storage**: Raw data is stored in an S3 data lake; processed data is stored in another S3 bucket.
-- **Data Processing**: AWS Glue Crawlers catalog the data, and ETL jobs transform it for analysis.
-- **Web Interface**: AWS Amplify hosts a Next.js app for real-time dashboards and analytics.
-- **User Management**: Amazon Cognito manages user access, allowing up to 5 active accounts.
+- **Amazon Route 53**: DNS resolution.
+- **Amazon CloudFront**: CDN for frontend distribution and the single entry point for all traffic.
+- **AWS WAF**: Attached to CloudFront to inspect and block malicious requests before they reach the system.
+- **Amazon S3 (Web Hosting)**: Stores the static React SPA, accessible only through CloudFront.
+
+#### Regional — Authentication & Entry Layer
+
+- **Amazon API Gateway**: REST API that receives all requests from CloudFront (`/api/*`).
+- **Amazon Cognito**: Handles login, issues JWT tokens, and supports RBAC with 4 roles (Admin, Security Manager, Security Analyst, Auditor).
+
+#### Regional — Compute Layer (5 Lambda functions)
+
+- **Lambda Incident CRUD**: Creates, reads, updates, and assigns incidents.
+- **Lambda Upload Evidence**: Handles evidence file uploads to S3.
+- **Lambda Generate Report**: Aggregates data from DynamoDB and exports PDF/CSV reports.
+- **Lambda Alert Handler**: Receives GuardDuty findings, auto-creates incidents, and sends notifications.
+- **Lambda AI Assistant**: Calls Google Gemini API to suggest severity and response actions.
+
+#### Regional — Data Layer
+
+- **Amazon DynamoDB**: Stores Incidents, Timeline, Users, and EvidenceMetadata.
+- **Amazon S3 (Evidence Store)**: Stores evidence files such as screenshots, logs, PCAP files, and PDF reports.
+
+#### Regional — Security & Automation Layer
+
+- **Amazon GuardDuty**: Automatically detects threats.
+- **Amazon EventBridge**: Captures GuardDuty findings through rules and triggers Lambda Alert Handler; also runs the monthly report scheduler.
+- **Amazon SNS**: Sends email notifications to Security Analysts when a new incident is created.
+- **AWS Secrets Manager**: Stores the Gemini API key securely.
+
+#### External Layer
+
+- **Google Gemini API**: Analyzes incident descriptions and returns severity plus suggested actions. It is used instead of Bedrock due to intern account limitations.
 
 ### 4. Technical Implementation
-**Implementation Phases**
-This project has two parts—setting up weather edge stations and building the weather platform—each following 4 phases:
-- Build Theory and Draw Architecture: Research Raspberry Pi setup with ESP32 sensors and design the AWS serverless architecture (1 month pre-internship)
-- Calculate Price and Check Practicality: Use AWS Pricing Calculator to estimate costs and adjust if needed (Month 1).
-- Fix Architecture for Cost or Solution Fit: Tweak the design (e.g., optimize Lambda with Next.js) to stay cost-effective and usable (Month 2).
-- Develop, Test, and Deploy: Code the Raspberry Pi setup, AWS services with CDK/SDK, and Next.js app, then test and release to production (Months 2-3).
 
-**Technical Requirements**
-- Weather Edge Station: Sensors (temperature, humidity, rainfall, wind speed), a microcontroller (ESP32), and a Raspberry Pi as the edge device. Raspberry Pi runs Raspbian, handles Docker for filtering, and sends 1 MB/day per station via MQTT over Wi-Fi.
-- Weather Platform: Practical knowledge of AWS Amplify (hosting Next.js), Lambda (minimal use due to Next.js), AWS Glue (ETL), S3 (two buckets), IoT Core (gateway and rules), and Cognito (5 users). Use AWS CDK/SDK to code interactions (e.g., IoT Core rules to S3). Next.js reduces Lambda workload for the fullstack web app.
+**Frontend:** React 18 + TypeScript + Vite + TailwindCSS. Main screens include Dashboard, Incident List/Detail, Timeline, Evidence Upload, and Report View. The app is built as static assets, deployed to S3, and distributed through CloudFront.
+
+**Backend:** Fully Serverless. The 5 Lambda functions are written in Python 3.12. Each function is independent and uses its own IAM Role with least-privilege permissions. The frontend communicates with the backend through API Gateway REST with JWT Authorizer.
+
+**Infrastructure as Code:** AWS SAM (Serverless Application Model). All resources are defined in a YAML template and can be redeployed with a single `sam deploy` command.
+
+**Source Control:** GitHub monorepo with the branching rule `main` → `develop` → `feature/<name>-<task>`. Pull requests must be reviewed before merging into `develop`.
+
+**Team assignment:**
+
+- **Member 1:** Frontend (React, Dashboard, UI).
+- **Member 2:** Authentication (Cognito, API Gateway, RBAC).
+- **Member 3:** Incident Core (Lambda CRUD, DynamoDB schema, Report).
+- **Member 4:** Evidence & Storage (S3, Upload Lambda, Secrets Manager).
+- **Member 5:** Security Automation & AI (GuardDuty, EventBridge, SNS, Alert Lambda, AI Assistant).
 
 ### 5. Timeline & Milestones
-**Project Timeline**
-- Pre-Internship (Month 0): 1 month for planning and old station review.
-- Internship (Months 1-3): 3 months.
-    - Month 1: Study AWS and upgrade hardware.
-    - Month 2: Design and adjust architecture.
-    - Month 3: Implement, test, and launch.
-- Post-Launch: Up to 1 year for research.
+
+- **Week 1:** Set up shared AWS account, IAM users for each member, Budget Alert, SAM CLI, and GitHub repo structure. Member 2 sets up Cognito + API Gateway + 1 test Lambda and verifies JWT Authorizer. Member 3 designs DynamoDB schema and API spec.
+- **Week 2:** Member 3 completes Incident CRUD Lambda. Member 1 builds the frontend and connects it to the real API. Internal demo: login → create incident → list incident end-to-end.
+- **Week 3:** Member 4 completes Evidence Upload. Member 5 sets up GuardDuty + EventBridge + Lambda Alert Handler. Member 3 builds Generate Report.
+- **Week 4:** Member 5 integrates AI Assistant (Gemini). Member 1 completes the full UI. Set up CloudFront + WAF. Run full end-to-end system testing.
+- **Week 5+:** Write report, workshop, and blog. Fix bugs. Prepare mentor demo.
 
 ### 6. Budget Estimation
-You can find the budget estimation on the [AWS Pricing Calculator](https://calculator.aws/#/estimate?id=621f38b12a1ef026842ba2ddfe46ff936ed4ab01).  
-Or you can download the [Budget Estimation File](../attachments/budget_estimation.pdf).
 
-### Infrastructure Costs
-- AWS Services:
-    - AWS Lambda: $0.00/month (1,000 requests, 512 MB storage).
-    - S3 Standard: $0.15/month (6 GB, 2,100 requests, 1 GB scanned).
-    - Data Transfer: $0.02/month (1 GB inbound, 1 GB outbound).
-    - AWS Amplify: $0.35/month (256 MB, 500 ms requests).
-    - Amazon API Gateway: $0.01/month (2,000 requests).
-    - AWS Glue ETL Jobs: $0.02/month (2 DPUs).
-    - AWS Glue Crawlers: $0.07/month (1 crawler).
-    - MQTT (IoT Core): $0.08/month (5 devices, 45,000 messages).
+The Serverless architecture has no continuously running servers. All services are charged based on actual usage.
 
-Total: $0.7/month, $8.40/12 months
+| Service | Estimated monthly cost |
+| --- | --- |
+| AWS Lambda | ~$0 (Free Tier: 1M requests/month) |
+| API Gateway | ~$0-1 |
+| DynamoDB | ~$0 (Free Tier: 25GB) |
+| S3 (2 buckets) | ~$0-1 |
+| CloudFront | ~$0-1 |
+| Cognito | ~$0 (Free Tier: 50,000 MAU) |
+| GuardDuty | ~$0 (30-day free trial) |
+| EventBridge | ~$0 |
+| SNS | ~$0 (Free Tier: 1M notifications) |
+| Secrets Manager | ~$0.40/secret/month |
+| **Total** | **~$0-5/month** |
 
-- Hardware: $265 one-time (Raspberry Pi 5 and sensors).
+An AWS Budget Alert has been configured at the $5 threshold to warn the team before costs exceed the expected budget.
 
 ### 7. Risk Assessment
-#### Risk Matrix
-- Network Outages: Medium impact, medium probability.
-- Sensor Failures: High impact, low probability.
-- Cost Overruns: Medium impact, low probability.
 
-#### Mitigation Strategies
-- Network: Local storage on Raspberry Pi with Docker.
-- Sensors: Regular checks and spares.
-- Cost: AWS budget alerts and optimization.
+**Risk 1: Amazon Bedrock is not available in the intern account**
+Resolution: Use Google Gemini API instead (free tier: 1,500 requests/day, enough for demo). The API key is stored securely in Secrets Manager, and the AWS architecture remains unchanged.
 
-#### Contingency Plans
-- Revert to manual methods if AWS fails.
-- Use CloudFormation for cost-related rollbacks.
+**Risk 2: AWS cost exceeds budget**
+Resolution: Configure a $5 Budget Alert, maximize Free Tier usage, and avoid EC2/RDS/NAT Gateway. Resources can be deleted after each test session when needed.
+
+**Risk 3: Code conflicts when 5 members work together**
+Resolution: Use a clear GitHub branching strategy (feature branch → develop → main), standardize the API spec from week 1, and keep each Lambda function independent.
+
+**Risk 4: Team members are blocked by dependencies**
+Resolution: Member 2 prioritizes Cognito + API Gateway + JWT Authorizer in week 1 because all Lambda functions depend on authentication. The frontend uses mock data early to avoid blocking.
+
+**Risk 5: Personal AWS account and shared AWS account are mixed up**
+Resolution: Each member configures 2 separate AWS CLI profiles (`irms-sandbox` for personal account and `irms-shared` for shared account), and always uses `--profile` when running commands.
 
 ### 8. Expected Outcomes
-#### Technical Improvements: 
-Real-time data and analytics replace manual processes.  
-Scalable to 10-15 stations.
-#### Long-term Value
-1-year data foundation for AI research.  
-Reusable for future projects.
+
+By the end of the project, the team will have a working IRMS system running on AWS with the following features:
+
+- Login and RBAC authorization with 4 roles (Admin, Manager, Analyst, Auditor).
+- Create, view, update, and assign incidents.
+- Record investigation timeline step by step.
+- Upload and manage evidence files.
+- Automatically detect incidents from GuardDuty and send email notifications.
+- AI-assisted severity and response action suggestions.
+- Export periodic PDF/CSV reports.

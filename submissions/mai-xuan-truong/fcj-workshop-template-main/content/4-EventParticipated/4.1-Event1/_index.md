@@ -6,121 +6,55 @@ chapter: false
 pre: " <b> 4.1. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy it verbatim** into your report, including this warning.
-{{% /notice %}}
+## Saturday Topic: Self-Optimization and Mastering AI Technology
 
-# Summary Report: “GenAI-powered App-DB Modernization workshop”
+**Time:** Saturday, May 09, 2026
+**Location:** Offline participation at the event venue
+**Role:** Offline attendee
 
-### Event Objectives
+## Event Objectives
 
-- Share best practices in modern application design
-- Introduce Domain-Driven Design (DDD) and event-driven architecture
-- Provide guidance on selecting the right compute services
-- Present AI tools to support the development lifecycle
+- Share scientific methods for improving learning efficiency and self-discipline.
+- Improve AI working skills through advanced Prompt Engineering techniques.
+- Discuss mindset, career readiness, and how young people can move beyond their comfort zone.
 
-### Speakers
+## Speakers
 
-- **Jignesh Shah** – Director, Open Source Databases
-- **Erica Liu** – Sr. GTM Specialist, AppMod
-- **Fabrianne Effendi** – Assc. Specialist SA, Serverless Amazon Web Services
+- Huynh Hoang Long - dopamine and behavioral psychology.
+- Thinh Nguyen - AI Engineer.
+- Khang Nguyen - AWS Vietnam customer / Cloud Kinetics.
+- Thao - productivity optimization speaker.
 
-### Key Highlights
+## Key Highlights
 
-#### Identifying the drawbacks of legacy application architecture
+### Learning addiction and dopamine
 
-- Long product release cycles → Lost revenue/missed opportunities  
-- Inefficient operations → Reduced productivity, higher costs  
-- Non-compliance with security regulations → Security breaches, loss of reputation  
+The speaker explained dopamine and reward loops, then connected them with learning habits. I learned how to break learning goals into smaller levels and create small rewards to maintain motivation.
 
-#### Transitioning to modern application architecture – Microservices
+### Automated Prompt AI Engineer
 
-Migrating to a modular system — each function is an **independent service** communicating via **events**, built on three core pillars:
+Instead of writing prompts emotionally, an AI Engineer should build a pipeline to evaluate, optimize, and test prompts with context, examples, and hallucination reduction techniques.
 
-- **Queue Management**: Handle asynchronous tasks  
-- **Caching Strategy**: Optimize performance  
-- **Message Handling**: Flexible inter-service communication  
+### Why have you not started working yet?
 
-#### Domain-Driven Design (DDD)
+This session discussed the fear of not being ready. The key message was to apply, interview, and learn from real market feedback instead of waiting to be perfect.
 
-- **Four-step method**: Identify domain events → arrange timeline → identify actors → define bounded contexts  
-- **Bookstore case study**: Demonstrates real-world DDD application  
-- **Context mapping**: 7 patterns for integrating bounded contexts  
+### BMAD Method
 
-#### Event-Driven Architecture
+The method emphasized building small behaviors, taking action, and maintaining discipline rather than depending only on motivation.
 
-- **3 integration patterns**: Publish/Subscribe, Point-to-point, Streaming  
-- **Benefits**: Loose coupling, scalability, resilience  
-- **Sync vs async comparison**: Understanding the trade-offs  
+## What I Learned
 
-#### Compute Evolution
+- I learned how to structure and optimize prompts instead of using AI only as a simple chatbot.
+- I understood how dopamine and reward loops can be used to build better learning habits.
+- I realized that waiting until everything is perfect can delay career growth.
 
-- **Shared Responsibility Model**: EC2 → ECS → Fargate → Lambda  
-- **Serverless benefits**: No server management, auto-scaling, pay-for-value  
-- **Functions vs Containers**: Criteria for appropriate choice  
+## Application to My Work
 
-#### Amazon Q Developer
+- Use clearer context and examples when using AI for coding or documentation.
+- Break AWS, SAM, CloudFront, and workshop tasks into smaller milestones.
+- Update my portfolio/CV and actively look for internship or job opportunities.
 
-- **SDLC automation**: From planning to maintenance  
-- **Code transformation**: Java upgrade, .NET modernization  
-- **AWS Transform agents**: VMware, Mainframe, .NET migration  
+## Event Experience
 
-### Key Takeaways
-
-#### Design Mindset
-
-- **Business-first approach**: Always start from the business domain, not the technology  
-- **Ubiquitous language**: Importance of a shared vocabulary between business and tech teams  
-- **Bounded contexts**: Identifying and managing complexity in large systems  
-
-#### Technical Architecture
-
-- **Event storming technique**: Practical method for modeling business processes  
-- Use **event-driven communication** instead of synchronous calls  
-- **Integration patterns**: When to use sync, async, pub/sub, streaming  
-- **Compute spectrum**: Criteria for choosing between VM, containers, and serverless  
-
-#### Modernization Strategy
-
-- **Phased approach**: No rushing — follow a clear roadmap  
-- **7Rs framework**: Multiple modernization paths depending on the application  
-- **ROI measurement**: Cost reduction + business agility  
-
-### Applying to Work
-
-- **Apply DDD** to current projects: Event storming sessions with business teams  
-- **Refactor microservices**: Use bounded contexts to define service boundaries  
-- **Implement event-driven patterns**: Replace some sync calls with async messaging  
-- **Adopt serverless**: Pilot AWS Lambda for suitable use cases  
-- **Try Amazon Q Developer**: Integrate into the dev workflow to boost productivity  
-
-### Event Experience
-
-Attending the **“GenAI-powered App-DB Modernization”** workshop was extremely valuable, giving me a comprehensive view of modernizing applications and databases using advanced methods and tools. Key experiences included:
-
-#### Learning from highly skilled speakers
-- Experts from AWS and major tech organizations shared **best practices** in modern application design.  
-- Through real-world case studies, I gained a deeper understanding of applying **DDD** and **Event-Driven Architecture** to large projects.  
-
-#### Hands-on technical exposure
-- Participating in **event storming** sessions helped me visualize how to **model business processes** into domain events.  
-- Learned how to **split microservices** and define **bounded contexts** to manage large-system complexity.  
-- Understood trade-offs between **synchronous and asynchronous communication** and integration patterns like **pub/sub, point-to-point, streaming**.  
-
-#### Leveraging modern tools
-- Explored **Amazon Q Developer**, an AI tool for SDLC support from planning to maintenance.  
-- Learned to **automate code transformation** and pilot serverless with **AWS Lambda** to improve productivity.  
-
-#### Networking and discussions
-- The workshop offered opportunities to exchange ideas with experts, peers, and business teams, enhancing the **ubiquitous language** between business and tech.  
-- Real-world examples reinforced the importance of the **business-first approach** rather than focusing solely on technology.  
-
-#### Lessons learned
-- Applying DDD and event-driven patterns reduces **coupling** while improving **scalability** and **resilience**.  
-- Modernization requires a **phased approach** with **ROI measurement**; rushing the process can be risky.  
-- AI tools like Amazon Q Developer can significantly **boost productivity** when integrated into the current workflow.  
-
-#### Some event photos
-*Add your event photos here*  
-
-> Overall, the event not only provided technical knowledge but also helped me reshape my thinking about application design, system modernization, and cross-team collaboration.
+Although it was a weekend event, the speakers brought a lot of energy. The content combined AI, behavioral psychology, productivity, and career orientation. I learned that in the AI era, technical skills must go together with discipline, self-learning, and a strong mindset.

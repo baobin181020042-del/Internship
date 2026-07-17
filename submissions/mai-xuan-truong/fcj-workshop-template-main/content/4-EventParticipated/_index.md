@@ -6,39 +6,31 @@ chapter: false
 pre: " <b> 4. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy it verbatim** for your report, including this warning.
-{{% /notice %}}
+During the internship, I participated in three events related to AI, AWS, cloud architecture, career orientation, and working skills in the technology era. These events helped me expand my perspective beyond lab exercises and connect the knowledge to the IRMS project and my career preparation.
 
-> In this section, you should list and describe in detail the events you have participated in during your internship or work experience.  
-> 
-> Each event should be presented in the format Event 1, Event 2, Event 3…, along with the following details:
-> * Event name
-> * Date and time
-> * Location (if applicable)
-> * Your role in the event (attendee, event support, speaker, etc.)
-> * A brief description of the event’s content and main activities
-> * Outcomes or value gained (lessons learned, new skills, contribution to the team/project)
-> * This listing helps demonstrate your actual participation as well as the soft skills and experience you have gained from each event.
+## Event List
 
-During my internship, I participated in two events. Each one was a memorable experience that provided new, interesting, and useful knowledge, along with gifts and wonderful moments.
+### [Event 1 - Saturday Topic: Self-Optimization and Mastering AI Technology](4.1-Event1/)
 
-### [Event 1](4.1-Event1/)  
-&emsp;**Event Name:** GenAI-powered App-DB Modernization workshop  
+**Time:** Saturday, May 09, 2026
+**Location:** Offline participation at the event venue
+**Role:** Offline attendee
+**Main value:** I learned how to structure and optimize prompts instead of using AI only as a simple chatbot.
 
-&emsp;**Date & Time:** 09:00, August 13, 2025  
+### [Event 2 - DATA DRIVEN, AI RISEN](4.2-Event2/)
 
-&emsp;**Location:** 26th Floor, Bitexco Tower, 02 Hai Trieu Street, Saigon Ward, Ho Chi Minh City  
+**Time:** June 27, 2026
+**Location:** Hybrid event on floors 26 and 36, also livestreamed on YouTube
+**Role:** Online attendee
+**Main value:** AI does not fully replace people; it amplifies capable engineers and specialists.
 
-&emsp;**Role:** Attendee  
+### [Event 3 - AWS: Enterprise Cloud Architectures and Industry Application featuring Cloud Kinetics & Renova Cloud](4.3-Event3/)
 
----
+**Time:** Morning, July 04, 2026
+**Location:** Study Tour at AWS Vietnam for Swinburne Vietnam students
+**Role:** Online attendee
+**Main value:** Career growth can be viewed through Capability x Visibility x Consistency.
 
-### [Event 2](4.2-Event2/)  
-&emsp;**Event Name:** GenAI-powered App-DB Modernization workshop  
+## Summary
 
-&emsp;**Date & Time:** 09:00, August 13, 2025  
-
-&emsp;**Location:** 26th Floor, Bitexco Tower, 02 Hai Trieu Street, Saigon Ward, Ho Chi Minh City  
-
-&emsp;**Role:** Attendee  
+Through these three events, I learned that growing in cloud and AI requires more than tools. It also requires architecture thinking, self-learning, communication skills, and proactive career development.

@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Tự đánh giá"
 date: 2026-04-17
 weight: 6
@@ -6,34 +6,30 @@ chapter: false
 pre: " <b> 6. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
+Trong suốt thời gian thực tập tại **First Cloud AI Journey** từ **17/04/2026** đến **10/07/2026**, tôi đã có cơ hội học hỏi, thực hành và áp dụng kiến thức về cloud vào một dự án có tính thực tế hơn so với bài lab thông thường. Quá trình thực tập giúp tôi hiểu rõ hơn cách một hệ thống được xây dựng từ giai đoạn chọn đề tài, phân tích yêu cầu, thiết kế kiến trúc, triển khai hạ tầng, kiểm thử cho đến hoàn thiện tài liệu.
 
-Trong suốt thời gian thực tập tại **First Cloud AI Journey** từ **17/04/2026** đến **10/07/2026**, tôi đã có cơ hội học hỏi, rèn luyện và áp dụng kiến thức đã được trang bị tại trường vào môi trường làm việc thực tế.  
-Tôi đã tham gia các nội dung liên quan đến **cloud internship, viết worklog và triển khai workshop theo template**, qua đó cải thiện kỹ năng **phân tích, viết báo cáo, quản lý công việc và giao tiếp trong nhóm**.
+## Kết quả tự đánh giá
 
-Về tác phong, tôi luôn cố gắng hoàn thành tốt nhiệm vụ, tuân thủ nội quy, và tích cực trao đổi với đồng nghiệp để nâng cao hiệu quả công việc.
+| STT | Tiêu chí | Mức độ | Nhận xét |
+| --- | --- | --- | --- |
+| 1 | Kiến thức chuyên môn | Tốt | Nắm được các dịch vụ AWS chính đã dùng trong IRMS như Cognito, API Gateway, Lambda, DynamoDB, S3, EventBridge, SNS, CloudFront và AWS SAM. |
+| 2 | Khả năng học hỏi | Tốt | Có khả năng tự đọc tài liệu, thử nghiệm, ghi lỗi và điều chỉnh khi gặp vấn đề trong quá trình deploy/test. |
+| 3 | Tinh thần trách nhiệm | Tốt | Chủ động phụ trách phần hạ tầng AWS, deployment, testing và documentation theo phạm vi được phân công. |
+| 4 | Làm việc nhóm | Khá/Tốt | Biết phối hợp với các bạn phụ trách backend/frontend, tuy đôi lúc vẫn cần cải thiện cách cập nhật tiến độ sớm hơn. |
+| 5 | Kỹ năng trình bày tài liệu | Khá/Tốt | Đã cải thiện nhiều qua việc viết Worklog, Proposal và Workshop, biết tách nội dung theo mục rõ ràng hơn. |
 
-Để phản ánh một cách khách quan quá trình thực tập, tôi xin tự đánh giá bản thân dựa trên các tiêu chí dưới đây:
+## Điểm mạnh
 
-| STT | Tiêu chí                            | Mô tả                                                                                            | Tốt | Khá | Trung bình |
-| --- | ----------------------------------- | ------------------------------------------------------------------------------------------------ | --- | --- | ---------- |
-| 1   | **Kiến thức và kỹ năng chuyên môn** | Hiểu biết về ngành, áp dụng kiến thức vào thực tế, kỹ năng sử dụng công cụ, chất lượng công việc | ✅   | ☐   | ☐          |
-| 2   | **Khả năng học hỏi**                | Tiếp thu kiến thức mới, học hỏi nhanh                                                            | ☐   | ✅   | ☐          |
-| 3   | **Chủ động**                        | Tự tìm hiểu, nhận nhiệm vụ mà không chờ chỉ dẫn                                                  | ✅   | ☐   | ☐          |
-| 4   | **Tinh thần trách nhiệm**           | Hoàn thành công việc đúng hạn, đảm bảo chất lượng                                                | ✅   | ☐   | ☐          |
-| 5   | **Kỷ luật**                         | Tuân thủ giờ giấc, nội quy, quy trình làm việc                                                   | ☐   | ☐   | ✅          |
-| 6   | **Tính cầu tiến**                   | Sẵn sàng nhận feedback và cải thiện bản thân                                                     | ☐   | ✅   | ☐          |
-| 7   | **Giao tiếp**                       | Trình bày ý tưởng, báo cáo công việc rõ ràng                                                     | ☐   | ✅   | ☐          |
-| 8   | **Hợp tác nhóm**                    | Làm việc hiệu quả với đồng nghiệp, tham gia nhóm                                                 | ✅   | ☐   | ☐          |
-| 9   | **Ứng xử chuyên nghiệp**            | Tôn trọng đồng nghiệp, đối tác, môi trường làm việc                                              | ✅   | ☐   | ☐          |
-| 10  | **Tư duy giải quyết vấn đề**        | Nhận diện vấn đề, đề xuất giải pháp, sáng tạo                                                    | ☐   | ✅   | ☐          |
-| 11  | **Đóng góp vào dự án/tổ chức**      | Hiệu quả công việc, sáng kiến cải tiến, ghi nhận từ team                                         | ✅   | ☐   | ☐          |
-| 12  | **Tổng thể**                        | Đánh giá chung về toàn bộ quá trình thực tập                                                     | ✅   | ☐   | ☐          |
+Điểm mạnh lớn nhất của tôi trong kỳ thực tập là khả năng kiên trì khi gặp lỗi kỹ thuật. Khi làm với AWS, nhiều lỗi không nằm ở code mà nằm ở cấu hình giữa các dịch vụ như IAM permission, CORS, environment variable, CloudFront cache hoặc region. Tôi đã học cách kiểm tra từng lớp, đọc log CloudWatch và ghi lại lỗi để xử lý có hệ thống hơn.
 
-### Cần cải thiện
+Tôi cũng có sự tiến bộ trong việc viết tài liệu. Ban đầu nội dung Worklog và Workshop còn dài, dính đoạn hoặc chưa đúng giọng báo cáo. Sau quá trình chỉnh sửa, tôi hiểu hơn cách trình bày công việc cá nhân, cách phân biệt phần mình phụ trách với phần nhóm cùng làm, và cách đưa lệnh/cấu hình vào format dễ đọc.
 
-* Nâng cao tính kỷ luật, chấp hành nghiêm chỉnh nội quy của tổ chức
-* Cải thiện tư duy giải quyết vấn đề
-* Học cách giao tiếp tốt hơn trong công việc và xử lý tình huống
+## Điểm cần cải thiện
+
+Tôi vẫn cần cải thiện khả năng lên kế hoạch sớm hơn. Trong một số giai đoạn, việc vừa triển khai, vừa test, vừa viết tài liệu khiến tiến độ bị dồn về cuối. Nếu làm lại, tôi sẽ ghi chú kỹ hơn ngay sau mỗi ngày làm việc để khi đưa vào báo cáo không phải chỉnh sửa quá nhiều.
+
+Ngoài ra, tôi cần tiếp tục rèn luyện kỹ năng giao tiếp trong nhóm. Với dự án có nhiều phần tích hợp như IRMS, chỉ cần backend, frontend và hạ tầng không thống nhất endpoint hoặc tên resource là có thể phát sinh lỗi. Vì vậy, việc cập nhật thay đổi sớm và ghi rõ quyết định kỹ thuật là rất quan trọng.
+
+## Tổng kết
+
+Nhìn chung, tôi tự đánh giá bản thân đã hoàn thành tốt vai trò thực tập sinh trong phạm vi được giao. Tôi không phải người làm toàn bộ dự án một mình, nhưng đã đóng góp rõ ràng vào các phần AWS infrastructure, AWS SAM, Cognito, API Gateway, Lambda/DynamoDB integration, EventBridge, SNS, CloudFront, frontend integration, deployment, testing và documentation. Kỳ thực tập giúp tôi tự tin hơn khi làm việc với AWS và hiểu hơn quy trình hoàn thiện một sản phẩm theo hướng teamwork.

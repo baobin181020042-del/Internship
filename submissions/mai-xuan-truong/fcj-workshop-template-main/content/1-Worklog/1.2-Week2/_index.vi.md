@@ -1,57 +1,59 @@
-﻿---
-title: "Worklog Tuần 2"
-date: 2026-04-26
-weight: 1
+---
+title: "Tuần 2"
+date: 2024-01-01
+weight: 2
 chapter: false
 pre: " <b> 1.2. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
-### Mục tiêu tuần 2 (26/04/2026 - 30/04/2026):
+**Mốc thời gian:** 26/4 → 30/4 (5 ngày)
 
-* Củng cố nền tảng AWS về IAM, EC2, VPC, RDS, Monitoring, CLI và Backup.
-* Làm workshop theo hướng thực hành end-to-end, vừa triển khai vừa tự kiểm soát chi phí.
-* Tăng khả năng vận hành thực tế: bảo mật quyền truy cập, phân tích logs, cảnh báo và backup/restore.
+## Ngày 1 - 26/4: Học IAM
 
-### Nhật ký công việc theo ngày:
+**Công việc đã thực hiện:** Thực hiện lab IAM để hiểu cách AWS quản lý danh tính và phân quyền. Nội dung chính gồm IAM User, Group, Policy và Role.
 
-| Ngày | Nội dung thực hiện | Kết quả |
-| --- | --- | --- |
-| **26/04/2026** | Học **Lab 02 IAM**: IAM User, Group, Policy, Role; best practices. Đồng thời học chi tiết **EC2**: Instance, AMI, Key Pair, Security Group, Elastic IP, quy trình launch và bảo mật. Thực hành thêm workshop **VPC + Site-to-Site VPN** (VPC, subnet, route table, IGW, NAT, SG/NACL, flow logs, tunnel VPN). | Nắm rõ kiến trúc truy cập IAM và nền tảng hạ tầng EC2/VPC/VPN. |
-| **27/04/2026** | Workshop **Amazon RDS**: tạo DB subnet group, cấu hình security group tách biệt EC2/RDS, tạo MySQL RDS, kết nối app qua endpoint, thực hành snapshot/restore. Làm workshop **AWS Budgets**: Cost Budget, Usage Budget, tìm hiểu RI/Savings Plans Budget và cơ chế cảnh báo. | Kết nối thành công ứng dụng với RDS, hiểu rõ cách kiểm soát chi phí bằng budgets nhiều ngưỡng. |
-| **28/04/2026** | Workshop **Amazon CloudWatch**: Metrics, Logs, Logs Insights, Metric Filter, Alarms qua SNS, Dashboard theo dõi tập trung. Thực hành thêm workshop **Hybrid DNS với Route 53 Resolver**: Outbound/Inbound Endpoint, Resolver Rules, tích hợp DNS giữa môi trường “on-prem” mô phỏng và AWS. | Thiết lập được luồng giám sát đầy đủ metric-log-alarm-dashboard và hiểu mô hình DNS hybrid doanh nghiệp. |
-| **29/04/2026** | Workshop **AWS CLI**: cài đặt, profile, thao tác EC2/S3/SNS/IAM/VPC bằng lệnh, tạo EC2 bằng CLI và dọn tài nguyên. Làm thêm workshop **AWS Backup**: backup plan, vault, tag-based assignment, SNS notifications, kiểm thử restore tự động bằng Lambda và kiểm tra CloudWatch Logs. | Tăng tốc thao tác AWS bằng CLI, hiểu tư duy vận hành backup chuyên nghiệp có kiểm thử restore. |
-| **30/04/2026** | Workshop **VM Import/Export**: tạo VM Ubuntu local, export VMDK, upload S3, tạo role `vmimport`, import thành AMI, launch EC2 từ AMI; chiều ngược lại export instance/image về lại môi trường on-prem. Thực hành thêm workshop **Deploy Application on Docker**: build image, network, docker run, docker compose, push image lên ECR/Docker Hub. | Hiểu quy trình migration VM hai chiều và nền tảng container hóa ứng dụng trên AWS. |
+**Kiến thức đã học:** Hiểu user đại diện cho người dùng, group giúp gom quyền, policy định nghĩa quyền bằng JSON và role dùng cho quyền tạm thời.
 
-### Khó khăn gặp phải trong tuần 2:
+**Kết quả đạt được:** Nắm được nền tảng bảo mật quan trọng trước khi học các dịch vụ khác trong AWS.
 
-* Ban đầu khó phân biệt rõ **IAM Role** và **IAM User** trong ngữ cảnh cấp quyền thực tế.
-* Chưa quen đọc/viết **IAM Policy JSON**, dễ nhầm scope quyền.
-* Workshop mạng (VPC/VPN/Hybrid DNS) có nhiều thành phần nên dễ sai thứ tự cấu hình.
-* Khi làm RDS/Aurora và nhiều workshop liên tiếp, dễ sót tài nguyên ở region khác gây phát sinh chi phí.
-* Với AWS CLI, lúc đầu khó nhớ đầy đủ tham số lệnh và ARN khi thao tác dịch vụ phức tạp.
+**Khó khăn và bài học:** Ban đầu dễ nhầm giữa User và Role. Bài học là không dùng root account cho công việc hằng ngày và nên cấp quyền theo nguyên tắc least privilege.
 
-### Cách xử lý:
+## Ngày 2 - 27/4: Thực hành EC2
 
-* Tách từng workshop thành checklist nhỏ theo đúng thứ tự thao tác.
-* Dùng CloudWatch Logs/Reachability Analyzer để debug thay vì đoán lỗi.
-* Áp dụng quy tắc “xong bài nào dọn bài đó” + kiểm tra tài nguyên theo từng region.
-* Đặt ngưỡng cảnh báo AWS Budgets nhiều mức (50/80/100%) để phát hiện sớm.
-* Dùng profile CLI riêng và lưu các lệnh mẫu quan trọng để tái sử dụng.
+**Công việc đã thực hiện:** Học cách tạo EC2 instance, chọn AMI, instance type, key pair và security group. Sau đó tìm hiểu cách kết nối server qua SSH.
 
-### Kết quả đạt được tuần 2:
+**Kiến thức đã học:** Hiểu EC2 là máy chủ ảo trên cloud, có thể start, stop, reboot và cấu hình tương tự server thật nhưng linh hoạt hơn.
 
-* Hoàn thành chuỗi workshop thực hành trọng tâm của tuần.
-* Cải thiện rõ khả năng triển khai hạ tầng, giám sát, backup và automation trên AWS.
-* Nâng cao ý thức bảo mật quyền truy cập IAM và kiểm soát chi phí cloud.
-* Tự tin hơn khi chuyển từ thao tác console sang thao tác CLI/script.
+**Kết quả đạt được:** Tạo được instance thử nghiệm và biết các điểm cần kiểm tra khi mở port truy cập.
 
-### Bài học rút ra:
+**Khó khăn và bài học:** Khó khăn là quản lý file `.pem` và rule inbound. Bài học là không mở SSH rộng cho Internet nếu không cần thiết.
 
-* IAM là nền tảng phải nắm chắc trước khi đi sâu dịch vụ khác.
-* Monitoring và Backup chỉ có ý nghĩa khi có kiểm thử khôi phục và cảnh báo chủ động.
-* Kiểm soát chi phí cần làm song song với kỹ thuật ngay từ đầu, không để đến cuối tháng.
-* Quy trình chuẩn (triển khai -> kiểm thử -> dọn tài nguyên) giúp giảm rủi ro vận hành thực tế.
+## Ngày 3 - 28/4: Học VPC và Site-to-Site VPN
 
+**Công việc đã thực hiện:** Làm workshop về Amazon VPC và Site-to-Site VPN. Nội dung gồm VPC, subnet, route table, Internet Gateway, NAT Gateway và các lớp bảo mật mạng.
+
+**Kiến thức đã học:** Hiểu VPC giống một mạng riêng trên AWS; public subnet cho tài nguyên cần Internet, private subnet dùng cho tài nguyên nội bộ.
+
+**Kết quả đạt được:** Có cái nhìn rõ hơn về nền tảng network cần thiết khi thiết kế hệ thống cloud.
+
+**Khó khăn và bài học:** Các khái niệm route và gateway khá nhiều. Bài học là nên vẽ luồng traffic để tránh cấu hình sai.
+
+## Ngày 4 - 29/4: Học S3 và lưu trữ
+
+**Công việc đã thực hiện:** Tìm hiểu Amazon S3, bucket, object, storage class, versioning và chính sách truy cập. Liên hệ kiến thức này với nhu cầu lưu evidence của dự án IRMS sau này.
+
+**Kiến thức đã học:** Hiểu S3 phù hợp để lưu file tĩnh, log, bằng chứng điều tra và cũng có thể dùng cho static web hosting.
+
+**Kết quả đạt được:** Nắm được cách tạo bucket, upload object và cấu hình quyền truy cập cơ bản.
+
+**Khó khăn và bài học:** Khó khăn là phân biệt public access block, bucket policy và IAM policy. Bài học là quyền S3 cần được thiết kế cẩn thận.
+
+## Ngày 5 - 30/4: Tổng hợp kiến thức tuần 2
+
+**Công việc đã thực hiện:** Tổng hợp lại các lab IAM, EC2, VPC và S3. Sắp xếp ghi chú thành các nhóm kiến thức để dễ dùng lại khi bắt đầu dự án chính.
+
+**Kiến thức đã học:** Nhận ra các dịch vụ AWS không tách rời: IAM kiểm soát quyền, VPC kiểm soát mạng, EC2 chạy compute và S3 lưu dữ liệu.
+
+**Kết quả đạt được:** Có nền tảng tốt hơn để đọc tài liệu kiến trúc serverless và chuẩn bị chọn đề tài.
+
+**Khó khăn và bài học:** Một số ghi chú còn dài. Bài học là khi viết worklog cần tóm tắt ý chính thay vì chép toàn bộ nội dung lab.

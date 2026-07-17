@@ -1,61 +1,83 @@
-﻿---
-title: "Worklog Tuần 7"
+---
+title: "Tuần 7"
 date: 2024-01-01
-weight: 1
+weight: 7
 chapter: false
 pre: " <b> 1.7. </b> "
 ---
-{{% notice warning %}}
-â ï¸ **LÆ°u Ă½:** CĂ¡c thĂ´ng tin dÆ°á»›i Ä‘Ă¢y chá»‰ nháº±m má»¥c Ä‘Ă­ch tham kháº£o, vui lĂ²ng **khĂ´ng sao chĂ©p nguyĂªn vÄƒn** cho bĂ i bĂ¡o cĂ¡o cá»§a báº¡n ká»ƒ cáº£ warning nĂ y.
-{{% /notice %}}
 
+**Mốc thời gian:** 25/5 → 30/5 (6 ngày)
 
-### Má»¥c tiĂªu tuáº§n 7:
+> Dự án IRMS được thực hiện bởi nhóm 5 thành viên. Các ghi chú dưới đây tập trung vào phần đóng góp cá nhân của tôi trong quá trình phối hợp với nhóm.
 
-* Káº¿t ná»‘i, lĂ m quen vá»›i cĂ¡c thĂ nh viĂªn trong First Cloud AI Journey.
-* Hiá»ƒu dá»‹ch vá»¥ AWS cÆ¡ báº£n, cĂ¡ch dĂ¹ng console & CLI.
+## Ngày 1 - 25/5: Cấu hình EventBridge rule
 
-### CĂ¡c cĂ´ng viá»‡c cáº§n triá»ƒn khai trong tuáº§n nĂ y:
-| Thá»© | CĂ´ng viá»‡c                                                                                                                                                                                   | NgĂ y báº¯t Ä‘áº§u | NgĂ y hoĂ n thĂ nh | Nguá»“n tĂ i liá»‡u                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - LĂ m quen vá»›i cĂ¡c thĂ nh viĂªn FCJ <br> - Äá»c vĂ  lÆ°u Ă½ cĂ¡c ná»™i quy, quy Ä‘á»‹nh táº¡i Ä‘Æ¡n vá»‹ thá»±c táº­p                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - TĂ¬m hiá»ƒu AWS vĂ  cĂ¡c loáº¡i dá»‹ch vá»¥ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Táº¡o AWS Free Tier account <br> - TĂ¬m hiá»ƒu AWS Console & AWS CLI <br> - **Thá»±c hĂ nh:** <br>&emsp; + Táº¡o AWS account <br>&emsp; + CĂ i AWS CLI & cáº¥u hĂ¬nh <br> &emsp; + CĂ¡ch sá»­ dá»¥ng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - TĂ¬m hiá»ƒu EC2 cÆ¡ báº£n: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - CĂ¡c cĂ¡ch remote SSH vĂ o EC2 <br> - TĂ¬m hiá»ƒu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thá»±c hĂ nh:** <br>&emsp; + Táº¡o EC2 instance <br>&emsp; + Káº¿t ná»‘i SSH <br>&emsp; + Gáº¯n EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+**Công việc đã thực hiện:** Tôi phụ trách thử rule EventBridge bằng event mẫu, sau đó phối hợp với bạn làm Alert Handler để kiểm tra dữ liệu truyền vào Lambda.
 
+Tôi thử nhiều event mẫu nhỏ để kiểm tra rule có match đúng không. Sau mỗi lần test, tôi xem log Lambda để biết event truyền vào có đủ field cho Alert Handler xử lý hay không.
 
-### Káº¿t quáº£ Ä‘áº¡t Ä‘Æ°á»£c tuáº§n 7:
+**Kiến thức đã học:** Event pattern quyết định event nào được chuyển sang xử lý.
 
-* Hiá»ƒu AWS lĂ  gĂ¬ vĂ  náº¯m Ä‘Æ°á»£c cĂ¡c nhĂ³m dá»‹ch vá»¥ cÆ¡ báº£n: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+**Kết quả đạt được:** Rule hoạt động với event mẫu và có thể dùng cho demo GuardDuty-like flow.
 
-* ÄĂ£ táº¡o vĂ  cáº¥u hĂ¬nh AWS Free Tier account thĂ nh cĂ´ng.
+**Khó khăn và bài học:** Cần test bằng mẫu nhỏ trước khi mở rộng event source.
 
-* LĂ m quen vá»›i AWS Management Console vĂ  biáº¿t cĂ¡ch tĂ¬m, truy cáº­p, sá»­ dá»¥ng dá»‹ch vá»¥ tá»« giao diá»‡n web.
+## Ngày 2 - 26/5: Tích hợp SNS notification
 
-* CĂ i Ä‘áº·t vĂ  cáº¥u hĂ¬nh AWS CLI trĂªn mĂ¡y tĂ­nh bao gá»“m:
-  * Access Key
-  * Secret Key
-  * Region máº·c Ä‘á»‹nh
-  * ...
+**Công việc đã thực hiện:** Tôi hỗ trợ cấu hình SNS topic và kiểm tra cách Lambda gửi thông báo khi có alert quan trọng. Nhóm cùng đánh giá mức độ thông báo phù hợp.
 
-* Sá»­ dá»¥ng AWS CLI Ä‘á»ƒ thá»±c hiá»‡n cĂ¡c thao tĂ¡c cÆ¡ báº£n nhÆ°:
+Tôi cấu hình topic và kiểm tra luồng Lambda gửi thông báo khi có alert. Tôi cũng trao đổi với nhóm về việc chỉ gửi thông báo cho sự kiện quan trọng để demo không bị quá nhiều message.
 
-  * Kiá»ƒm tra thĂ´ng tin tĂ i khoáº£n & cáº¥u hĂ¬nh
-  * Láº¥y danh sĂ¡ch region
-  * Xem dá»‹ch vá»¥ EC2
-  * Táº¡o vĂ  quáº£n lĂ½ key pair
-  * Kiá»ƒm tra thĂ´ng tin dá»‹ch vá»¥ Ä‘ang cháº¡y
-  * ...
+**Kiến thức đã học:** SNS phù hợp cho notification đơn giản trong kiến trúc serverless.
 
-* CĂ³ kháº£ nÄƒng káº¿t ná»‘i giá»¯a giao diá»‡n web vĂ  CLI Ä‘á»ƒ quáº£n lĂ½ tĂ i nguyĂªn AWS song song.
-* ...
+**Kết quả đạt được:** Có kênh thông báo thử nghiệm cho alert workflow.
 
+**Khó khăn và bài học:** Không nên gửi quá nhiều thông báo gây nhiễu trong demo.
 
+## Ngày 3 - 27/5: Rà soát Secrets Manager
 
+**Công việc đã thực hiện:** Tôi rà soát cách lưu giá trị nhạy cảm cho phần AI integration trong Secrets Manager. Tôi không đưa giá trị thật vào source hoặc tài liệu.
 
+Tôi kiểm tra cách Lambda đọc giá trị cấu hình từ Secrets Manager và cách mô tả bước này trong tài liệu. Tôi chỉ ghi hướng cấu hình và tên biến minh họa, không đưa giá trị thật vào Worklog hoặc Workshop.
+
+**Kiến thức đã học:** Secrets Manager giúp tách cấu hình nhạy cảm khỏi code.
+
+**Kết quả đạt được:** Có hướng cấu hình an toàn hơn cho Lambda gọi dịch vụ AI.
+
+**Khó khăn và bài học:** Tài liệu chỉ nên mô tả cách cấu hình, không chứa giá trị thật.
+
+## Ngày 4 - 28/5: Hỗ trợ tích hợp Gemini AI
+
+**Công việc đã thực hiện:** Tôi hỗ trợ phần cấu hình môi trường và kiểm tra Lambda AI Assistant khi gọi dịch vụ bên ngoài. Phần prompt và nghiệp vụ AI được nhóm cùng điều chỉnh.
+
+Tôi hỗ trợ kiểm tra phần cấu hình runtime, timeout và xử lý lỗi khi Lambda gọi dịch vụ AI. Tôi cũng test tình huống phản hồi chậm hoặc lỗi để frontend có thể hiển thị thông báo phù hợp.
+
+**Kiến thức đã học:** Khi tích hợp AI cần giới hạn dữ liệu gửi đi và xử lý lỗi phản hồi.
+
+**Kết quả đạt được:** AI Assistant chạy thử được với incident context mẫu.
+
+**Khó khăn và bài học:** Không nên xem output AI là kết luận cuối cùng trong xử lý sự cố.
+
+## Ngày 5 - 29/5: Kiểm thử API nội bộ
+
+**Công việc đã thực hiện:** Tôi tập trung test các endpoint bằng dữ liệu mẫu: incident CRUD, timeline, evidence, report và alert. Kết quả được ghi lại để nhóm sửa theo từng phần.
+
+Tôi chuẩn bị dữ liệu mẫu cho incident, timeline và evidence để gọi API theo thứ tự thực tế. Kết quả test được ghi lại theo endpoint để nhóm biết lỗi nằm ở API Gateway, Lambda hay DynamoDB.
+
+**Kiến thức đã học:** Test API sớm giúp phát hiện lỗi tích hợp trước khi frontend gọi thật.
+
+**Kết quả đạt được:** Phát hiện một số lỗi response schema và permission.
+
+**Khó khăn và bài học:** Cần test từng endpoint riêng trước khi test cả workflow.
+
+## Ngày 6 - 30/5: Hỗ trợ sửa lỗi backend
+
+**Công việc đã thực hiện:** Tôi phối hợp với nhóm sửa các lỗi liên quan API Gateway integration, status code, IAM permission và dữ liệu DynamoDB.
+
+Tôi phối hợp sửa các lỗi tích hợp sau khi test API, nhất là response thiếu header, status code chưa đúng và permission chưa đủ. Sau mỗi lần sửa, tôi chạy lại request để xác nhận lỗi đã hết.
+
+**Kiến thức đã học:** Serverless integration thường lỗi ở ranh giới giữa các dịch vụ hơn là trong một file code riêng lẻ.
+
+**Kết quả đạt được:** Backend ổn định hơn để chuẩn bị đưa vào SAM.
+
+**Khó khăn và bài học:** Cần giữ response schema cố định để frontend tích hợp thuận lợi.

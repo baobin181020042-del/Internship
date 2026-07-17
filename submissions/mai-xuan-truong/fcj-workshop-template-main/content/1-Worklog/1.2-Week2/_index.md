@@ -1,56 +1,59 @@
-﻿---
-title: "Week 2 Worklog"
-date: 2026-04-26
-weight: 1
+---
+title: "Week 2"
+date: 2024-01-01
+weight: 2
 chapter: false
 pre: " <b> 1.2. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Note:** The following information is for reference only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
 
-### Week 2 Objectives (26/04/2026 - 30/04/2026):
+**Timeline:** 26/4 → 30/4 (5 days)
 
-* Strengthen AWS fundamentals across IAM, EC2, VPC, RDS, CloudWatch, CLI, Backup, and migration.
-* Practice end-to-end implementation with security and cost awareness.
-* Build operational mindset: monitoring, alerting, backup/restore, and cleanup discipline.
+## Day 1 - 26/4: IAM study
 
-### Daily Worklog:
+**Work completed:** Completed the IAM lab to understand identity and access management in AWS, including IAM User, Group, Policy, and Role.
 
-| Day | Activities | Outcome |
-| --- | --- | --- |
-| **26/04/2026** | IAM lab (User, Group, Policy, Role), detailed EC2 learning, plus VPC & Site-to-Site VPN workshop. | Built strong base on access control and cloud network architecture. |
-| **27/04/2026** | RDS workshop (deploy app with RDS endpoint, snapshot/restore) and AWS Budgets workshop. | Connected app to managed DB and improved cost governance skills. |
-| **28/04/2026** | CloudWatch workshop (Metrics, Logs, Insights, Alarms, Dashboard) and Hybrid DNS with Route 53 Resolver. | Completed full monitoring flow and understood enterprise DNS integration model. |
-| **29/04/2026** | AWS CLI workshop (EC2/S3/SNS/IAM/VPC via commands) and AWS Backup workshop (backup plan, vault notifications, restore test with Lambda). | Improved CLI productivity and learned practical backup/restore validation workflow. |
-| **30/04/2026** | VM Import/Export workshop and Docker application deployment workshop (image build, compose, ECR/Docker Hub). | Understood two-way VM migration and containerized deployment pattern on AWS. |
+**Knowledge gained:** Learned that users represent people, groups simplify permission management, policies define permissions in JSON, and roles provide temporary access.
 
-### Key Difficulties:
+**Result:** Built a security foundation required before working with other AWS services.
 
-* Initially confused between IAM Role and IAM User usage contexts.
-* Not fully comfortable with IAM Policy JSON design at first.
-* Networking workshops (VPC/VPN/Hybrid DNS) had many dependent steps and were easy to misconfigure.
-* Risk of leftover resources in non-default regions causing unexpected charges.
-* CLI parameter/ARN usage was error-prone in early attempts.
+**Difficulty and lesson:** The main challenge was handling new AWS concepts carefully. The lesson was to verify configuration, permissions, region, and cost before moving to the next task.
 
-### How I Addressed Them:
+## Day 2 - 27/4: EC2 practice
 
-* Broke each workshop into strict step-by-step checklists.
-* Used CloudWatch logs and Reachability Analyzer for structured troubleshooting.
-* Applied immediate cleanup after each lab and cross-region resource checks.
-* Configured multi-threshold AWS Budgets alerts (50/80/100).
-* Kept reusable CLI command notes and profile-based configuration.
+**Work completed:** Practiced creating an EC2 instance, selecting an AMI, instance type, key pair, and security group, then connecting through SSH.
 
-### Week 2 Achievements:
+**Knowledge gained:** Understood EC2 as a cloud virtual server that can be started, stopped, rebooted, and configured like a physical server.
 
-* Completed major practical workshops scheduled for the week.
-* Improved hands-on capability in infrastructure, monitoring, backup, and automation.
-* Strengthened IAM security mindset and cloud cost control habits.
-* Increased confidence moving from console-based workflows to CLI-driven operations.
+**Result:** Created a test instance and identified what to check when opening access ports.
 
-### Lessons Learned:
+**Difficulty and lesson:** The main challenge was handling new AWS concepts carefully. The lesson was to verify configuration, permissions, region, and cost before moving to the next task.
 
-* IAM understanding is foundational before scaling to advanced AWS services.
-* Monitoring and backup are only meaningful when restore is regularly tested.
-* Cost control must run in parallel with technical implementation from day one.
-* A standard workflow (deploy -> validate -> cleanup) reduces operational risk significantly.
+## Day 3 - 28/4: VPC and Site-to-Site VPN
+
+**Work completed:** Worked through the Amazon VPC and Site-to-Site VPN workshop, covering VPCs, subnets, route tables, Internet Gateway, NAT Gateway, and network security layers.
+
+**Knowledge gained:** Understood VPC as a private network on AWS, with public subnets for Internet-facing resources and private subnets for internal resources.
+
+**Result:** Gained a clearer view of networking foundations for cloud system design.
+
+**Difficulty and lesson:** The main challenge was handling new AWS concepts carefully. The lesson was to verify configuration, permissions, region, and cost before moving to the next task.
+
+## Day 4 - 29/4: S3 and storage
+
+**Work completed:** Studied Amazon S3 concepts such as buckets, objects, storage classes, versioning, and access policies, and related them to IRMS evidence storage needs.
+
+**Knowledge gained:** Learned that S3 is suitable for static files, logs, investigation evidence, and static website hosting.
+
+**Result:** Learned how to create buckets, upload objects, and configure basic access controls.
+
+**Difficulty and lesson:** The main challenge was handling new AWS concepts carefully. The lesson was to verify configuration, permissions, region, and cost before moving to the next task.
+
+## Day 5 - 30/4: Week 2 summary
+
+**Work completed:** Reviewed IAM, EC2, VPC, and S3 labs and organized notes into reusable knowledge groups for the main project.
+
+**Knowledge gained:** Recognized that AWS services work together: IAM controls access, VPC controls networking, EC2 provides compute, and S3 stores data.
+
+**Result:** Built a stronger base for reading serverless architecture documents and selecting a project topic.
+
+**Difficulty and lesson:** The main challenge was handling new AWS concepts carefully. The lesson was to verify configuration, permissions, region, and cost before moving to the next task.

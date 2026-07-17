@@ -1,43 +1,69 @@
-﻿---
-title: "Worklog Tuần 1"
-date: 2026-04-20
+---
+title: "Tuần 1"
+date: 2024-01-01
 weight: 1
 chapter: false
 pre: " <b> 1.1. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
-### Mục tiêu tuần 1 (20/04/2026 - 25/04/2026):
+**Mốc thời gian:** 20/4 → 25/4 (6 ngày)
 
-* Tạo và kích hoạt tài khoản AWS để bắt đầu thực hành.
-* Hoàn thành các nhiệm vụ nền tảng trong chương trình nhận credit.
-* Làm quen cách kiểm soát chi phí và kiểm tra tài nguyên theo từng region.
-* Bắt đầu viết worklog và đưa nội dung lên GitHub.
+## Ngày 1 - 20/4: Tạo tài khoản AWS
 
-### Nhật ký công việc theo ngày:
+**Công việc đã thực hiện:** Bắt đầu chuẩn bị tài khoản AWS để dùng cho quá trình thực tập. Khi đăng ký, tài khoản gặp trạng thái bị suspend nên chưa thể thao tác ngay trên console.
 
-| Ngày | Nội dung thực hiện | Kết quả |
-| --- | --- | --- |
-| Ngày 1 (20/04/2026) | Tạo tài khoản AWS lần đầu. Gặp lỗi tài khoản bị **suspend** nên chưa thể tiếp tục các nhiệm vụ thực hành. | Chưa tạo thành công, xác định được vấn đề chính là bước xác minh tài khoản. |
-| Ngày 2 (21/04/2026) | Tiếp tục xử lý vấn đề tạo tài khoản. Sau nhiều lần thử, áp dụng giải pháp thuê số điện thoại để xác minh, sau đó tài khoản hoạt động bình thường. Bắt đầu làm chương trình 5 nhiệm vụ để nhận 100$ credit và hoàn thành được: **EC2**, **AWS Budgets**, **AWS Lambda**. | Tạo tài khoản thành công và hoàn thành 3/5 nhiệm vụ. |
-| Ngày 3 (22/04/2026) | Làm tiếp các nhiệm vụ còn lại: **RDS Database** và **Amazon Bedrock**. | Hoàn thành đủ 5 nhiệm vụ theo kế hoạch tuần. |
-| Ngày 4 (23/04/2026) | Nghiên cứu cách viết worklog: cấu trúc nội dung, cách mô tả tiến độ theo ngày, cách ghi vấn đề và bài học rút ra. | Nắm được format worklog để bắt đầu viết bài bản. |
-| Ngày 5 (24/04/2026) | Kiểm tra billing và phát hiện bị tính phí **Relational Database Service: 8.78$** dù đã xóa tài nguyên chính. Rà soát lại toàn bộ dịch vụ, phát hiện khi làm Aurora/RDS có thử qua region **N. California** và quên tắt tài nguyên ở đó. Đăng nhập đúng region và xóa ngay. | Dừng phát sinh phí sai, rút kinh nghiệm kiểm tra tài nguyên đa region sau mỗi bài lab. |
-| Ngày 6 (25/04/2026) | Tập viết worklog tuần 1 và đưa nội dung lên GitHub. | Hoàn thành bản worklog tuần đầu và sẵn sàng chuyển sang tuần 2. |
+**Kiến thức đã học:** Hiểu rằng tài khoản AWS cần thông tin thanh toán, xác minh số điện thoại và cơ chế kiểm soát rủi ro khá chặt chẽ trước khi được sử dụng.
 
-### Kết quả đạt được tuần 1:
+**Kết quả đạt được:** Ghi lại các bước đăng ký, các lỗi gặp phải và chuẩn bị phương án xử lý để tiếp tục trong ngày sau.
 
-* Đã tạo được tài khoản AWS sau khi xử lý sự cố suspend ban đầu.
-* Hoàn thành 5 nhiệm vụ nhận credit (EC2, AWS Budgets, AWS Lambda, RDS Database, Amazon Bedrock).
-* Bắt đầu có thói quen theo dõi billing và kiểm tra tài nguyên theo từng region.
-* Hoàn thành bản worklog tuần 1 và làm quen quy trình cập nhật GitHub.
+**Khó khăn và bài học:** Khó khăn chính là chưa quen quy trình xác minh tài khoản. Bài học rút ra là cần chuẩn bị thông tin hợp lệ và theo dõi email/thông báo từ AWS cẩn thận.
 
-### Bài học rút ra:
+## Ngày 2 - 21/4: Hoàn tất tài khoản và làm nhiệm vụ AWS đầu tiên
 
-* Luôn kiểm tra kỹ trạng thái tài khoản ngay từ bước đăng ký để tránh mất thời gian ở các ngày đầu.
-* Sau mỗi lab liên quan đến RDS/Aurora, cần rà soát tài nguyên ở **tất cả region đã truy cập**, không chỉ region mặc định.
-* Nên bật và theo dõi AWS Budgets sớm để phát hiện chi phí bất thường ngay trong ngày.
-* Worklog càng ghi chi tiết theo ngày thì càng dễ tổng hợp tiến độ và báo cáo với mentor.
+**Công việc đã thực hiện:** Tiếp tục xử lý tài khoản AWS, sau đó bắt đầu thực hiện các nhiệm vụ học tập ban đầu để nhận credit. Các dịch vụ được thao tác gồm EC2, AWS Budgets và AWS Lambda.
 
+**Kiến thức đã học:** Nắm được cách truy cập AWS Console, tìm dịch vụ, tạo tài nguyên cơ bản và theo dõi ngân sách để tránh phát sinh chi phí ngoài ý muốn.
+
+**Kết quả đạt được:** Tài khoản đã có thể sử dụng cho các bài lab cơ bản. Một số thao tác tạo/xóa tài nguyên đã được thực hiện thành công.
+
+**Khó khăn và bài học:** Một số bước xác minh mất thời gian. Bài học là phải kiểm tra kỹ vùng triển khai và xóa tài nguyên ngay sau khi thực hành.
+
+## Ngày 3 - 22/4: Thực hành RDS và Amazon Bedrock
+
+**Công việc đã thực hiện:** Hoàn thành thêm các nhiệm vụ liên quan đến Amazon RDS và Amazon Bedrock. Nội dung tập trung vào cách tạo database managed service và tìm hiểu dịch vụ AI sinh nội dung trên AWS.
+
+**Kiến thức đã học:** Hiểu sự khác nhau giữa việc tự vận hành database trên server và dùng RDS. Đồng thời có cái nhìn ban đầu về model foundation trong Bedrock.
+
+**Kết quả đạt được:** Hoàn thành các bước thực hành chính, có thêm kinh nghiệm kiểm tra cấu hình trước khi tạo tài nguyên có thể phát sinh chi phí.
+
+**Khó khăn và bài học:** RDS có nhiều tùy chọn dễ tạo nhầm cấu hình. Bài học là cần đọc kỹ region, instance class và storage trước khi bấm tạo.
+
+## Ngày 4 - 23/4: Nghiên cứu cách viết Worklog
+
+**Công việc đã thực hiện:** Tìm hiểu cách viết worklog cho báo cáo thực tập và cách trình bày nội dung theo tuần/ngày trên website Hugo Workshop.
+
+**Kiến thức đã học:** Học cách tách nội dung thành công việc đã làm, kiến thức học được, kết quả, khó khăn và bài học thay vì ghi lan man theo cảm xúc.
+
+**Kết quả đạt được:** Xây dựng được khung trình bày thống nhất để áp dụng cho các tuần sau của quá trình thực tập.
+
+**Khó khăn và bài học:** Ban đầu nội dung dễ bị dài và dính đoạn. Bài học là cần viết ngắn, xuống dòng rõ và dùng heading phù hợp.
+
+## Ngày 5 - 24/4: Kiểm tra chi phí và dọn tài nguyên
+
+**Công việc đã thực hiện:** Rà soát Billing Dashboard sau các bài lab đầu tiên. Phát hiện chi phí phát sinh từ RDS/Aurora do có tài nguyên còn chạy ở một region khác.
+
+**Kiến thức đã học:** Hiểu rõ hơn rằng tài nguyên AWS được quản lý theo từng region; nếu chỉ kiểm tra một region thì có thể bỏ sót tài nguyên đang phát sinh phí.
+
+**Kết quả đạt được:** Xóa các tài nguyên không cần thiết và ghi lại quy trình kiểm tra chi phí sau mỗi buổi thực hành.
+
+**Khó khăn và bài học:** Khó khăn là chi phí không luôn xuất hiện ngay lập tức. Bài học là phải kiểm tra Cost Explorer, Billing và từng region thường xuyên.
+
+## Ngày 6 - 25/4: Đưa Worklog lên GitHub
+
+**Công việc đã thực hiện:** Tập đưa nội dung worklog lên GitHub và kiểm tra cách website Hugo đọc các file Markdown trong thư mục content.
+
+**Kiến thức đã học:** Nắm được front matter, weight, title và cấu trúc thư mục ảnh hưởng đến sidebar và thứ tự hiển thị của website.
+
+**Kết quả đạt được:** Có bản worklog đầu tiên chạy được trên website, làm nền cho việc tiếp tục cập nhật các tuần sau.
+
+**Khó khăn và bài học:** Một số nội dung chưa đẹp vì copy trực tiếp từ ghi chú. Bài học là cần biên tập lại trước khi publish.

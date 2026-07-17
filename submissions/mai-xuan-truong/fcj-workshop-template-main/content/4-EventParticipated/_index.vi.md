@@ -1,46 +1,36 @@
 ---
-title: "Các events đã tham gia"
+title: "Các sự kiện đã tham gia"
 date: 2024-01-01
 weight: 4
 chapter: false
 pre: " <b> 4. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
+Trong quá trình thực tập, tôi đã tham gia 3 sự kiện liên quan đến AI, AWS, cloud architecture, định hướng nghề nghiệp và kỹ năng làm việc trong thời đại công nghệ mới. Các sự kiện này giúp tôi mở rộng góc nhìn ngoài phạm vi bài lab, đồng thời liên hệ được nhiều kiến thức vào dự án IRMS và quá trình chuẩn bị nghề nghiệp.
 
-> Trong phần này, các bạn cần liệt kê và mô tả chi tiết các sự kiện (event) mà mình đã tham gia trong suốt quá trình thực tập hoặc làm việc. 
-> 
-> Mỗi sự kiện nên được trình bày theo định dạng Event 1, Event 2, Event 3…, kèm theo các thông tin:
-> * Tên sự kiện
-> * Thời gian tổ chức
-> * Địa điểm (nếu có)
-> * Vai trò của bạn trong sự kiện (người tham dự, hỗ trợ tổ chức, diễn giả, v.v.)
-> * Mô tả ngắn gọn nội dung và hoạt động chính trong sự kiện
-> * Kết quả hoặc giá trị đạt được (bài học, kỹ năng mới, đóng góp cho nhóm/dự án)
-> * Việc liệt kê này giúp thể hiện rõ sự tham gia thực tế của bạn, cũng như các kỹ năng mềm và kinh nghiệm bạn đã tích lũy qua từng sự kiện.
+## Danh sách sự kiện
 
+### [Event 1 - Chuyên đề Thứ 7: Tối Ưu Hóa Bản Thân và Làm Chủ Công Nghệ AI](4.1-Event1/)
 
-Trong quá trình thực tập, em đã tham gia 2 events, với mỗi event là một trải nghiệm đáng nhớ với những kiến thức mới, hay và bổ ích, cùng với đó là nhứng món quà và những khoảnh khắc rất tuyệt vời.
+**Thời gian:** Thứ 7, ngày 09/05/2026
+**Địa điểm:** Tham gia offline tại địa điểm tổ chức
+**Vai trò:** Người tham dự offline offline
+**Giá trị chính:** Biết cách hệ thống hóa và tối ưu prompt, chuyển từ việc dùng AI như chatbot thông thường sang tư duy dùng AI có quy trình.
 
-### [Event 1](4.1-Event1/)
-&emsp;**Tên sự kiện:** GenAI-powered App-DB Modernization workshop
+### [Event 2 - DATA DRIVEN, AI RISEN](4.2-Event2/)
 
-&emsp;**Thời gian:** 09:00 ngày 13/08/2025
+**Thời gian:** 27/06/2026
+**Địa điểm:** Tổ chức trực tiếp tại tầng 26 và 36, đồng thời phát sóng livestream trên YouTube
+**Vai trò:** Người tham dự offline offline (online)
+**Giá trị chính:** AI không thay thế hoàn toàn con người, mà khuếch đại năng lực của người có nền tảng tốt.
 
-&emsp;**Địa điểm:** Tầng 26, tòa nhà Bitexco, số 02 đường Hải Triều, phường Sài Gòn, thành phố Hồ Chí Minh
+### [Event 3 - AWS: Enterprise Cloud Architectures and Industry Application featuring Cloud Kinetics & Renova Cloud](4.3-Event3/)
 
-&emsp;**Vai trò trong sự kiện:** Người tham dự 
+**Thời gian:** Buổi sáng, ngày 04/07/2026
+**Địa điểm:** Study Tour tại AWS Việt Nam dành cho sinh viên Swinburne Việt Nam (TP.HCM và Cần Thơ)
+**Vai trò:** Người tham dự offline offline (online)
+**Giá trị chính:** Công thức phát triển sự nghiệp có thể nhìn qua Capability x Visibility x Consistency.
 
+## Tổng kết
 
-
-### [Event 2](4.2-Event2/)
-&emsp;**Tên sự kiện:** GenAI-powered App-DB Modernization workshop
-
-&emsp;**Thời gian:** 09:00 ngày 13/08/2025
-
-&emsp;**Địa điểm:** Tầng 26, tòa nhà Bitexco, số 02 đường Hải Triều, phường Sài Gòn, thành phố Hồ Chí Minh
-
-&emsp;**Vai trò trong sự kiện:** Người tham dự 
-
+Thông qua 3 sự kiện, tôi học được rằng để phát triển trong lĩnh vực cloud/AI không chỉ cần biết công cụ, mà còn cần tư duy kiến trúc, khả năng tự học, kỹ năng giao tiếp và sự chủ động tạo cơ hội cho bản thân.

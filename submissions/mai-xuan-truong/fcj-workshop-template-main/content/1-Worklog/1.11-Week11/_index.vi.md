@@ -1,61 +1,83 @@
-﻿---
-title: "Worklog Tuần 11"
+---
+title: "Tuần 11"
 date: 2024-01-01
-weight: 2
+weight: 11
 chapter: false
 pre: " <b> 1.11. </b> "
 ---
-{{% notice warning %}}
-â ï¸ **LÆ°u Ă½:** CĂ¡c thĂ´ng tin dÆ°á»›i Ä‘Ă¢y chá»‰ nháº±m má»¥c Ä‘Ă­ch tham kháº£o, vui lĂ²ng **khĂ´ng sao chĂ©p nguyĂªn vÄƒn** cho bĂ i bĂ¡o cĂ¡o cá»§a báº¡n ká»ƒ cáº£ warning nĂ y.
-{{% /notice %}}
 
+**Mốc thời gian:** 18/6 → 23/6 (6 ngày)
 
-### Má»¥c tiĂªu tuáº§n 11:
+> Dự án IRMS được thực hiện bởi nhóm 5 thành viên. Các ghi chú dưới đây tập trung vào phần đóng góp cá nhân của tôi trong quá trình phối hợp với nhóm.
 
-* Káº¿t ná»‘i, lĂ m quen vá»›i cĂ¡c thĂ nh viĂªn trong First Cloud AI Journey.
-* Hiá»ƒu dá»‹ch vá»¥ AWS cÆ¡ báº£n, cĂ¡ch dĂ¹ng console & CLI.
+## Ngày 1 - 18/6: Kiểm tra Cognito trên frontend
 
-### CĂ¡c cĂ´ng viá»‡c cáº§n triá»ƒn khai trong tuáº§n nĂ y:
-| Thá»© | CĂ´ng viá»‡c                                                                                                                                                                                   | NgĂ y báº¯t Ä‘áº§u | NgĂ y hoĂ n thĂ nh | Nguá»“n tĂ i liá»‡u                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - LĂ m quen vá»›i cĂ¡c thĂ nh viĂªn FCJ <br> - Äá»c vĂ  lÆ°u Ă½ cĂ¡c ná»™i quy, quy Ä‘á»‹nh táº¡i Ä‘Æ¡n vá»‹ thá»±c táº­p                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - TĂ¬m hiá»ƒu AWS vĂ  cĂ¡c loáº¡i dá»‹ch vá»¥ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Táº¡o AWS Free Tier account <br> - TĂ¬m hiá»ƒu AWS Console & AWS CLI <br> - **Thá»±c hĂ nh:** <br>&emsp; + Táº¡o AWS account <br>&emsp; + CĂ i AWS CLI & cáº¥u hĂ¬nh <br> &emsp; + CĂ¡ch sá»­ dá»¥ng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - TĂ¬m hiá»ƒu EC2 cÆ¡ báº£n: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - CĂ¡c cĂ¡ch remote SSH vĂ o EC2 <br> - TĂ¬m hiá»ƒu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thá»±c hĂ nh:** <br>&emsp; + Táº¡o EC2 instance <br>&emsp; + Káº¿t ná»‘i SSH <br>&emsp; + Gáº¯n EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+**Công việc đã thực hiện:** Tôi kiểm tra luồng đăng nhập Cognito và cách frontend gửi JWT khi gọi API bảo vệ. Nhóm cùng xử lý các lỗi giao diện đăng nhập.
 
+Tôi test đăng nhập, lấy JWT và gọi API được bảo vệ bởi Cognito Authorizer. Khi gặp lỗi 401, tôi kiểm tra lại group, app client và header request.
 
-### Káº¿t quáº£ Ä‘áº¡t Ä‘Æ°á»£c tuáº§n 11:
+**Kiến thức đã học:** Authentication cần được test từ trình duyệt đến API authorizer.
 
-* Hiá»ƒu AWS lĂ  gĂ¬ vĂ  náº¯m Ä‘Æ°á»£c cĂ¡c nhĂ³m dá»‹ch vá»¥ cÆ¡ báº£n: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+**Kết quả đạt được:** Luồng đăng nhập/gọi API bảo vệ hoạt động ổn hơn.
 
-* ÄĂ£ táº¡o vĂ  cáº¥u hĂ¬nh AWS Free Tier account thĂ nh cĂ´ng.
+**Khó khăn và bài học:** Cần xử lý lỗi 401 rõ ràng cho người dùng.
 
-* LĂ m quen vá»›i AWS Management Console vĂ  biáº¿t cĂ¡ch tĂ¬m, truy cáº­p, sá»­ dá»¥ng dá»‹ch vá»¥ tá»« giao diá»‡n web.
+## Ngày 2 - 19/6: Tích hợp Evidence UI
 
-* CĂ i Ä‘áº·t vĂ  cáº¥u hĂ¬nh AWS CLI trĂªn mĂ¡y tĂ­nh bao gá»“m:
-  * Access Key
-  * Secret Key
-  * Region máº·c Ä‘á»‹nh
-  * ...
+**Công việc đã thực hiện:** Tôi hỗ trợ kiểm tra evidence upload từ UI đến S3 và metadata trong DynamoDB. Phần giao diện upload do teammate phụ trách chính.
 
-* Sá»­ dá»¥ng AWS CLI Ä‘á»ƒ thá»±c hiá»‡n cĂ¡c thao tĂ¡c cÆ¡ báº£n nhÆ°:
+Tôi test giao diện upload evidence với file mẫu, theo dõi progress và kiểm tra sau upload file có vào S3 hay không. Tôi cũng xem metadata có hiển thị lại trong incident detail không.
 
-  * Kiá»ƒm tra thĂ´ng tin tĂ i khoáº£n & cáº¥u hĂ¬nh
-  * Láº¥y danh sĂ¡ch region
-  * Xem dá»‹ch vá»¥ EC2
-  * Táº¡o vĂ  quáº£n lĂ½ key pair
-  * Kiá»ƒm tra thĂ´ng tin dá»‹ch vá»¥ Ä‘ang cháº¡y
-  * ...
+**Kiến thức đã học:** Upload UI cần phản hồi rõ khi upload thành công hoặc thất bại.
 
-* CĂ³ kháº£ nÄƒng káº¿t ná»‘i giá»¯a giao diá»‡n web vĂ  CLI Ä‘á»ƒ quáº£n lĂ½ tĂ i nguyĂªn AWS song song.
-* ...
+**Kết quả đạt được:** Evidence hiển thị tốt hơn trong trang incident detail.
 
+**Khó khăn và bài học:** Cần giới hạn loại file và thông báo lỗi dễ hiểu.
 
+## Ngày 3 - 20/6: Tích hợp Report UI
 
+**Công việc đã thực hiện:** Tôi test luồng gọi report API từ frontend và kiểm tra dữ liệu report hiển thị đúng với incident hiện tại.
 
+Tôi gọi report API từ giao diện và so sánh nội dung trả về với dữ liệu incident thật. Tôi góp ý tách các phần summary, timeline và evidence để report dễ đọc hơn.
+
+**Kiến thức đã học:** Report UI cần bám đúng cấu trúc response từ backend.
+
+**Kết quả đạt được:** Report phục vụ demo rõ hơn.
+
+**Khó khăn và bài học:** Cần tách timeline và evidence trong report để người xem dễ theo dõi.
+
+## Ngày 4 - 21/6: Hỗ trợ AI Assistant UI
+
+**Công việc đã thực hiện:** Tôi hỗ trợ kết nối màn hình AI Assistant với API backend và kiểm tra trạng thái loading/error khi gọi AI.
+
+Tôi kiểm tra lúc UI gửi incident context sang backend AI Assistant và nhận phản hồi. Tôi cũng test trạng thái loading, lỗi timeout và cách hiển thị kết quả AI cho người dùng.
+
+**Kiến thức đã học:** AI output nên được xem là gợi ý hỗ trợ, không phải quyết định cuối cùng.
+
+**Kết quả đạt được:** AI Assistant có thể chạy demo với incident context mẫu.
+
+**Khó khăn và bài học:** Cần kiểm soát dữ liệu gửi đi và hiển thị thông báo phù hợp.
+
+## Ngày 5 - 22/6: Rà soát bảo mật frontend
+
+**Công việc đã thực hiện:** Tôi rà soát source frontend để không hard-code giá trị nhạy cảm, đồng thời kiểm tra cách cấu hình endpoint và biến môi trường.
+
+Tôi rà lại source để tránh hard-code cấu hình nhạy cảm và kiểm tra các biến môi trường dùng khi build. Tôi cũng đảm bảo tài liệu chỉ mô tả cách cấu hình, không chứa giá trị thật.
+
+**Kiến thức đã học:** Frontend security hygiene rất quan trọng trước khi deploy.
+
+**Kết quả đạt được:** Source sạch hơn và phù hợp để đưa vào báo cáo/workshop.
+
+**Khó khăn và bài học:** Không đưa giá trị nhạy cảm hoặc cấu hình riêng tư vào repository.
+
+## Ngày 6 - 23/6: Chuẩn bị deploy frontend
+
+**Công việc đã thực hiện:** Tôi chuẩn bị build production, kiểm tra API base URL và phối hợp với nhóm để chốt bản frontend trước khi upload S3.
+
+Tôi kiểm tra lệnh build, base URL, API endpoint và các file output trước khi upload lên S3. Nhóm cùng review bản cuối để tránh deploy thiếu asset hoặc gọi nhầm endpoint.
+
+**Kiến thức đã học:** Deploy frontend cần chuẩn bị cấu hình môi trường chính xác.
+
+**Kết quả đạt được:** Frontend sẵn sàng cho bước hosting trên S3/CloudFront.
+
+**Khó khăn và bài học:** Sai endpoint khi build sẽ khiến bản deploy gọi nhầm API.

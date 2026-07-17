@@ -1,58 +1,69 @@
-﻿---
-title: "Week 3 Worklog"
+---
+title: "Week 3"
 date: 2024-01-01
-weight: 1
+weight: 3
 chapter: false
 pre: " <b> 1.3. </b> "
 ---
-{{% notice warning %}} 
-â ï¸ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
 
+**Timeline:** 1/5 → 6/5 (6 days)
 
-### Week 3 Objectives:
+## Day 1 - 1/5: ECS workshop
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
+**Work completed:** Completed the Deploy Applications on Amazon ECS workshop to understand container application deployment on AWS.
 
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+**Knowledge gained:** Learned about clusters, task definitions, services, Fargate, and how ECS maintains running tasks.
 
+**Result:** Understood the difference between running Docker manually and letting AWS manage the container lifecycle.
 
-### Week 3 Achievements:
+**Difficulty and lesson:** The main challenge was handling new AWS concepts carefully. The lesson was to verify configuration, permissions, region, and cost before moving to the next task.
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+## Day 2 - 2/5: Fargate and ALB
 
-* Successfully created and configured an AWS Free Tier account.
+**Work completed:** Continued ECS practice with Fargate, Application Load Balancer, and rolling deployment strategies.
 
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
+**Knowledge gained:** Learned that Fargate removes server management, while ALB distributes traffic to healthy tasks.
 
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
+**Result:** Gained a clearer understanding of low-operations container deployment.
 
-* Used AWS CLI to perform basic operations such as:
+**Difficulty and lesson:** The main challenge was handling new AWS concepts carefully. The lesson was to verify configuration, permissions, region, and cost before moving to the next task.
 
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
+## Day 3 - 3/5: Container and serverless comparison
 
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+**Work completed:** Compared ECS/Fargate deployment with a serverless approach using Lambda, API Gateway, and DynamoDB.
 
+**Knowledge gained:** Learned that containers are useful for runtime control, while serverless suits API and event-driven workloads with lower operations.
+
+**Result:** Built a basis for choosing the architecture of the internship project.
+
+**Difficulty and lesson:** The main challenge was handling new AWS concepts carefully. The lesson was to verify configuration, permissions, region, and cost before moving to the next task.
+
+## Day 4 - 4/5: API Gateway and Lambda review
+
+**Work completed:** Reviewed how API Gateway receives requests and invokes Lambda for business logic, which is foundational for IRMS.
+
+**Knowledge gained:** Learned request/response flow, status codes, integration concepts, and Lambda environment variables.
+
+**Result:** Prepared the knowledge needed to design incident CRUD APIs.
+
+**Difficulty and lesson:** The main challenge was handling new AWS concepts carefully. The lesson was to verify configuration, permissions, region, and cost before moving to the next task.
+
+## Day 5 - 5/5: Post-lab cost review
+
+**Work completed:** Reviewed resources created during ECS, EC2, and related labs to avoid leaving background resources running.
+
+**Knowledge gained:** Learned how to check regions, CloudWatch logs, load balancers, NAT Gateway, and other potentially billable resources.
+
+**Result:** Cleaned up unused resources and documented a cleanup checklist.
+
+**Difficulty and lesson:** The main challenge was handling new AWS concepts carefully. The lesson was to verify configuration, permissions, region, and cost before moving to the next task.
+
+## Day 6 - 6/5: Project topic preparation
+
+**Work completed:** Summarized the first three weeks of learning and started considering a practical AWS project suitable for the internship timeline.
+
+**Knowledge gained:** Recognized that the project should have a clear architecture, connected AWS services, and step-by-step workshop potential.
+
+**Result:** Formed an initial direction for a cybersecurity incident response management system.
+
+**Difficulty and lesson:** The main challenge was handling new AWS concepts carefully. The lesson was to verify configuration, permissions, region, and cost before moving to the next task.

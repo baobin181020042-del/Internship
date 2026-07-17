@@ -1,61 +1,69 @@
-﻿---
-title: "Worklog Tuần 3"
+---
+title: "Tuần 3"
 date: 2024-01-01
-weight: 1
+weight: 3
 chapter: false
 pre: " <b> 1.3. </b> "
 ---
-{{% notice warning %}}
-â ï¸ **LÆ°u Ă½:** CĂ¡c thĂ´ng tin dÆ°á»›i Ä‘Ă¢y chá»‰ nháº±m má»¥c Ä‘Ă­ch tham kháº£o, vui lĂ²ng **khĂ´ng sao chĂ©p nguyĂªn vÄƒn** cho bĂ i bĂ¡o cĂ¡o cá»§a báº¡n ká»ƒ cáº£ warning nĂ y.
-{{% /notice %}}
 
+**Mốc thời gian:** 1/5 → 6/5 (6 ngày)
 
-### Má»¥c tiĂªu tuáº§n 3:
+## Ngày 1 - 1/5: Workshop ECS
 
-* Káº¿t ná»‘i, lĂ m quen vá»›i cĂ¡c thĂ nh viĂªn trong First Cloud AI Journey.
-* Hiá»ƒu dá»‹ch vá»¥ AWS cÆ¡ báº£n, cĂ¡ch dĂ¹ng console & CLI.
+**Công việc đã thực hiện:** Làm workshop Deploy Applications on Amazon ECS để hiểu cách triển khai ứng dụng container trên AWS.
 
-### CĂ¡c cĂ´ng viá»‡c cáº§n triá»ƒn khai trong tuáº§n nĂ y:
-| Thá»© | CĂ´ng viá»‡c                                                                                                                                                                                   | NgĂ y báº¯t Ä‘áº§u | NgĂ y hoĂ n thĂ nh | Nguá»“n tĂ i liá»‡u                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - LĂ m quen vá»›i cĂ¡c thĂ nh viĂªn FCJ <br> - Äá»c vĂ  lÆ°u Ă½ cĂ¡c ná»™i quy, quy Ä‘á»‹nh táº¡i Ä‘Æ¡n vá»‹ thá»±c táº­p                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - TĂ¬m hiá»ƒu AWS vĂ  cĂ¡c loáº¡i dá»‹ch vá»¥ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Táº¡o AWS Free Tier account <br> - TĂ¬m hiá»ƒu AWS Console & AWS CLI <br> - **Thá»±c hĂ nh:** <br>&emsp; + Táº¡o AWS account <br>&emsp; + CĂ i AWS CLI & cáº¥u hĂ¬nh <br> &emsp; + CĂ¡ch sá»­ dá»¥ng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - TĂ¬m hiá»ƒu EC2 cÆ¡ báº£n: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - CĂ¡c cĂ¡ch remote SSH vĂ o EC2 <br> - TĂ¬m hiá»ƒu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thá»±c hĂ nh:** <br>&emsp; + Táº¡o EC2 instance <br>&emsp; + Káº¿t ná»‘i SSH <br>&emsp; + Gáº¯n EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+**Kiến thức đã học:** Học về cluster, task definition, service, Fargate và cách ECS tự duy trì số lượng task đang chạy.
 
+**Kết quả đạt được:** Hiểu sự khác nhau giữa chạy Docker thủ công và để AWS quản lý vòng đời container.
 
-### Káº¿t quáº£ Ä‘áº¡t Ä‘Æ°á»£c tuáº§n 3:
+**Khó khăn và bài học:** Nhiều khái niệm ECS liên kết với nhau. Bài học là cần đọc task definition trước rồi mới phân tích service/deployment.
 
-* Hiá»ƒu AWS lĂ  gĂ¬ vĂ  náº¯m Ä‘Æ°á»£c cĂ¡c nhĂ³m dá»‹ch vá»¥ cÆ¡ báº£n: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+## Ngày 2 - 2/5: Tìm hiểu Fargate và ALB
 
-* ÄĂ£ táº¡o vĂ  cáº¥u hĂ¬nh AWS Free Tier account thĂ nh cĂ´ng.
+**Công việc đã thực hiện:** Tiếp tục phần ECS với Fargate, Application Load Balancer và chiến lược rolling deployment.
 
-* LĂ m quen vá»›i AWS Management Console vĂ  biáº¿t cĂ¡ch tĂ¬m, truy cáº­p, sá»­ dá»¥ng dá»‹ch vá»¥ tá»« giao diá»‡n web.
+**Kiến thức đã học:** Hiểu Fargate giúp không phải quản lý EC2 bên dưới, còn ALB phân phối traffic đến các task khỏe mạnh.
 
-* CĂ i Ä‘áº·t vĂ  cáº¥u hĂ¬nh AWS CLI trĂªn mĂ¡y tĂ­nh bao gá»“m:
-  * Access Key
-  * Secret Key
-  * Region máº·c Ä‘á»‹nh
-  * ...
+**Kết quả đạt được:** Nắm được cách triển khai ứng dụng container theo hướng ít vận hành hơn.
 
-* Sá»­ dá»¥ng AWS CLI Ä‘á»ƒ thá»±c hiá»‡n cĂ¡c thao tĂ¡c cÆ¡ báº£n nhÆ°:
+**Khó khăn và bài học:** Khó khăn là cấu hình network/security group cho ALB và task. Bài học là cần kiểm tra subnet, listener và target group cùng lúc.
 
-  * Kiá»ƒm tra thĂ´ng tin tĂ i khoáº£n & cáº¥u hĂ¬nh
-  * Láº¥y danh sĂ¡ch region
-  * Xem dá»‹ch vá»¥ EC2
-  * Táº¡o vĂ  quáº£n lĂ½ key pair
-  * Kiá»ƒm tra thĂ´ng tin dá»‹ch vá»¥ Ä‘ang cháº¡y
-  * ...
+## Ngày 3 - 3/5: So sánh container và serverless
 
-* CĂ³ kháº£ nÄƒng káº¿t ná»‘i giá»¯a giao diá»‡n web vĂ  CLI Ä‘á»ƒ quáº£n lĂ½ tĂ i nguyĂªn AWS song song.
-* ...
+**Công việc đã thực hiện:** So sánh hướng triển khai bằng ECS/Fargate với hướng serverless dùng Lambda, API Gateway và DynamoDB.
 
+**Kiến thức đã học:** Hiểu container phù hợp khi cần kiểm soát runtime, còn serverless phù hợp cho API/event-driven workload ít vận hành.
 
+**Kết quả đạt được:** Có cơ sở để cân nhắc kiến trúc cho đề tài internship sau này.
 
+**Khó khăn và bài học:** Khó khăn là mỗi mô hình có ưu/nhược điểm riêng. Bài học là chọn kiến trúc theo yêu cầu, không chọn theo cảm tính.
 
+## Ngày 4 - 4/5: Ôn API Gateway và Lambda
+
+**Công việc đã thực hiện:** Ôn lại cách API Gateway nhận request và gọi Lambda để xử lý nghiệp vụ. Đây là phần nền tảng cho dự án IRMS.
+
+**Kiến thức đã học:** Hiểu request/response flow, status code, integration và vai trò của Lambda environment variables.
+
+**Kết quả đạt được:** Chuẩn bị được nền kiến thức để thiết kế API CRUD cho incident.
+
+**Khó khăn và bài học:** Khó khăn là dễ nhầm giữa route, method và integration. Bài học là nên lập bảng endpoint trước khi cấu hình.
+
+## Ngày 5 - 5/5: Rà soát chi phí sau lab
+
+**Công việc đã thực hiện:** Kiểm tra lại các tài nguyên đã tạo trong quá trình lab ECS, EC2 và các dịch vụ liên quan để tránh để sót tài nguyên chạy nền.
+
+**Kiến thức đã học:** Học cách kiểm tra region, CloudWatch log, load balancer, NAT Gateway và các tài nguyên có thể phát sinh chi phí.
+
+**Kết quả đạt được:** Dọn dẹp các tài nguyên không cần dùng và ghi chú lại checklist cleanup.
+
+**Khó khăn và bài học:** Một số dịch vụ tạo tài nguyên phụ. Bài học là sau khi deploy phải kiểm tra cả tài nguyên được tạo gián tiếp.
+
+## Ngày 6 - 6/5: Chuẩn bị chọn đề tài
+
+**Công việc đã thực hiện:** Tổng hợp kiến thức ba tuần đầu và bắt đầu suy nghĩ về đề tài có thể triển khai trên AWS, vừa đủ thực tế vừa phù hợp thời gian thực tập.
+
+**Kiến thức đã học:** Nhận ra đề tài cần có kiến trúc rõ, nhiều dịch vụ AWS liên kết và có thể trình bày thành workshop từng bước.
+
+**Kết quả đạt được:** Hình thành hướng đi ban đầu cho hệ thống quản lý sự cố an ninh mạng.
+
+**Khó khăn và bài học:** Khó khăn là phạm vi đề tài dễ quá rộng. Bài học là cần giới hạn chức năng MVP trước.

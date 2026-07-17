@@ -1,61 +1,83 @@
-﻿---
-title: "Worklog Tuần 9"
+---
+title: "Tuần 9"
 date: 2024-01-01
-weight: 1
+weight: 9
 chapter: false
 pre: " <b> 1.9. </b> "
 ---
-{{% notice warning %}}
-â ï¸ **LÆ°u Ă½:** CĂ¡c thĂ´ng tin dÆ°á»›i Ä‘Ă¢y chá»‰ nháº±m má»¥c Ä‘Ă­ch tham kháº£o, vui lĂ²ng **khĂ´ng sao chĂ©p nguyĂªn vÄƒn** cho bĂ i bĂ¡o cĂ¡o cá»§a báº¡n ká»ƒ cáº£ warning nĂ y.
-{{% /notice %}}
 
+**Mốc thời gian:** 6/6 → 11/6 (6 ngày)
 
-### Má»¥c tiĂªu tuáº§n 9:
+> Dự án IRMS được thực hiện bởi nhóm 5 thành viên. Các ghi chú dưới đây tập trung vào phần đóng góp cá nhân của tôi trong quá trình phối hợp với nhóm.
 
-* Káº¿t ná»‘i, lĂ m quen vá»›i cĂ¡c thĂ nh viĂªn trong First Cloud AI Journey.
-* Hiá»ƒu dá»‹ch vá»¥ AWS cÆ¡ báº£n, cĂ¡ch dĂ¹ng console & CLI.
+## Ngày 1 - 6/6: Test Incident CRUD
 
-### CĂ¡c cĂ´ng viá»‡c cáº§n triá»ƒn khai trong tuáº§n nĂ y:
-| Thá»© | CĂ´ng viá»‡c                                                                                                                                                                                   | NgĂ y báº¯t Ä‘áº§u | NgĂ y hoĂ n thĂ nh | Nguá»“n tĂ i liá»‡u                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - LĂ m quen vá»›i cĂ¡c thĂ nh viĂªn FCJ <br> - Äá»c vĂ  lÆ°u Ă½ cĂ¡c ná»™i quy, quy Ä‘á»‹nh táº¡i Ä‘Æ¡n vá»‹ thá»±c táº­p                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - TĂ¬m hiá»ƒu AWS vĂ  cĂ¡c loáº¡i dá»‹ch vá»¥ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Táº¡o AWS Free Tier account <br> - TĂ¬m hiá»ƒu AWS Console & AWS CLI <br> - **Thá»±c hĂ nh:** <br>&emsp; + Táº¡o AWS account <br>&emsp; + CĂ i AWS CLI & cáº¥u hĂ¬nh <br> &emsp; + CĂ¡ch sá»­ dá»¥ng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - TĂ¬m hiá»ƒu EC2 cÆ¡ báº£n: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - CĂ¡c cĂ¡ch remote SSH vĂ o EC2 <br> - TĂ¬m hiá»ƒu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thá»±c hĂ nh:** <br>&emsp; + Táº¡o EC2 instance <br>&emsp; + Káº¿t ná»‘i SSH <br>&emsp; + Gáº¯n EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+**Công việc đã thực hiện:** Tôi phụ trách test CRUD qua API Gateway với dữ liệu incident mẫu, sau đó báo lại các lỗi field/response cho nhóm backend.
 
+Tôi test các trường hợp tạo incident mới, xem danh sách, cập nhật trạng thái và xóa dữ liệu thử. Tôi ghi rõ request body, expected response và lỗi thực tế để nhóm backend sửa nhanh hơn.
 
-### Káº¿t quáº£ Ä‘áº¡t Ä‘Æ°á»£c tuáº§n 9:
+**Kiến thức đã học:** Test CRUD cần kiểm tra cả success case và error case.
 
-* Hiá»ƒu AWS lĂ  gĂ¬ vĂ  náº¯m Ä‘Æ°á»£c cĂ¡c nhĂ³m dá»‹ch vá»¥ cÆ¡ báº£n: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+**Kết quả đạt được:** CRUD ổn định hơn và dữ liệu lưu đúng bảng.
 
-* ÄĂ£ táº¡o vĂ  cáº¥u hĂ¬nh AWS Free Tier account thĂ nh cĂ´ng.
+**Khó khăn và bài học:** Thiếu field hoặc sai status code cần được xử lý nhất quán.
 
-* LĂ m quen vá»›i AWS Management Console vĂ  biáº¿t cĂ¡ch tĂ¬m, truy cáº­p, sá»­ dá»¥ng dá»‹ch vá»¥ tá»« giao diá»‡n web.
+## Ngày 2 - 7/6: Test Timeline
 
-* CĂ i Ä‘áº·t vĂ  cáº¥u hĂ¬nh AWS CLI trĂªn mĂ¡y tĂ­nh bao gá»“m:
-  * Access Key
-  * Secret Key
-  * Region máº·c Ä‘á»‹nh
-  * ...
+**Công việc đã thực hiện:** Tôi test việc thêm timeline khi incident thay đổi trạng thái hoặc có ghi chú mới. Kết quả được đối chiếu với dữ liệu DynamoDB.
 
-* Sá»­ dá»¥ng AWS CLI Ä‘á»ƒ thá»±c hiá»‡n cĂ¡c thao tĂ¡c cÆ¡ báº£n nhÆ°:
+Tôi tạo một incident mẫu rồi thêm nhiều timeline event để kiểm tra thứ tự hiển thị. Tôi cũng đối chiếu dữ liệu trong DynamoDB để chắc timeline gắn đúng incident.
 
-  * Kiá»ƒm tra thĂ´ng tin tĂ i khoáº£n & cáº¥u hĂ¬nh
-  * Láº¥y danh sĂ¡ch region
-  * Xem dá»‹ch vá»¥ EC2
-  * Táº¡o vĂ  quáº£n lĂ½ key pair
-  * Kiá»ƒm tra thĂ´ng tin dá»‹ch vá»¥ Ä‘ang cháº¡y
-  * ...
+**Kiến thức đã học:** Timeline là phần quan trọng để truy vết quá trình xử lý.
 
-* CĂ³ kháº£ nÄƒng káº¿t ná»‘i giá»¯a giao diá»‡n web vĂ  CLI Ä‘á»ƒ quáº£n lĂ½ tĂ i nguyĂªn AWS song song.
-* ...
+**Kết quả đạt được:** Timeline hiển thị dữ liệu hợp lý hơn cho frontend.
 
+**Khó khăn và bài học:** Cần thống nhất thứ tự sắp xếp và định dạng thời gian.
 
+## Ngày 3 - 8/6: Test Evidence Upload
 
+**Công việc đã thực hiện:** Tôi test presigned URL, upload file mẫu lên S3 và kiểm tra metadata trong DynamoDB. Đây là phần tôi tham gia khá nhiều vì liên quan S3 và API.
 
+Tôi test từ bước lấy presigned URL đến upload file và kiểm tra metadata. Khi gặp lỗi CORS hoặc content type, tôi chụp lại lỗi và ghi chú cấu hình cần sửa.
+
+**Kiến thức đã học:** Evidence upload cần phối hợp chặt giữa S3, Lambda, DynamoDB và frontend.
+
+**Kết quả đạt được:** Flow upload hoạt động với file thử nghiệm.
+
+**Khó khăn và bài học:** CORS và content type là lỗi dễ gặp nhất.
+
+## Ngày 4 - 9/6: Sửa CORS cùng nhóm
+
+**Công việc đã thực hiện:** Tôi hỗ trợ cấu hình CORS cho API Gateway/S3 để frontend có thể gọi API và upload file. Sau mỗi thay đổi, tôi test lại từ trình duyệt.
+
+Tôi kiểm tra lỗi trên browser console và network tab, sau đó đối chiếu với cấu hình API Gateway/S3. Việc sửa CORS được test lại trực tiếp từ frontend để chắc người dùng cuối gọi API được.
+
+**Kiến thức đã học:** CORS là vấn đề tích hợp frontend-backend, không chỉ là lỗi backend.
+
+**Kết quả đạt được:** Giảm lỗi blocked by CORS trong quá trình test.
+
+**Khó khăn và bài học:** Cần khai báo đúng origin, method và header.
+
+## Ngày 5 - 10/6: Test Report API
+
+**Công việc đã thực hiện:** Tôi test API tạo report từ incident có timeline và evidence metadata. Phần nội dung report được nhóm cùng kiểm tra.
+
+Tôi chuẩn bị incident có đủ timeline và evidence rồi gọi report API. Tôi kiểm tra xem report có thiếu phần nào không và ghi chú các field cần frontend hiển thị.
+
+**Kiến thức đã học:** Report cần lấy dữ liệu từ nhiều nguồn nhưng vẫn trả về cấu trúc dễ dùng.
+
+**Kết quả đạt được:** Report API trả về đủ thông tin cho demo.
+
+**Khó khăn và bài học:** Không nên đưa dữ liệu không cần thiết vào report.
+
+## Ngày 6 - 11/6: Test Alert Handler
+
+**Công việc đã thực hiện:** Tôi gửi event mẫu để kiểm tra Alert Handler, EventBridge và SNS notification. Kết quả được ghi lại trong checklist test.
+
+Tôi gửi event mẫu qua luồng alert để xem incident có được tạo đúng không. Tôi cũng kiểm tra SNS notification và log để đảm bảo khi demo có thể giải thích luồng tự động hóa.
+
+**Kiến thức đã học:** Event-driven workflow cần test bằng event mẫu trước khi demo.
+
+**Kết quả đạt được:** Luồng tự động tạo incident từ alert chạy được ở mức demo.
+
+**Khó khăn và bài học:** Cần log event id và timestamp để truy vết lỗi.
