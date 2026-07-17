@@ -1,5 +1,7 @@
 # First Cloud Journey (FCJ) Internship Program - Early Completion Requirements
 
+📍 **Live Demo:** [View Report](https://mxt2003.github.io/Internship/)
+
 [![FCJ](https://img.shields.io/badge/FCJ-Internship-blue)](https://github.com/AWS-First-Cloud-Journey/Internship)
 [![AWS](https://img.shields.io/badge/AWS-Cloud-orange)](https://aws.amazon.com/)
 [![Duration](https://img.shields.io/badge/Duration-2%2F3%20months-green)](https://github.com/AWS-First-Cloud-Journey/Internship)
