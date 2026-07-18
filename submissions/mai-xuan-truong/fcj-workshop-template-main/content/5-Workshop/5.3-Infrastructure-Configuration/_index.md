@@ -1,6 +1,6 @@
 ---
 title: "Infrastructure Configuration"
-date: 2024-01-01
+date: 2026-07-17
 weight: 3
 chapter: false
 pre: " <b> 5.3. </b> "
@@ -130,17 +130,17 @@ Auditor          (Precedence: 4)
 Still on the User Pool, click tab Users → Create user:
 User 1 (Admin):
 Invitation message:     Don't send an invitation
-Email address:          admin@irms-demo.com
+Email address:          admin@example.com
 Email address verified: check ✅
 Temporary password:     select "Set a password"
-Password:               Admin@123456
+Password:               YOUR_TEMP_PASSWORD
 User must create a new password: uncheck the option
 Click Create user → click to user that you just created → Add user to group → select Admin
 ![Setup Authentication 3](/images/5-Workshop/IRMS/section-03-003.png)
 Repeat the same steps for the remaining three users and assign each user to the correct group:
-manager@irms-demo.com  → group SecurityManager  → pass: Manager@123456
-analyst@irms-demo.com  → group SecurityAnalyst   → pass: Analyst@123456
-auditor@irms-demo.com  → group Auditor           → pass: Auditor@123456
+manager@example.com  → group SecurityManager  → pass: YOUR_TEMP_PASSWORD
+analyst@example.com  → group SecurityAnalyst   → pass: YOUR_TEMP_PASSWORD
+auditor@example.com  → group Auditor           → pass: YOUR_TEMP_PASSWORD
 ![Setup Authentication 4](/images/5-Workshop/IRMS/section-03-004.png)
 
 #### 5.3.3.5 Verify from the Terminal
@@ -149,7 +149,7 @@ Open a terminal on your machine and run the following command. Replace `YOUR_CLI
 ```bash
 aws cognito-idp initiate-auth \
 --auth-flow USER_PASSWORD_AUTH \
---auth-parameters USERNAME=analyst@irms-demo.com,PASSWORD=Analyst@123456 \
+--auth-parameters USERNAME=analyst@example.com,PASSWORD=YOUR_TEMP_PASSWORD \
 --client-id YOUR_CLIENT_ID \
 --region ap-southeast-1 \
 --profile irms-shared
@@ -171,8 +171,8 @@ Expected result — seeing three tokens means success:
 ![Setup Authentication 5](/images/5-Workshop/IRMS/section-03-005.png)
 ![Setup Authentication 6](/images/5-Workshop/IRMS/section-03-006.png)
 ![Setup Authentication 7](/images/5-Workshop/IRMS/section-03-007.png)
-if you see error NotAuthorizedException → verify password or email.
-if you see error UserNotFoundException → verify email was created correctly.
+If you see the error NotAuthorizedException → verify password or email.
+If you see the error UserNotFoundException → verify email was created correctly.
 Verify JWT token:
 - Copy the full IdToken string (which is long and starts with eyJ...)
 - Open the browser, go to https://jwt.io
@@ -181,7 +181,7 @@ Verify JWT token:
 
 ```json
 {
-"email": "analyst@irms-demo.com",
+"email": "analyst@example.com",
 "cognito:groups": ["SecurityAnalyst"]
 }
 ```
@@ -231,7 +231,7 @@ Click Create authorizer
 ![Setup API Gateway 5](/images/5-Workshop/IRMS/section-04-005.png)
 
 #### 5.3.4.3 Create Two Test Routes
-Go to Resources in the left menu. Objective create 2 route for clear testing:
+Go to Resources in the left menu. Objective: create two routes for clear testing:
 GET /ping       → does not have an Authorizer → always returns 200
 GET /ping-auth  → has Authorizer       → 401 without a token, 200 with a valid token
 Create /ping (does not have Authorizer):
@@ -318,14 +318,14 @@ Invoke URL: https://ymag7i4369.execute-api.ap-southeast-1.amazonaws.com/dev
 ⚠ This URL is only used to test the Authorizer in this section. The real system URL is created later by SAM and will have a different value, so use the SAM output URL at that point.
 
 #### 5.3.4.5 Test with Postman
-Install Postman if not yet has:
+Install Postman if it is not already installed:
 - Go to https://www.postman.com/downloads/
 - Download → install → open it → select Skip (account creation is not required)
 Get the JWT token from Cognito:
 Open Terminal (Windows: PowerShell or Git Bash / Mac: Terminal), then run the following command. Replace `YOUR_CLIENT_ID` with the Client ID saved earlier:
 aws cognito-idp initiate-auth \
 --auth-flow USER_PASSWORD_AUTH \
---auth-parameters USERNAME=analyst@irms-demo.com,PASSWORD=Analyst@123456!\
+--auth-parameters USERNAME=analyst@example.com,PASSWORD=YOUR_PASSWORD\
 --client-id YOUR_CLIENT_ID \
 --region ap-southeast-1 \
 --profile irms-shared
@@ -575,8 +575,8 @@ After creating all four tables, add a few sample records to the Incidents table 
 "severity": { "S": "Critical" },
 "status": { "S": "Open" },
 "description": { "S": "S3 bucket company-data has public access enabled, which may expose customer data" },
-"assignedTo": { "S": "analyst@irms-demo.com" },
-"createdBy": { "S": "admin@irms-demo.com" },
+"assignedTo": { "S": "analyst@example.com" },
+"createdBy": { "S": "admin@example.com" },
 "createdAt": { "S": "2026-06-01T08:00:00Z" },
 "updatedAt": { "S": "2026-06-01T08:00:00Z" }
 }
@@ -590,8 +590,8 @@ Click Create item
 "severity": "High",
 "status": "Investigating",
 "description": "Detected 500 failed SSH login attempts from IP 203.0.113.42 within 10 minutes",
-"assignedTo": "analyst@irms-demo.com",
-"createdBy": "manager@irms-demo.com",
+"assignedTo": "analyst@example.com",
+"createdBy": "manager@example.com",
 "createdAt": "2026-06-02T10:30:00Z",
 "updatedAt": "2026-06-02T11:00:00Z"
 }

@@ -1,6 +1,6 @@
 ---
 title: "Giới thiệu"
-date: 2024-01-01
+date: 2026-07-17
 weight: 1
 chapter: false
 pre: " <b> 5.1. </b> "
@@ -23,7 +23,7 @@ Sau khi hoàn thành workshop, bạn sẽ có một hệ thống IRMS chạy th�
 
 Hệ thống gồm các lớp sau:
 Global/Edge:
-- Route 53 → CloudFront (+ WAF Attached) → S3 Web Hosting
+- CloudFront → S3 Static Website (React + Vite + Stitch UI)
 Regional — Entry:
 - API Gateway → Cognito (JWT Authorizer)
 Regional — Compute:
@@ -40,9 +40,9 @@ External:
 
 | Service | Mục đích |
 | --- | --- |
-| Amazon Route 53 | Phân giải DNS |
+| Amazon Route 53 | Future Enhancement: custom domain và DNS |
 | Amazon CloudFront | CDN, cổng vào duy nhất |
-| AWS WAF | Bảo vệ ứng dụng web |
+| AWS WAF | Future Enhancement: bảo vệ web bổ sung |
 | Amazon S3 | Web Hosting + Evidence Store |
 | Amazon API Gateway | REST API |
 | Amazon Cognito | Xác thực, phân quyền |

@@ -1,12 +1,12 @@
 ---
 title: "Tự đánh giá"
-date: 2026-04-17
+date: 2026-07-30
 weight: 6
 chapter: false
 pre: " <b> 6. </b> "
 ---
 
-Trong suốt thời gian thực tập tại **First Cloud AI Journey** từ **17/04/2026** đến **10/07/2026**, tôi đã có cơ hội học hỏi, thực hành và áp dụng kiến thức về cloud vào một dự án có tính thực tế hơn so với bài lab thông thường. Quá trình thực tập giúp tôi hiểu rõ hơn cách một hệ thống được xây dựng từ giai đoạn chọn đề tài, phân tích yêu cầu, thiết kế kiến trúc, triển khai hạ tầng, kiểm thử cho đến hoàn thiện tài liệu.
+Trong suốt thời gian thực tập tại **First Cloud AI Journey** từ **17/04/2026** đến **30/07/2026**, tôi đã có cơ hội học hỏi, thực hành và áp dụng kiến thức về cloud vào một dự án có tính thực tế hơn so với bài lab thông thường. Quá trình thực tập giúp tôi hiểu rõ hơn cách một hệ thống được xây dựng từ giai đoạn chọn đề tài, phân tích yêu cầu, thiết kế kiến trúc, triển khai hạ tầng, kiểm thử cho đến hoàn thiện tài liệu.
 
 ## Kết quả tự đánh giá
 

@@ -1,6 +1,6 @@
 ---
 title: "Deployment and Testing"
-date: 2024-01-01
+date: 2026-07-17
 weight: 5
 chapter: false
 pre: " <b> 5.5. </b> "
@@ -753,7 +753,7 @@ curl.exe -X PUT ^
   https://07frck8bih.execute-api.ap-southeast-1.amazonaws.com/dev/incidents/INC-53DB6458 ^
   -H "Content-Type: application/json" ^
   -H "Authorization: Bearer YOUR_ID_TOKEN" ^
-  -d "{\"status\":\"In Progress\",\"assignedTo\":\"Security Analyst\",\"actor\":\"analyst@irms-demo.com\"}"
+  -d "{\"status\":\"In Progress\",\"assignedTo\":\"Security Analyst\",\"actor\":\"analyst@example.com\"}"
 ```
 
 ![Testing & Validation 14](/images/5-Workshop/IRMS/section-11-014.png)
@@ -815,7 +815,7 @@ curl.exe -X POST ^
   https://07frck8bih.execute-api.ap-southeast-1.amazonaws.com/dev/evidence ^
   -H "Content-Type: application/json" ^
   -H "Authorization: Bearer YOUR_ID_TOKEN" ^
-  -d "{\"incidentId\":\"INC-53DB6458\",\"fileName\":\"evidence-test.txt\",\"fileType\":\"text/plain\",\"description\":\"Test evidence upload from CMD\",\"uploadedBy\":\"analyst@irms-demo.com\",\"fileSize\":32}"
+  -d "{\"incidentId\":\"INC-53DB6458\",\"fileName\":\"evidence-test.txt\",\"fileType\":\"text/plain\",\"description\":\"Test evidence upload from CMD\",\"uploadedBy\":\"analyst@example.com\",\"fileSize\":32}"
 ```
 
 ![Testing & Validation 22](/images/5-Workshop/IRMS/section-11-022.png)

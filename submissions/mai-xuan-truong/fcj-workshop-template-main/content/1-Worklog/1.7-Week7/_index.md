@@ -1,6 +1,6 @@
 ---
 title: "Week 7"
-date: 2024-01-01
+date: 2026-05-25
 weight: 7
 chapter: false
 pre: " <b> 1.7. </b> "
@@ -46,13 +46,13 @@ I also recorded the concrete checks I performed, the integration points I verifi
 
 **Difficulty and lesson:** The main challenge was keeping my part aligned with the team implementation. The lesson was to communicate changes early and verify integration points carefully.
 
-## Day 4 - 28/5: Assisting Gemini AI integration
+## Day 4 - 28/5: Assisting AI provider integration
 
-**Work completed:** I worked on assisting gemini ai integration as my individual contribution while coordinating with the five-member IRMS team. My focus was the AWS, integration, deployment, testing, or documentation part related to this task.
+**Work completed:** I worked on assisting AI provider integration as my individual contribution while coordinating with the five-member IRMS team. My focus was the AWS, integration, deployment, testing, or documentation part related to this task.
 
 I also recorded the concrete checks I performed, the integration points I verified, and the issues I needed to report back to teammates. This made the entry reflect my own internship work instead of describing the whole project as if it was completed by one person.
 
-**Knowledge gained:** I learned how assisting gemini ai integration connects to the wider IRMS architecture and how collaboration affects integration quality.
+**Knowledge gained:** I learned how assisting AI provider integration connects to the wider IRMS architecture and how collaboration affects integration quality.
 
 **Result:** The task produced a concrete contribution for my assigned scope and helped the team move to the next implementation step.
 

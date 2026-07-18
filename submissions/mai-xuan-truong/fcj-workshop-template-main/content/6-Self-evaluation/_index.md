@@ -1,12 +1,12 @@
 ---
 title: "Self-Assessment"
-date: 2026-04-17
+date: 2026-07-30
 weight: 6
 chapter: false
 pre: " <b> 6. </b> "
 ---
 
-During my internship at **First Cloud AI Journey** from **17/04/2026** to **10/07/2026**, I had the opportunity to learn, practice, and apply cloud knowledge in a more realistic project environment. The internship helped me understand how a system is built from topic selection, requirement analysis, architecture design, infrastructure deployment, testing, and documentation.
+During my internship at **First Cloud AI Journey** from **April 17, 2026** to **July 30, 2026**, I had the opportunity to learn, practice, and apply cloud knowledge in a more realistic project environment. The internship helped me understand how a system is built from topic selection, requirement analysis, architecture design, infrastructure deployment, testing, and documentation.
 
 ## Self-Assessment Summary
 

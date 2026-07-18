@@ -1,6 +1,6 @@
 ---
 title: "Kết quả, chi phí và dọn dẹp"
-date: 2024-01-01
+date: 2026-07-17
 weight: 7
 chapter: false
 pre: " <b> 5.7. </b> "
@@ -71,7 +71,7 @@ Dự án sử dụng AWS Secrets Manager để lưu Groq API key. Frontend khôn
 | --- | --- | --- |
 | AWS Secrets Manager | 1 Secret | USD 0.02 |
 
-Chi phí này được AWS Free Tier Credit bù trừ hoàn toàn nên số tiền phải thanh toán vẫn bằng 0 USD.
+Giá trị này được ghi nhận như một yếu tố chi phí nhỏ ở quy mô demo. Chi phí thực tế phụ thuộc account, region, thời gian lưu và tài nguyên còn hoạt động sau khi test.
 
 #### 5.7.13.4 AI Service Cost
 
@@ -98,17 +98,17 @@ Chi phí AWS chủ yếu đến từ Lambda, API Gateway, CloudFront, S3, Dynamo
 | Category | Cost |
 | --- | --- |
 | AWS Services | USD 0.00 |
-| AWS Secrets Manager | USD 0.02, được Free Tier credit bù trừ |
+| AWS Secrets Manager | Chi phí nhỏ theo số lượng secret/tháng |
 | Groq API | USD 0.00, Free Tier cho development/demo |
 | Amazon Bedrock | USD 0.00, chưa bật |
 
 ```text
-Actual AWS Charge     : USD 0.00
-Free Tier Credit Used : USD 0.02
-Final Amount Paid     : USD 0.00
+Primary AWS cost drivers : Lambda, API Gateway, CloudFront, S3, DynamoDB, Secrets Manager, CloudWatch
+Current AI provider      : Groq cho development/demo
+Future AI provider       : Amazon Bedrock nếu được bật sau này
 ```
 
-Hệ thống được triển khai và vận hành thành công mà không phát sinh chi phí thanh toán cuối cùng nhờ tận dụng AWS Free Tier và Groq Free Tier.
+Demo được giữ ở mức cost-aware bằng serverless services, kiểm tra tài nguyên đang chạy và cleanup tài nguyên không còn cần thiết.
 
 #### 5.7.13.6 Resource Cleanup
 Sau khi hoàn thành workshop hoặc quá trình đánh giá, cần dọn dẹp tài nguyên để tránh phát sinh chi phí ngoài ý muốn.

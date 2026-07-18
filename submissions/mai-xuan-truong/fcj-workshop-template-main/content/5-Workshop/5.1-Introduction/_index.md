@@ -1,6 +1,6 @@
 ---
 title: "Introduction"
-date: 2024-01-01
+date: 2026-07-17
 weight: 1
 chapter: false
 pre: " <b> 5.1. </b> "
@@ -23,7 +23,7 @@ After completing the workshop, you will have a working IRMS system on AWS with c
 
 The system includes the following layers:
 Global/Edge:
-- Route 53 → CloudFront (+ WAF Attached) → S3 Web Hosting
+- CloudFront → S3 Static Website (React + Vite + Stitch UI)
 Regional — Entry:
 - API Gateway → Cognito (JWT Authorizer)
 Regional — Compute:
@@ -40,9 +40,9 @@ External:
 
 | Service | Purpose |
 | --- | --- |
-| Amazon Route 53 | DNS resolution |
+| Amazon Route 53 | Future Enhancement: custom domain and DNS resolution |
 | Amazon CloudFront | CDN, single entry point |
-| AWS WAF | Web application protection |
+| AWS WAF | Future Enhancement: additional web application protection |
 | Amazon S3 | Web Hosting + Evidence Store |
 | Amazon API Gateway | REST API |
 | Amazon Cognito | Authentication and authorization |

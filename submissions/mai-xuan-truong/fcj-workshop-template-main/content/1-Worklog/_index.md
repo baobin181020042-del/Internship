@@ -1,6 +1,6 @@
 ---
 title: "Worklog"
-date: 2024-01-01
+date: 2026-04-17
 weight: 1
 chapter: false
 pre: " <b> 1. </b> "
@@ -21,4 +21,4 @@ This section summarizes the 12-week internship progress. The content was edited 
 - [Week 9: 6/6 → 11/6 (6 days)](1.9-week9/)
 - [Week 10: 12/6 → 17/6 (6 days)](1.10-week10/)
 - [Week 11: 18/6 → 23/6 (6 days)](1.11-week11/)
-- [Week 12: 24/6 → 10/7 (extended final summary period)](1.12-week12/)
+- [Week 12: 24/6 → 30/7 (final extended internship period)](1.12-week12/)

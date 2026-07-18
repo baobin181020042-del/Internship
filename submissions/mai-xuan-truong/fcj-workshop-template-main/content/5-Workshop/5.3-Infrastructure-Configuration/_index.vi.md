@@ -1,6 +1,6 @@
 ---
 title: "Cấu hình hạ tầng"
-date: 2024-01-01
+date: 2026-07-17
 weight: 3
 chapter: false
 pre: " <b> 5.3. </b> "
@@ -109,17 +109,17 @@ Auditor          (Precedence: 4)
 Vẫn ở trang User Pool, click tab Users → Create user:
 User 1 (Admin):
 Invitation message:     Don't send an invitation
-Email address:          admin@irms-demo.com
+Email address:          admin@example.com
 Email address verified: tích ✅
 Temporary password:     chọn "Set a password"
-Password:               Admin@123456
+Password:               YOUR_TEMP_PASSWORD
 User must create a new password: bỏ tích ✅
 Click Create user → click vào user vừa tạo → Add user to group → chọn Admin
 ![Setup Authentication 3](/images/5-Workshop/IRMS/section-03-003.png)
 Lặp lại tương tự cho 3 user còn lại, gắn vào đúng group:
-manager@irms-demo.com  → group SecurityManager  → pass: Manager@123456
-analyst@irms-demo.com  → group SecurityAnalyst   → pass: Analyst@123456
-auditor@irms-demo.com  → group Auditor           → pass: Auditor@123456
+manager@example.com  → group SecurityManager  → pass: YOUR_TEMP_PASSWORD
+analyst@example.com  → group SecurityAnalyst   → pass: YOUR_TEMP_PASSWORD
+auditor@example.com  → group Auditor           → pass: YOUR_TEMP_PASSWORD
 ![Setup Authentication 4](/images/5-Workshop/IRMS/section-03-004.png)
 
 #### 5.3.3.5 Verify bằng Terminal
@@ -128,7 +128,7 @@ Mở Terminal trên máy, chạy lệnh sau (thay YOUR_CLIENT_ID bằng Client I
 ```bash
 aws cognito-idp initiate-auth \
 --auth-flow USER_PASSWORD_AUTH \
---auth-parameters USERNAME=analyst@irms-demo.com,PASSWORD=Analyst@123456 \
+--auth-parameters USERNAME=analyst@example.com,PASSWORD=YOUR_TEMP_PASSWORD \
 --client-id YOUR_CLIENT_ID \
 --region ap-southeast-1 \
 --profile irms-shared
@@ -158,7 +158,7 @@ Kiểm tra JWT token:
 
 ```json
 {
-"email": "analyst@irms-demo.com",
+"email": "analyst@example.com",
 "cognito:groups": ["SecurityAnalyst"],
 ```
 
@@ -274,7 +274,7 @@ Lấy JWT token từ Cognito:
 Mở Terminal (Windows: PowerShell hoặc Git Bash / Mac: Terminal), chạy lệnh sau (thay YOUR_CLIENT_ID bằng Client ID đã lưu ở 3):
 aws cognito-idp initiate-auth \
 --auth-flow USER_PASSWORD_AUTH \
---auth-parameters USERNAME=analyst@irms-demo.com,PASSWORD=Analyst@123456!\
+--auth-parameters USERNAME=analyst@example.com,PASSWORD=YOUR_PASSWORD\
 --client-id YOUR_CLIENT_ID \
 --region ap-southeast-1 \
 --profile irms-shared
@@ -490,8 +490,8 @@ Sau khi tạo đủ 4 bảng, thêm vài record mẫu vào bảng Incidents đ�
 "severity": { "S": "Critical" },
 "status": { "S": "Open" },
 "description": { "S": "S3 bucket company-data đang bị public access, có thể lộ dữ liệu khách hàng" },
-"assignedTo": { "S": "analyst@irms-demo.com" },
-"createdBy": { "S": "admin@irms-demo.com" },
+"assignedTo": { "S": "analyst@example.com" },
+"createdBy": { "S": "admin@example.com" },
 "createdAt": { "S": "2026-06-01T08:00:00Z" },
 "updatedAt": { "S": "2026-06-01T08:00:00Z" }
 }
@@ -503,8 +503,8 @@ Click Create item
 "severity": "High",
 "status": "Investigating",
 "description": "Phát hiện 500 lần đăng nhập SSH thất bại từ IP 203.0.113.42 trong 10 phút",
-"assignedTo": "analyst@irms-demo.com",
-"createdBy": "manager@irms-demo.com",
+"assignedTo": "analyst@example.com",
+"createdBy": "manager@example.com",
 "createdAt": "2026-06-02T10:30:00Z",
 "updatedAt": "2026-06-02T11:00:00Z"
 }

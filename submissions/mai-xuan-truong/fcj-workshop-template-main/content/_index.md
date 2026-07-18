@@ -28,7 +28,7 @@ chapter: false
 
 &emsp; **Internship Position:** FCAJ cloud intern
 
-&emsp; **Internship Duration:** From 17/04/2026 to 10/07/2026
+&emsp; **Internship Duration:** April 17, 2026 - July 30, 2026
 
 <img src="/images/avatar-mxt.png" alt="Your profile picture" width="380" />
 

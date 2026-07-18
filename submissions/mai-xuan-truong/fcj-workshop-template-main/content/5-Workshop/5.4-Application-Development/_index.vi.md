@@ -1,6 +1,6 @@
 ---
 title: "Phát triển ứng dụng"
-date: 2024-01-01
+date: 2026-07-17
 weight: 4
 chapter: false
 pre: " <b> 5.4. </b> "

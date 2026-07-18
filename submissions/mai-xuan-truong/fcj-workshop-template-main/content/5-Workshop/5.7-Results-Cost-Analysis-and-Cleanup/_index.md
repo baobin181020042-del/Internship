@@ -1,6 +1,6 @@
 ---
 title: "Results, Cost Analysis, and Cleanup"
-date: 2024-01-01
+date: 2026-07-17
 weight: 7
 chapter: false
 pre: " <b> 5.7. </b> "
@@ -69,7 +69,7 @@ The project also used AWS Secrets Manager to store the Groq API key. No API key 
 | --- | --- | --- |
 | AWS Secrets Manager | 1 secret | USD 0.02 |
 
-This cost was fully offset by AWS Free Tier credit, so the final amount paid remained USD 0.00.
+This value is documented as a small demo-scale Secrets Manager cost driver. Actual billing depends on the active account, region, retention period, and whether resources remain after testing.
 
 #### 5.7.13.4 AI Service Cost
 
@@ -96,17 +96,17 @@ AWS costs remain dominated by Lambda, API Gateway, CloudFront, S3, DynamoDB, and
 | Category | Cost |
 | --- | --- |
 | AWS Services | USD 0.00 |
-| AWS Secrets Manager | USD 0.02, offset by Free Tier credit |
+| AWS Secrets Manager | Small per-secret monthly cost driver |
 | Groq API | USD 0.00, Free Tier for development/demo |
 | Amazon Bedrock | USD 0.00, not enabled |
 
 ```text
-Actual AWS Charge     : USD 0.00
-Free Tier Credit Used : USD 0.02
-Final Amount Paid     : USD 0.00
+Primary AWS cost drivers : Lambda, API Gateway, CloudFront, S3, DynamoDB, Secrets Manager, CloudWatch
+Current AI provider      : Groq for development/demo usage
+Future AI provider       : Amazon Bedrock only if enabled
 ```
 
-The system was deployed and operated successfully without a final payable charge by using AWS Free Tier and the Groq Free Tier effectively.
+The demo was kept cost-aware by using serverless services, monitoring active resources, and cleaning up resources that were no longer needed.
 
 #### 5.7.13.6 Resource Cleanup
 

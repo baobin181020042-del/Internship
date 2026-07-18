@@ -1,6 +1,6 @@
 ---
 title: "Tuần 7"
-date: 2024-01-01
+date: 2026-05-25
 weight: 7
 chapter: false
 pre: " <b> 1.7. </b> "
@@ -46,7 +46,7 @@ Tôi kiểm tra cách Lambda đọc giá trị cấu hình từ Secrets Manager 
 
 **Khó khăn và bài học:** Tài liệu chỉ nên mô tả cách cấu hình, không chứa giá trị thật.
 
-## Ngày 4 - 28/5: Hỗ trợ tích hợp Gemini AI
+## Ngày 4 - 28/5: Hỗ trợ tích hợp AI provider
 
 **Công việc đã thực hiện:** Tôi hỗ trợ phần cấu hình môi trường và kiểm tra Lambda AI Assistant khi gọi dịch vụ bên ngoài. Phần prompt và nghiệp vụ AI được nhóm cùng điều chỉnh.
 
