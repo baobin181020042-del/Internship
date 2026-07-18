@@ -20,7 +20,7 @@ During the internship, I participated in three events related to AI, AWS, cloud 
 ### [Event 2 - DATA DRIVEN, AI RISEN](4.2-Event2/)
 
 - **Time:** June 27, 2026
-- **Location:** Hybrid event on floors 26 and 36, also livestreamed on YouTube
+- **Location:** Hybrid event held on floor 26 of Bitexco Financial Tower, also livestreamed on YouTube
 - **Role:** Online attendee
 - **Main value:** AI does not fully replace people; it amplifies capable engineers and specialists.
 

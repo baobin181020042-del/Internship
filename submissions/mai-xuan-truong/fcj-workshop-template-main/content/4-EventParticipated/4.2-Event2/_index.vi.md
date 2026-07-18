@@ -9,7 +9,7 @@ pre: " <b> 4.2. </b> "
 ## DATA DRIVEN, AI RISEN
 
 - **Thời gian:** 27/06/2026
-- **Địa điểm:** Tổ chức trực tiếp tại tầng 26 và 36, đồng thời phát sóng livestream trên YouTube
+- **Địa điểm:** Tổ chức trực tiếp tại tầng 26, tòa nhà Bitexco, đồng thời phát sóng livestream trên YouTube
 - **Vai trò:** Người tham dự (online)
 
 ## Mục đích của sự kiện
