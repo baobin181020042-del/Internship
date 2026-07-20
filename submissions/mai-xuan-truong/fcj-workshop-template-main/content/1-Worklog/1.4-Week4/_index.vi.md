@@ -1,12 +1,12 @@
 ---
 title: "Tuần 4"
-date: 2026-05-07
+date: 2026-05-11
 weight: 4
 chapter: false
 pre: " <b> 1.4. </b> "
 ---
 
-**Mốc thời gian:** 7/5 → 12/5 (6 ngày)
+**Mốc thời gian:** 11/5 → 15/5 (5 ngày làm việc)
 
 > Dự án IRMS được thực hiện bởi nhóm 5 thành viên. Các ghi chú dưới đây tập trung vào phần đóng góp cá nhân của tôi trong quá trình phối hợp với nhóm.
 

@@ -1,12 +1,12 @@
 ---
 title: "Week 12"
-date: 2026-06-24
+date: 2026-07-06
 weight: 12
 chapter: false
 pre: " <b> 1.12. </b> "
 ---
 
-**Timeline:** June 24, 2026 - July 30, 2026
+**Timeline:** July 6, 2026 - July 30, 2026
 
 > IRMS was completed by a five-member team. The notes below focus on my individual contribution while collaborating with the team.
 

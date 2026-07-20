@@ -6,7 +6,7 @@ chapter: false
 pre: " <b> 1.1. </b> "
 ---
 
-**Timeline:** 20/4 → 25/4 (6 days)
+**Timeline:** 20/4 → 24/4 (5 working days)
 
 ## Day 1 - 20/4: AWS account setup
 

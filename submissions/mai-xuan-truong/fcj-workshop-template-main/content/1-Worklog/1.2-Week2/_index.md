@@ -1,12 +1,12 @@
 ---
 title: "Week 2"
-date: 2026-04-26
+date: 2026-04-27
 weight: 2
 chapter: false
 pre: " <b> 1.2. </b> "
 ---
 
-**Timeline:** 26/4 → 30/4 (5 days)
+**Timeline:** 27/4 → 1/5 (5 working days)
 
 ## Day 1 - 26/4: IAM study
 

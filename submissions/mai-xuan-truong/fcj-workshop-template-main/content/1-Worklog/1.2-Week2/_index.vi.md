@@ -1,12 +1,12 @@
 ---
 title: "Tuần 2"
-date: 2026-04-26
+date: 2026-04-27
 weight: 2
 chapter: false
 pre: " <b> 1.2. </b> "
 ---
 
-**Mốc thời gian:** 26/4 → 30/4 (5 ngày)
+**Mốc thời gian:** 27/4 → 1/5 (5 ngày làm việc)
 
 ## Ngày 1 - 26/4: Học IAM
 

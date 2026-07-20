@@ -6,7 +6,7 @@ chapter: false
 pre: " <b> 1.1. </b> "
 ---
 
-**Mốc thời gian:** 20/4 → 25/4 (6 ngày)
+**Mốc thời gian:** 20/4 → 24/4 (5 ngày làm việc)
 
 ## Ngày 1 - 20/4: Tạo tài khoản AWS
 

@@ -1,12 +1,12 @@
 ---
 title: "Week 3"
-date: 2026-05-01
+date: 2026-05-04
 weight: 3
 chapter: false
 pre: " <b> 1.3. </b> "
 ---
 
-**Timeline:** 1/5 → 6/5 (6 days)
+**Timeline:** 4/5 → 8/5 (5 working days)
 
 ## Day 1 - 1/5: ECS workshop
 

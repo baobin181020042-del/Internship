@@ -1,12 +1,12 @@
 ---
 title: "Week 11"
-date: 2026-06-18
+date: 2026-06-29
 weight: 11
 chapter: false
 pre: " <b> 1.11. </b> "
 ---
 
-**Timeline:** 18/6 → 23/6 (6 days)
+**Timeline:** 29/6 → 3/7 (5 working days)
 
 > IRMS was completed by a five-member team. The notes below focus on my individual contribution while collaborating with the team.
 

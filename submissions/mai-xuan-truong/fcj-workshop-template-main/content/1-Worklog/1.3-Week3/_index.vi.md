@@ -1,12 +1,12 @@
 ---
 title: "Tuần 3"
-date: 2026-05-01
+date: 2026-05-04
 weight: 3
 chapter: false
 pre: " <b> 1.3. </b> "
 ---
 
-**Mốc thời gian:** 1/5 → 6/5 (6 ngày)
+**Mốc thời gian:** 4/5 → 8/5 (5 ngày làm việc)
 
 ## Ngày 1 - 1/5: Workshop ECS
 
