@@ -9,7 +9,7 @@ pre: " <b> 4.1. </b> "
 ## Saturday Topic: Self-Optimization and Mastering AI Technology
 
 - **Time:** Saturday, May 09, 2026
-- **Location:** Offline participation at the event venue
+- **Location:** Offline event held on floor 26 of Bitexco Financial Tower
 - **Role:** Offline attendee
 
 ## Event Objectives

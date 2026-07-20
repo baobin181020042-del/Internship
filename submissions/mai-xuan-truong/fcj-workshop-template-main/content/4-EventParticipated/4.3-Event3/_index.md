@@ -9,7 +9,7 @@ pre: " <b> 4.3. </b> "
 ## AWS: Enterprise Cloud Architectures and Industry Application featuring Cloud Kinetics & Renova Cloud
 
 - **Time:** Morning, July 04, 2026
-- **Location:** Study Tour at AWS Vietnam for Swinburne Vietnam students
+- **Location:** Study Tour held at AWS Vietnam on floor 26 of Bitexco Financial Tower
 - **Role:** Online attendee
 
 ## Event Objectives

@@ -9,7 +9,7 @@ pre: " <b> 4.1. </b> "
 ## Chuyên đề Thứ 7: Tối Ưu Hóa Bản Thân và Làm Chủ Công Nghệ AI
 
 - **Thời gian:** Thứ 7, ngày 09/05/2026
-- **Địa điểm:** Tham gia offline tại địa điểm tổ chức
+- **Địa điểm:** Tổ chức trực tiếp tại tầng 26, tòa nhà Bitexco
 - **Vai trò:** Người tham dự offline
 
 ## Mục đích của sự kiện

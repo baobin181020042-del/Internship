@@ -13,7 +13,7 @@ During the internship, I participated in three events related to AI, AWS, cloud 
 ### [Event 1 - Saturday Topic: Self-Optimization and Mastering AI Technology](4.1-Event1/)
 
 - **Time:** Saturday, May 09, 2026
-- **Location:** Offline participation at the event venue
+- **Location:** Offline event held on floor 26 of Bitexco Financial Tower
 - **Role:** Offline attendee
 - **Main value:** I learned how to structure and optimize prompts instead of using AI only as a simple chatbot.
 
@@ -27,7 +27,7 @@ During the internship, I participated in three events related to AI, AWS, cloud 
 ### [Event 3 - AWS: Enterprise Cloud Architectures and Industry Application featuring Cloud Kinetics & Renova Cloud](4.3-Event3/)
 
 - **Time:** Morning, July 04, 2026
-- **Location:** Study Tour at AWS Vietnam for Swinburne Vietnam students
+- **Location:** Study Tour held at AWS Vietnam on floor 26 of Bitexco Financial Tower
 - **Role:** Online attendee
 - **Main value:** Career growth can be viewed through Capability x Visibility x Consistency.
 
