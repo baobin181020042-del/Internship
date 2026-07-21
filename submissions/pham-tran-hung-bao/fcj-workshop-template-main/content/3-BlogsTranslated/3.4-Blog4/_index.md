@@ -6,9 +6,6 @@ chapter: false
 pre: " <b> 3.4. </b> "
 ---
 
-{{% notice warning %}}
-?? **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
 
 # Building Serverless APIs with API Gateway and AWS Lambda
 

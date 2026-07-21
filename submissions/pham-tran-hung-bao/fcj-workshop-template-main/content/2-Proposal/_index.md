@@ -6,10 +6,6 @@ chapter: false
 pre: " <b> 2. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
-
 # IRMS - Incident Response Management System
 
 ## Project Proposal

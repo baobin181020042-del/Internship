@@ -6,9 +6,6 @@ chapter: false
 pre: " <b> 3. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
 
 This page summarizes the AWS blog translations I completed during the internship. Each entry includes the topic, the AWS services involved, and the main technical lesson I learned from the article.
 
