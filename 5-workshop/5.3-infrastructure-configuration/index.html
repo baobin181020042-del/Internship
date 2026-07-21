@@ -1,0 +1,418 @@
+<!doctype html><html lang=en class="js csstransforms3d"><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=generator content="Hugo 0.160.1"><meta name=description content="Pham Tran Hung Bao AWS internship report and IRMS serverless workshop documentation"><meta name=author content="Pham Tran Hung Bao"><link rel=icon href=/Internship/images/favicon.png type=image/png><title>Infrastructure Configuration :: Internship Report</title><link href=/Internship/css/nucleus.css?1784676896 rel=stylesheet><link href=/Internship/css/fontawesome-all.min.css?1784676896 rel=stylesheet><link href=/Internship/css/hybrid.css?1784676896 rel=stylesheet><link href=/Internship/css/featherlight.min.css?1784676896 rel=stylesheet><link href=/Internship/css/perfect-scrollbar.min.css?1784676896 rel=stylesheet><link href=/Internship/css/auto-complete.css?1784676896 rel=stylesheet><link href=/Internship/css/atom-one-dark-reasonable.css?1784676896 rel=stylesheet><link href=/Internship/css/theme.css?1784676896 rel=stylesheet><link href=/Internship/css/hugo-theme.css?1784676896 rel=stylesheet><link href=/Internship/css/theme-workshop.css?1784676896 rel=stylesheet><script src=/Internship/js/jquery-3.3.1.min.js?1784676896></script><style>:root #header+#content>#left>#rlblock_left{display:none!important}</style></head><body data-url=/Internship/5-workshop/5.3-infrastructure-configuration/><nav id=sidebar class=showVisitedLinks><div id=header-wrapper><div id=header><a id=logo href=/><svg id="Layer_1" data-name="Layer 1" viewBox="0 0 60 30" width="30%"><defs><style>.cls-1{fill:#fff}.cls-2{fill:#fff;fill-rule:evenodd}</style></defs><title>AWS-Logo_White-Color</title><path class="cls-1" d="M14.09 10.85a4.7 4.7.0 00.19 1.48 7.73 7.73.0 00.54 1.19.77.77.0 01.12.38.64.64.0 01-.32.49l-1 .7a.83.83.0 01-.44.15.69.69.0 01-.49-.23 3.8 3.8.0 01-.6-.77q-.25-.42-.51-1a6.14 6.14.0 01-4.89 2.3 4.54 4.54.0 01-3.32-1.19 4.27 4.27.0 01-1.22-3.2 4.28 4.28.0 011.46-3.4A6.06 6.06.0 017.69 6.46a12.47 12.47.0 011.76.13q.92.13 1.91.36V5.73a3.65 3.65.0 00-.79-2.66A3.81 3.81.0 007.86 2.3a7.71 7.71.0 00-1.79.22 12.78 12.78.0 00-1.79.57 4.55 4.55.0 01-.58.22h-.26q-.35.0-.35-.52V2a1.09 1.09.0 01.12-.58 1.2 1.2.0 01.47-.35A10.88 10.88.0 015.77.32 10.19 10.19.0 018.36.0a6 6 0 014.35 1.35 5.49 5.49.0 011.38 4.09zM7.34 13.38a5.36 5.36.0 001.72-.31A3.63 3.63.0 0010.63 12 2.62 2.62.0 0011.19 11a5.63 5.63.0 00.16-1.44v-.7a14.35 14.35.0 00-1.53-.28 12.37 12.37.0 00-1.56-.1 3.84 3.84.0 00-2.47.67A2.34 2.34.0 005 11a2.35 2.35.0 00.61 1.76A2.4 2.4.0 007.34 13.38zm13.35 1.8a1 1 0 01-.64-.16 1.3 1.3.0 01-.35-.65L15.81 1.51a3 3 0 01-.15-.67.36.36.0 01.41-.41H17.7a1 1 0 01.65.16 1.4 1.4.0 01.33.65l2.79 11 2.59-11A1.17 1.17.0 0124.39.6a1.1 1.1.0 01.67-.16H26.4a1.1 1.1.0 01.67.16 1.17 1.17.0 01.32.65L30 12.39 32.88 1.25A1.39 1.39.0 0133.22.6a1 1 0 01.65-.16h1.54a.36.36.0 01.41.41 1.36 1.36.0 010 .26 3.64 3.64.0 01-.12.41l-4 12.86a1.3 1.3.0 01-.35.65 1 1 0 01-.64.16H29.25a1 1 0 01-.67-.17 1.26 1.26.0 01-.32-.67L25.67 3.64l-2.56 10.7a1.26 1.26.0 01-.32.67 1 1 0 01-.67.17zm21.36.44a11.28 11.28.0 01-2.56-.29 7.44 7.44.0 01-1.92-.67 1 1 0 01-.61-.93v-.84q0-.52.38-.52a.9.9.0 01.31.06l.42.17a8.77 8.77.0 001.83.58 9.78 9.78.0 002 .2 4.48 4.48.0 002.43-.55 1.76 1.76.0 00.86-1.57 1.61 1.61.0 00-.45-1.16A4.29 4.29.0 0043 9.22l-2.41-.76A5.15 5.15.0 0138 6.78a3.94 3.94.0 01-.83-2.41 3.7 3.7.0 01.45-1.85 4.47 4.47.0 011.19-1.37 5.27 5.27.0 011.7-.86A7.4 7.4.0 0142.6.0a8.87 8.87.0 011.12.07q.57.07 1.08.19t.95.26a4.27 4.27.0 01.7.29 1.59 1.59.0 01.49.41.94.94.0 01.15.55v.79q0 .52-.38.52a1.76 1.76.0 01-.64-.2 7.74 7.74.0 00-3.2-.64 4.37 4.37.0 00-2.21.47 1.6 1.6.0 00-.79 1.48 1.58 1.58.0 00.49 1.18 4.94 4.94.0 001.83.92L44.55 7a5.08 5.08.0 012.57 1.6A3.76 3.76.0 0147.9 11a4.21 4.21.0 01-.44 1.93 4.4 4.4.0 01-1.21 1.47 5.43 5.43.0 01-1.85.93A8.25 8.25.0 0142.05 15.62z"/><path class="cls-2" d="M45.19 23.81C39.72 27.85 31.78 30 25 30A36.64 36.64.0 01.22 20.57c-.51-.46-.06-1.09.56-.74A49.78 49.78.0 0025.53 26.4 49.23 49.23.0 0044.4 22.53C45.32 22.14 46.1 23.14 45.19 23.81z"/><path class="cls-2" d="M47.47 21.21c-.7-.9-4.63-.42-6.39-.21-.53.06-.62-.4-.14-.74 3.13-2.2 8.27-1.57 8.86-.83s-.16 5.89-3.09 8.35c-.45.38-.88.18-.68-.32C46.69 25.8 48.17 22.11 47.47 21.21z"/></svg></a></div><div class=searchbox><label for=search-by><i class="fas fa-search"></i></label>
+<input data-search-input id=search-by type=search placeholder=Search...>
+<span data-search-clear><i class="fas fa-times"></i></span></div><script type=text/javascript src=/Internship/js/lunr.min.js?1784676896></script><script type=text/javascript src=/Internship/js/auto-complete.js?1784676896></script><script type=text/javascript>var baseurl="https://baobin181020042-del.github.io/Internship/"</script><script type=text/javascript src=/Internship/js/search.js?1784676896></script></div><div class=highlightable><ul class=topics><li data-nav-id=/Internship/1-worklog/ title=Worklog class=dd-item><a href=/Internship/1-worklog/><b>1. </b>Worklog
+<i class="fas fa-check read-icon"></i></a><ul><li data-nav-id=/Internship/1-worklog/1.1-week1/ title="Week 1" class=dd-item><a href=/Internship/1-worklog/1.1-week1/><b>1.1. </b>Week 1
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/Internship/1-worklog/1.2-week2/ title="Week 2" class=dd-item><a href=/Internship/1-worklog/1.2-week2/><b>1.2. </b>Week 2
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/Internship/1-worklog/1.3-week3/ title="Week 3" class=dd-item><a href=/Internship/1-worklog/1.3-week3/><b>1.3. </b>Week 3
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/Internship/1-worklog/1.4-week4/ title="Week 4" class=dd-item><a href=/Internship/1-worklog/1.4-week4/><b>1.4. </b>Week 4
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/Internship/1-worklog/1.5-week5/ title="Week 5" class=dd-item><a href=/Internship/1-worklog/1.5-week5/><b>1.5. </b>Week 5
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/Internship/1-worklog/1.6-week6/ title="Week 6" class=dd-item><a href=/Internship/1-worklog/1.6-week6/><b>1.6. </b>Week 6
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/Internship/1-worklog/1.7-week7/ title="Week 7" class=dd-item><a href=/Internship/1-worklog/1.7-week7/><b>1.7. </b>Week 7
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/Internship/1-worklog/1.8-week8/ title="Week 8" class=dd-item><a href=/Internship/1-worklog/1.8-week8/><b>1.8. </b>Week 8
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/Internship/1-worklog/1.9-week9/ title="Week 9" class=dd-item><a href=/Internship/1-worklog/1.9-week9/><b>1.9. </b>Week 9
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/Internship/1-worklog/1.10-week10/ title="Week 10" class=dd-item><a href=/Internship/1-worklog/1.10-week10/><b>1.10. </b>Week 10
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/Internship/1-worklog/1.11-week11/ title="Week 11" class=dd-item><a href=/Internship/1-worklog/1.11-week11/><b>1.11. </b>Week 11
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/Internship/1-worklog/1.12-week12/ title="Week 12" class=dd-item><a href=/Internship/1-worklog/1.12-week12/><b>1.12. </b>Week 12
+<i class="fas fa-check read-icon"></i></a></li></ul></li><li data-nav-id=/Internship/2-proposal/ title=Proposal class=dd-item><a href=/Internship/2-proposal/><b>2. </b>Proposal
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/Internship/3-blogstranslated/ title="Translated Blogs" class=dd-item><a href=/Internship/3-blogstranslated/><b>3. </b>Translated Blogs
+<i class="fas fa-check read-icon"></i></a><ul><li data-nav-id=/Internship/3-blogstranslated/3.1-blog1/ title="Shift-left Security with Amazon Bedrock" class=dd-item><a href=/Internship/3-blogstranslated/3.1-blog1/><b>3.1. </b>Shift-left Security with Amazon Bedrock
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/Internship/3-blogstranslated/3.2-blog2/ title="Amazon RDS + AI + MCP" class=dd-item><a href=/Internship/3-blogstranslated/3.2-blog2/><b>3.2. </b>Amazon RDS + AI + MCP
+<i class="fas fa-check read-icon"></i></a></li></ul></li><li data-nav-id=/Internship/4-eventparticipated/ title="Events Participated" class=dd-item><a href=/Internship/4-eventparticipated/><b>4. </b>Events Participated
+<i class="fas fa-check read-icon"></i></a><ul><li data-nav-id=/Internship/4-eventparticipated/4.1-event1/ title="Event 1" class=dd-item><a href=/Internship/4-eventparticipated/4.1-event1/><b>4.1. </b>Event 1
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/Internship/4-eventparticipated/4.2-event2/ title="Event 2" class=dd-item><a href=/Internship/4-eventparticipated/4.2-event2/><b>4.2. </b>Event 2
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/Internship/4-eventparticipated/4.3-event3/ title="Event 3" class=dd-item><a href=/Internship/4-eventparticipated/4.3-event3/><b>4.3. </b>Event 3
+<i class="fas fa-check read-icon"></i></a></li></ul></li><li data-nav-id=/Internship/5-workshop/ title=Workshop class="dd-item
+parent"><a href=/Internship/5-workshop/><b>5. </b>Workshop
+<i class="fas fa-check read-icon"></i></a><ul><li data-nav-id=/Internship/5-workshop/5.1-introduction/ title=Introduction class=dd-item><a href=/Internship/5-workshop/5.1-introduction/><b>5.1. </b>Introduction
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/Internship/5-workshop/5.2-environment-setup/ title="Environment Setup" class=dd-item><a href=/Internship/5-workshop/5.2-environment-setup/><b>5.2. </b>Environment Setup
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/Internship/5-workshop/5.3-infrastructure-configuration/ title="Infrastructure Configuration" class="dd-item
+active"><a href=/Internship/5-workshop/5.3-infrastructure-configuration/><b>5.3. </b>Infrastructure Configuration
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/Internship/5-workshop/5.4-application-development/ title="Application Development" class=dd-item><a href=/Internship/5-workshop/5.4-application-development/><b>5.4. </b>Application Development
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/Internship/5-workshop/5.5-deployment-and-testing/ title="Deployment and Testing" class=dd-item><a href=/Internship/5-workshop/5.5-deployment-and-testing/><b>5.5. </b>Deployment and Testing
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/Internship/5-workshop/5.6-frontend-integration-web-deployment/ title="Frontend Integration and Web Deployment" class=dd-item><a href=/Internship/5-workshop/5.6-frontend-integration-web-deployment/><b>5.6. </b>Frontend Integration and Web Deployment
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/Internship/5-workshop/5.7-results-cost-analysis-and-cleanup/ title="Results, Cost Analysis, and Cleanup" class=dd-item><a href=/Internship/5-workshop/5.7-results-cost-analysis-and-cleanup/><b>5.7. </b>Results, Cost Analysis, and Cleanup
+<i class="fas fa-check read-icon"></i></a></li></ul></li><li data-nav-id=/Internship/6-self-evaluation/ title=Self-Assessment class=dd-item><a href=/Internship/6-self-evaluation/><b>6. </b>Self-Assessment
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/Internship/7-feedback/ title="Sharing and Feedback" class=dd-item><a href=/Internship/7-feedback/><b>7. </b>Sharing and Feedback
+<i class="fas fa-check read-icon"></i></a></li></ul><section id=shortcuts><h3>More</h3><ul><li><a class=padding href=https://www.facebook.com/groups/awsstudygroupfcj/><i class='fab fa-facebook'></i> AWS Study Group</a></li></ul></section><section id=prefooter><hr><ul><li><a class=padding><i class="fas fa-language fa-fw"></i><div class=select-style><select id=select-language onchange="location=this.value"><option id=en value=https://baobin181020042-del.github.io/Internship/5-workshop/5.3-infrastructure-configuration/ selected>English</option><option id=vi value=https://baobin181020042-del.github.io/Internship/vi/5-workshop/5.3-infrastructure-configuration/>Tiếng Việt</option></select>
+<svg id="Capa_1" xmlns:xlink="http://www.w3.org/1999/xlink" width="255" height="255" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255"><g><g id="arrow-drop-down"><polygon points="0,63.75 127.5,191.25 255,63.75"/></g></g></svg></div></a></li><li><a class=padding href=# data-clear-history-toggle><i class="fas fa-history fa-fw"></i> Clear History</a></li></ul></section><section id=footer><left><br><br><b>Last Updated</b><br><i><span id=lastUpdated style=color:orange></span>
+</i><script>const today=new Date,formattedDate=today.toLocaleDateString("en-GB");document.getElementById("lastUpdated").textContent=formattedDate</script></left><left><br><br><b>Team</b><br><i><a href=https://www.facebook.com/groups/660548818043427 style=color:orange>First Cloud Journey</a><br></i></left><script async defer src=https://buttons.github.io/buttons.js></script></section></div></nav><section id=body><div id=overlay></div><div class="padding highlightable"><div><div id=top-bar><div id=breadcrumbs itemscope itemtype=http://data-vocabulary.org/Breadcrumb><span id=sidebar-toggle-span><a href=# id=sidebar-toggle data-sidebar-toggle><i class="fas fa-bars"></i>
+</a></span><span id=toc-menu><i class="fas fa-list-alt"></i></span>
+<span class=links><a href=/Internship/>Internship Report</a> > <a href=/Internship/5-workshop/>Workshop</a> > Infrastructure Configuration</span></div><div class=progress><div class=wrapper><nav id=TableOfContents><ul><li><a href=#3-infrastructure-configuration>3. Infrastructure Configuration</a><ul><li></li><li><a href=#533-setup-authentication-amazon-cognito>5.3.3 Setup Authentication (Amazon Cognito)</a></li><li><a href=#534-setup-api-gateway>5.3.4 Setup API Gateway</a></li><li><a href=#535-setup-dynamodb>5.3.5 Setup DynamoDB</a></li><li><a href=#536-setup-s3--storage>5.3.6 Setup S3 & Storage</a></li></ul></li></ul></nav></div></div></div></div><div id=head-tags></div><div id=body-inner><h1>Infrastructure Configuration</h1><h2 id=3-infrastructure-configuration>3. Infrastructure Configuration</h2><h4 id=contents>Contents</h4><ul><li>5.3.3 Setup Authentication</li><li>5.3.4 Setup API Gateway</li><li>5.3.5 Setup DynamoDB</li><li>5.3.6 Setup S3 & Storage</li></ul><h3 id=533-setup-authentication-amazon-cognito>5.3.3 Setup Authentication (Amazon Cognito)</h3><h4 id=5331-prepare-before-starting>5.3.3.1 Prepare Before Starting</h4><p>Open these two things first:
+First, open the AWS Console in the browser:</p><ul><li>Open the browser (Chrome/Edge), go to: <a href=https://console.aws.amazon.com>https://console.aws.amazon.com</a></li><li>Sign in with your IAM user</li><li>In the top-right corner, check the selected region — must be Asia Pacific (Singapore) ap-southeast-1. If it is not correct, click the region name → select Asia Pacific (Singapore)
+Second, open a terminal on the local machine:
+Windows: Press the Windows key → type PowerShell → Enter. or open Git Bash if Git is already installed.
+Mac: Press Cmd + Space → type Terminal → Enter.
+Configure AWS CLI
+-Create an access key</li><li>Create a profile, then enter the access key and secret key
+Verify that the AWS CLI is configured correctly with this command:</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-bash data-lang=bash><span style=display:flex><span>aws sts get-caller-identity --profile irms-shared
+</span></span></code></pre></div><p><img src=/Internship/images/5-Workshop/IRMS/section-03-001.png alt="Setup Authentication 1">
+Expected result. The Account ID and UserId should match your AWS account:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-json data-lang=json><span style=display:flex><span>{
+</span></span><span style=display:flex><span><span style=color:#f92672>&#34;UserId&#34;</span>: <span style=color:#e6db74>&#34;AIDXXXXXXXXXXXXXXXXX&#34;</span>,
+</span></span><span style=display:flex><span><span style=color:#f92672>&#34;Account&#34;</span>: <span style=color:#e6db74>&#34;123456789012&#34;</span>,
+</span></span><span style=display:flex><span><span style=color:#f92672>&#34;Arn&#34;</span>: <span style=color:#e6db74>&#34;arn:aws:iam::123456789012:user/your-username&#34;</span>
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><h4 id=5332-create-a-cognito-user-pool-in-the-aws-console>5.3.3.2 Create a Cognito User Pool (in the AWS Console)</h4><p><strong>Step 1: In the AWS Console search bar, type Cognito → click Amazon Cognito</strong></p><p><strong>Step 2: Click Create user pool (in the top-right corner)</strong></p><p><strong>Step 3: Configure sign-in experience:</strong></p><ul><li>Authentication providers: select Cognito user pool</li><li>Cognito user pool sign-in options: check Email</li><li>Click Next</li></ul><p><strong>Step 4: Configure security requirements:</strong></p><ul><li>Password policy mode: select Custom</li><li>Minimum length: 8</li><li>Check: Contains at least 1 uppercase, 1 lowercase, 1 number, 1 special character</li><li>Multi-factor authentication: select No MFA (demo is not needed)</li><li>Click Next</li></ul><p><strong>Step 5: Configure sign-up experience:</strong></p><ul><li>Keep all default settings</li><li>Click Next</li></ul><p><strong>Step 6: Configure message delivery:</strong></p><ul><li>Email provider: select Send email with Cognito (free and sufficient for the demo)</li><li>Click Next</li></ul><p><strong>Step 7: Integrate your app:</strong></p><ul><li>User pool name: irms-user-pool</li><li>App client name: irms-web-client</li><li>Client secret: select Don&rsquo;t generate a client secret</li><li>Click Next</li></ul><p><strong>Step 8: Review and create:</strong></p><ul><li>Scroll down and review all settings</li><li>Click Create user pool</li></ul><p><strong>Step 9: After creation, the new User Pool page appears. Save these two values to a local note file:</strong></p><p>User Pool ID: ap-southeast-1_XXXXXXXXX ← shown in the &ldquo;Overview&rdquo; tab
+Client ID: XXXXXXXXXXXXXXXXXXXXXXXXXX ← shown in the &ldquo;App clients&rdquo; tab
+These two values are used many times in later steps, so save them carefully.</p><h4 id=5333-create-four-groups-rbac>5.3.3.3 Create Four Groups (RBAC)</h4><p>Still on the Cognito User Pool that you just created:</p><p><strong>Step 1: Click tab Groups → Click Create group</strong></p><p><strong>Step 2: Create Group 1:</strong></p><p>Group name: Admin
+Description: Full system permissions
+Precedence: 1
+Click Create group</p><p><strong>Step 3: Repeat, create three more groups:</strong></p><p>Group name: SecurityManager
+Description: View all incidents, assign incidents, and view reports
+Precedence: 2</p><p>Group name: SecurityAnalyst
+Description: Investigate incidents, upload evidence, and update status
+Precedence: 3</p><p>Group name: Auditor
+Description: Read-only access
+Precedence: 4
+After finishing, the Groups tab should show four groups as follows:
+Admin (Precedence: 1)
+SecurityManager (Precedence: 2)
+SecurityAnalyst (Precedence: 3)
+Auditor (Precedence: 4)
+<img src=/Internship/images/5-Workshop/IRMS/section-03-002.png alt="Setup Authentication 2"></p><h4 id=5334-create-a-test-user>5.3.3.4 Create a Test User</h4><p>Still on the User Pool, click tab Users → Create user:
+User 1 (Admin):
+Invitation message: Don&rsquo;t send an invitation
+Email address: <a href=mailto:admin@example.com>admin@example.com</a>
+Email address verified: check ✅
+Temporary password: select &ldquo;Set a password&rdquo;
+Password: YOUR_TEMP_PASSWORD
+User must create a new password: uncheck the option
+Click Create user → click to user that you just created → Add user to group → select Admin
+<img src=/Internship/images/5-Workshop/IRMS/section-03-003.png alt="Setup Authentication 3">
+Repeat the same steps for the remaining three users and assign each user to the correct group:
+<a href=mailto:manager@example.com>manager@example.com</a> → group SecurityManager → pass: YOUR_TEMP_PASSWORD
+<a href=mailto:analyst@example.com>analyst@example.com</a> → group SecurityAnalyst → pass: YOUR_TEMP_PASSWORD
+<a href=mailto:auditor@example.com>auditor@example.com</a> → group Auditor → pass: YOUR_TEMP_PASSWORD
+<img src=/Internship/images/5-Workshop/IRMS/section-03-004.png alt="Setup Authentication 4"></p><h4 id=5335-verify-from-the-terminal>5.3.3.5 Verify from the Terminal</h4><p>Open a terminal on your machine and run the following command. Replace <code>YOUR_CLIENT_ID</code> with the Client ID saved earlier in section 5.3.3.2:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-bash data-lang=bash><span style=display:flex><span>aws cognito-idp initiate-auth <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span>--auth-flow USER_PASSWORD_AUTH <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span>--auth-parameters USERNAME<span style=color:#f92672>=</span>analyst@example.com,PASSWORD<span style=color:#f92672>=</span>YOUR_TEMP_PASSWORD <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span>--client-id YOUR_CLIENT_ID <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span>--region ap-southeast-1 <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span>--profile irms-shared
+</span></span></code></pre></div><p>Expected result — seeing three tokens means success:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-json data-lang=json><span style=display:flex><span>{
+</span></span><span style=display:flex><span><span style=color:#f92672>&#34;AuthenticationResult&#34;</span>: {
+</span></span><span style=display:flex><span><span style=color:#f92672>&#34;AccessToken&#34;</span>: <span style=color:#e6db74>&#34;eyJraWQiOi...&#34;</span>,
+</span></span><span style=display:flex><span><span style=color:#f92672>&#34;IdToken&#34;</span>: <span style=color:#e6db74>&#34;eyJraWQiOi...&#34;</span>,
+</span></span><span style=display:flex><span><span style=color:#f92672>&#34;RefreshToken&#34;</span>: <span style=color:#e6db74>&#34;eyJjdHki...&#34;</span>,
+</span></span><span style=display:flex><span><span style=color:#f92672>&#34;ExpiresIn&#34;</span>: <span style=color:#ae81ff>3600</span>,
+</span></span><span style=display:flex><span><span style=color:#f92672>&#34;TokenType&#34;</span>: <span style=color:#e6db74>&#34;Bearer&#34;</span>
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p><img src=/Internship/images/5-Workshop/IRMS/section-03-005.png alt="Setup Authentication 5">
+<img src=/Internship/images/5-Workshop/IRMS/section-03-006.png alt="Setup Authentication 6">
+<img src=/Internship/images/5-Workshop/IRMS/section-03-007.png alt="Setup Authentication 7">
+If you see the error NotAuthorizedException → verify password or email.
+If you see the error UserNotFoundException → verify email was created correctly.
+Verify JWT token:</p><ul><li>Copy the full IdToken string (which is long and starts with eyJ&mldr;)</li><li>Open the browser, go to <a href=https://jwt.io>https://jwt.io</a></li><li>Paste it into the Encoded box on the left</li><li>In the Payload section on the right, you should see:</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-json data-lang=json><span style=display:flex><span>{
+</span></span><span style=display:flex><span><span style=color:#f92672>&#34;email&#34;</span>: <span style=color:#e6db74>&#34;analyst@example.com&#34;</span>,
+</span></span><span style=display:flex><span><span style=color:#f92672>&#34;cognito:groups&#34;</span>: [<span style=color:#e6db74>&#34;SecurityAnalyst&#34;</span>]
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>If these two fields are visible, Cognito is configured correctly.
+<img src=/Internship/images/5-Workshop/IRMS/section-03-008.png alt="Setup Authentication 8"></p><h3 id=534-setup-api-gateway>5.3.4 Setup API Gateway</h3><p>Note about the approach: this part uses the Console only to understand the Cognito Authorizer mechanism and test JWT tokens. The real API routes (<code>/incidents</code>, <code>/evidence</code>, <code>/reports</code>, <code>/ai</code>) are generated by SAM later when deploying Lambda, so do not create them manually here to avoid conflicts.</p><h4 id=5341-create-the-rest-api>5.3.4.1 Create the REST API</h4><p><strong>Step 1: In the AWS Console search bar, type API Gateway → click API Gateway</strong></p><p><strong>Step 2: Click Create API</strong></p><p><img src=/Internship/images/5-Workshop/IRMS/section-04-001.png alt="Setup API Gateway 1"></p><p><strong>Step 3: Select the API type:</strong></p><ul><li>Select REST API (not REST API Private and not HTTP API)</li><li>Click Build
+<img src=/Internship/images/5-Workshop/IRMS/section-04-002.png alt="Setup API Gateway 2"></li></ul><p><strong>Step 4: Enter information:</strong></p><p>API details: New API
+API name: irms-api-learning
+Description: Used to learn the Authorizer mechanism; delete it before moving to the production API section
+API endpoint type: Regional
+Click Create API
+<img src=/Internship/images/5-Workshop/IRMS/section-04-003.png alt="Setup API Gateway 3">
+⚠ This API is named <code>irms-api-learning</code> to distinguish it from the real API created later by SAM. After testing the Authorizer, this learning API can be deleted without affecting the system.</p><h4 id=5342-create-a-cognito-authorizer>5.3.4.2 Create a Cognito Authorizer</h4><p><strong>Step 1: Left menu → click Authorizers → click Create authorizer</strong></p><p><strong>Step 2: Enter information:</strong></p><p>Authorizer name: irms-cognito-authorizer
+Authorizer type: Cognito
+Cognito user pool: select &ldquo;irms-user-pool&rdquo;
+Token source: Authorization
+Token validation: (leave blank)
+Click Create authorizer
+<img src=/Internship/images/5-Workshop/IRMS/section-04-004.png alt="Setup API Gateway 4">
+<img src=/Internship/images/5-Workshop/IRMS/section-04-005.png alt="Setup API Gateway 5"></p><h4 id=5343-create-two-test-routes>5.3.4.3 Create Two Test Routes</h4><p>Go to Resources in the left menu. Objective: create two routes for clear testing:
+GET /ping → does not have an Authorizer → always returns 200
+GET /ping-auth → has Authorizer → 401 without a token, 200 with a valid token
+Create /ping (does not have Authorizer):</p><p><strong>Step 1: Click / (root) → click Create resource</strong></p><p>Resource name: ping
+Resource path: /ping
+CORS: do not check (because SAM will manage this later)
+Click Create resource</p><p><strong>Step 2: Click /ping → click Create method</strong></p><p>Method type: GET
+Integration type: Mock
+<img src=/Internship/images/5-Workshop/IRMS/section-04-006.png alt="Setup API Gateway 6">
+Click Create method
+<img src=/Internship/images/5-Workshop/IRMS/section-04-007.png alt="Setup API Gateway 7"></p><p><strong>Step 3: Go to Integration Response → Mapping Templates → add a template:</strong></p><p>Content-Type: application/json
+Template body:
+{
+&ldquo;message&rdquo;: &ldquo;pong&rdquo;,
+&ldquo;auth&rdquo;: false
+}
+Click Save</p><p><strong>Step 4: Confirm that /ping does not use an Authorizer:</strong></p><ul><li>Click method GET</li><li>Tab Method request → Authorization: must be NONE</li></ul><p>Create /ping-auth (has Authorizer):</p><p><strong>Step 1: Click / (root) → click Create resource</strong></p><p>Resource name: ping-auth
+Resource path: /ping-auth
+CORS: do not check
+Click Create resource</p><p><strong>Step 2: Click /ping-auth → click Create method</strong></p><p>Method type: GET
+Integration type: Mock
+Click Create method
+<img src=/Internship/images/5-Workshop/IRMS/section-04-008.png alt="Setup API Gateway 8"></p><p><strong>Step 3: Go to Integration Response → Mapping Templates → add a template:</strong></p><p>Content-Type: application/json
+Template body:
+{
+&ldquo;message&rdquo;: &ldquo;Authorized&rdquo;,
+&ldquo;auth&rdquo;: true
+}
+Click Save
+<img src=/Internship/images/5-Workshop/IRMS/section-04-009.png alt="Setup API Gateway 9"></p><p><strong>Step 4: Attach the Authorizer to /ping-auth:</strong></p><ul><li>Click method GET of /ping-auth</li><li>Tab Method request → Authorization → click Edit</li><li>Select irms-cognito-authorizer</li><li>Click Save</li></ul><h4 id=5344-deploy-the-dev-stage>5.3.4.4 Deploy the dev Stage</h4><p><strong>Step 1: Click Deploy API (in the top-right corner)</strong></p><p><strong>Step 2: In the Deploy API dialog:</strong></p><p>Stage: <em>New stage</em>
+Stage name: dev
+Click Deploy
+<img src=/Internship/images/5-Workshop/IRMS/section-04-010.png alt="Setup API Gateway 10">
+<img src=/Internship/images/5-Workshop/IRMS/section-04-011.png alt="Setup API Gateway 11"></p><p><strong>Step 3: The Stage Editor appears → save the Invoke URL:</strong></p><p>Invoke URL: <a href=https://ymag7i4369.execute-api.ap-southeast-1.amazonaws.com/dev>https://ymag7i4369.execute-api.ap-southeast-1.amazonaws.com/dev</a>
+⚠ This URL is only used to test the Authorizer in this section. The real system URL is created later by SAM and will have a different value, so use the SAM output URL at that point.</p><h4 id=5345-test-with-postman>5.3.4.5 Test with Postman</h4><p>Install Postman if it is not already installed:</p><ul><li>Go to <a href=https://www.postman.com/downloads/>https://www.postman.com/downloads/</a></li><li>Download → install → open it → select Skip (account creation is not required)
+Get the JWT token from Cognito:
+Open Terminal (Windows: PowerShell or Git Bash / Mac: Terminal), then run the following command. Replace <code>YOUR_CLIENT_ID</code> with the Client ID saved earlier:
+aws cognito-idp initiate-auth<br>&ndash;auth-flow USER_PASSWORD_AUTH<br>&ndash;auth-parameters <a href="mailto:USERNAME=analyst@example.com">USERNAME=analyst@example.com</a>,PASSWORD=YOUR_PASSWORD<br>&ndash;client-id YOUR_CLIENT_ID<br>&ndash;region ap-southeast-1<br>&ndash;profile irms-shared
+<img src=/Internship/images/5-Workshop/IRMS/section-04-012.png alt="Setup API Gateway 12">
+Copy the full IdToken string (starts with eyJ&mldr;) to Notepad.</li></ul><p>Test 1 — /ping does not require a token:
+Open Postman:</p><ul><li>Method: GET</li><li>URL: <a href=https://xxxxxxxxxx.execute-api.ap-southeast-1.amazonaws.com/dev/ping>https://xxxxxxxxxx.execute-api.ap-southeast-1.amazonaws.com/dev/ping</a></li><li>do not add anything in Headers</li><li>Click Send
+Expected result:
+{
+&ldquo;message&rdquo;: &ldquo;pong&rdquo;,
+&ldquo;auth&rdquo;: false
+}
+<img src=/Internship/images/5-Workshop/IRMS/section-04-013.png alt="Setup API Gateway 13">
+Status: 200 OK → ✅ API Gateway works</li></ul><p>Test 2 — /ping-auth without a token:</p><ul><li>Method: GET</li><li>URL: <a href=https://xxxxxxxxxx.execute-api.ap-southeast-1.amazonaws.com/dev/ping-auth>https://xxxxxxxxxx.execute-api.ap-southeast-1.amazonaws.com/dev/ping-auth</a></li><li>do not add anything in Headers</li><li>Click Send
+Expected result:
+{
+&ldquo;message&rdquo;: &ldquo;Unauthorized&rdquo;
+}
+<img src=/Internship/images/5-Workshop/IRMS/section-04-014.png alt="Setup API Gateway 14">
+Status: 401 Unauthorized → ✅ Authorizer is blocking requests correctly</li></ul><p>Test 3 — /ping-auth has token:</p><ul><li>Method: GET</li><li>URL: <a href=https://xxxxxxxxxx.execute-api.ap-southeast-1.amazonaws.com/dev/ping-auth>https://xxxxxxxxxx.execute-api.ap-southeast-1.amazonaws.com/dev/ping-auth</a></li><li>Headers tab -> add:
+Key: Authorization
+Value: Bearer &lt;eyJraWQiOi&mldr;> ← paste the IdToken here</li><li>Click Send
+Expected result:
+{
+&ldquo;message&rdquo;: &ldquo;Authorized&rdquo;,
+&ldquo;auth&rdquo;: true
+}
+<img src=/Internship/images/5-Workshop/IRMS/section-04-015.png alt="Setup API Gateway 15">
+Status: 200 OK → ✅ Authorizer JWT authentication succeeds</li></ul><p>Test 4 — /ping-auth with an invalid token:</p><ul><li>Keep the same setup Test 3 but replace the token with any random string:
+Authorization: Bearer thisisafaketoken</li><li>Click Send
+Expected result:
+{
+&ldquo;message&rdquo;: &ldquo;Unauthorized&rdquo;
+}
+<img src=/Internship/images/5-Workshop/IRMS/section-04-016.png alt="Setup API Gateway 16">
+Status: 401 Unauthorized → ✅ Authorizer rejects the invalid token</li></ul><h4 id=5346-checklist-4>5.3.4.6 Checklist 4</h4><p>Before moving to 5, confirm the following items:</p><ul><li>✅ API Gateway (Regional) already create ten irms-api-learning</li><li>✅ Cognito Authorizer already create, points to irms-user-pool</li><li>✅ GET /ping → Mock, does not have Authorizer</li><li>✅ GET /ping-auth → Mock, has Cognito Authorizer</li><li>✅ Deployed the dev stage</li><li>✅ Test Postman:
+/ping → 200 (does not require a token)
+/ping-auth → 401 (without a token)
+/ping-auth → 200 (has valid token)
+/ping-auth → 401 (an invalid token)</li><li>✅ Saved the Invoke URL for temporary testing</li></ul><h3 id=535-setup-dynamodb>5.3.5 Setup DynamoDB</h3><h4 id=5351-design-the-schema-before-creation>5.3.5.1 Design the Schema Before Creation</h4><p>Before using the Console, understand the data structure. IRMS uses four tables:
+Incidents → store incident information
+Timeline → store the processing timeline
+EvidenceMetadata → store evidence file metadata
+Users → store user information
+Table details:
+Table Incidents:
+Partition key: incidentId (String)
+GSI 1: status-index → query by status (Open/Investigating/Closed)
+GSI 2: assignedTo-index → query by assigned user
+Attributes:
+incidentId String &ldquo;INC-001&rdquo;
+title String &ldquo;SQL Injection Attack&rdquo;
+severity String &ldquo;Critical / High / Medium / Low&rdquo;
+status String &ldquo;Open / Investigating / Containment / Resolved / Closed&rdquo;
+description String description details
+assignedTo String email of the assigned user
+createdBy String email of the creator
+createdAt String ISO timestamp
+updatedAt String ISO timestamp</p><p>Table Timeline:
+Partition key: incidentId (String)
+Sort key: timestamp (String)
+Attributes:
+incidentId String
+timestamp String ISO timestamp
+action String &ldquo;Created / Assigned / Status Changed / Note Added&rdquo;
+description String action description
+performedBy String email of the user performing the action</p><p>Table EvidenceMetadata:
+Partition key: evidenceId (String)
+GSI 1: incidentId-index → query evidence theo incident
+Attributes:
+evidenceId String UUID
+incidentId String &ldquo;INC-001&rdquo;
+fileName String &ldquo;screenshot.png&rdquo;
+fileType String &ldquo;image/png&rdquo;
+s3Key String S3 path
+uploadedBy String email of the uploader
+uploadedAt String ISO timestamp
+fileSize Number bytes</p><p>Table Users:
+Partition key: email (String)
+Attributes:
+email String
+fullName String
+role String &ldquo;Admin / SecurityManager / SecurityAnalyst / Auditor&rdquo;
+createdAt String</p><h4 id=5352-create-table-incidents>5.3.5.2 Create Table Incidents</h4><p><strong>Step 1: In the AWS Console search bar, type DynamoDB → click DynamoDB</strong></p><p><strong>Step 2: Click Create table</strong></p><p><strong>Step 3: Enter basic information:</strong></p><p>Table name: irms-incidents
+Partition key: incidentId Type: String
+Sort key: (leave blank)
+<img src=/Internship/images/5-Workshop/IRMS/section-05-001.png alt="Setup DynamoDB 1"></p><p><strong>Step 4: Table settings → select Customize settings</strong></p><p><strong>Step 5: Table class: DynamoDB Standard</strong></p><p><strong>Step 6: Read/write capacity settings:</strong></p><p>Capacity mode: On-demand
+<img src=/Internship/images/5-Workshop/IRMS/section-05-002.png alt="Setup DynamoDB 2">
+Select On-demand because the demo does not have stable traffic. You only pay per actual request, which avoids charges when the table is idle.</p><p><strong>Step 7: Encryption: Owned by Amazon DynamoDB (default and sufficient for the demo)</strong></p><p><img src=/Internship/images/5-Workshop/IRMS/section-05-003.png alt="Setup DynamoDB 3"></p><p><strong>Step 8: Click Create table, wait about 30 seconds until the status changes to Active</strong></p><p><img src=/Internship/images/5-Workshop/IRMS/section-05-004.png alt="Setup DynamoDB 4"></p><h4 id=5353-create-the-gsi-for-the-incidents-table>5.3.5.3 Create the GSI for the Incidents Table</h4><p>After the table becomes Active, create Global Secondary Index to query quickly theo status and assignedTo:</p><p><strong>Step 1: Click table irms-incidents → tab Indexes → click Create index</strong></p><p><img src=/Internship/images/5-Workshop/IRMS/section-05-005.png alt="Setup DynamoDB 5">
+Create GSI 1 — query by status:
+Partition key: status Type: String
+Sort key: createdAt Type: String
+Index name: status-index
+Projected attributes: All
+Click Create index → wait until the status changes to Active
+<img src=/Internship/images/5-Workshop/IRMS/section-05-006.png alt="Setup DynamoDB 6">
+Create GSI 2 — query by assigned user:
+Click Create index again:
+Partition key: assignedTo Type: String
+Sort key: createdAt Type: String
+Index name: assignedTo-index
+Projected attributes: All
+Click Create index → wait until it becomes Active
+<img src=/Internship/images/5-Workshop/IRMS/section-05-007.png alt="Setup DynamoDB 7"></p><h4 id=5354-create-table-timeline>5.3.5.4 Create Table Timeline</h4><p><strong>Step 1: Click Create table</strong></p><p><strong>Step 2:</strong>
+Table name: irms-timeline
+Partition key: incidentId Type: String
+Sort key: timestamp Type: String
+The sort key is <code>timestamp</code> because one incident can have many timeline entries. The sort key automatically orders them by time.</p><p><strong>Step 3: Table settings → Customize settings → Capacity mode: On-demand</strong></p><p><strong>Step 4: Click Create table → wait until it becomes Active</strong></p><p><img src=/Internship/images/5-Workshop/IRMS/section-05-008.png alt="Setup DynamoDB 8"></p><h4 id=5355-create-table-evidencemetadata>5.3.5.5 Create Table EvidenceMetadata</h4><p><strong>Step 1: Click Create table</strong></p><p><strong>Step 2:</strong>
+Table name: irms-evidence-metadata
+Partition key: evidenceId Type: String
+Sort key: (leave blank)</p><p><strong>Step 3: Table settings → Customize settings → Capacity mode: On-demand</strong></p><p><strong>Step 4: Click Create table → wait until it becomes Active</strong></p><p><strong>Step 5: Create a GSI to query evidence by incidentId:</strong></p><p>Tab Indexes → Create index:
+Partition key: incidentId Type: String
+Sort key: uploadedAt Type: String
+Index name: incidentId-index
+Projected attributes: All
+Click Create index → wait until it becomes Active
+<img src=/Internship/images/5-Workshop/IRMS/section-05-009.png alt="Setup DynamoDB 9"></p><h4 id=5356-create-table-users>5.3.5.6 Create Table Users</h4><p><strong>Step 1: Click Create table</strong></p><p><strong>Step 2:</strong>
+Table name: irms-users
+Partition key: email Type: String
+Sort key: (leave blank)</p><p><strong>Step 3: Table settings → Customize settings → Capacity mode: On-demand</strong></p><p><strong>Step 4: Click Create table → wait until it becomes Active</strong></p><p><img src=/Internship/images/5-Workshop/IRMS/section-05-010.png alt="Setup DynamoDB 10"></p><h4 id=5357-add-sample-data-for-testing>5.3.5.7 Add Sample Data for Testing</h4><p>After creating all four tables, add a few sample records to the Incidents table to test Lambda later:</p><p><strong>Step 1: Click table irms-incidents → tab Explore items → click Create item</strong></p><p><img src=/Internship/images/5-Workshop/IRMS/section-05-011.png alt="Setup DynamoDB 11"></p><p><strong>Step 2: Select JSON view, paste the following content:</strong></p><p>{
+&ldquo;incidentId&rdquo;: { &ldquo;S&rdquo;: &ldquo;INC-001&rdquo; },
+&ldquo;title&rdquo;: { &ldquo;S&rdquo;: &ldquo;Public S3 Bucket Detected&rdquo; },
+&ldquo;severity&rdquo;: { &ldquo;S&rdquo;: &ldquo;Critical&rdquo; },
+&ldquo;status&rdquo;: { &ldquo;S&rdquo;: &ldquo;Open&rdquo; },
+&ldquo;description&rdquo;: { &ldquo;S&rdquo;: &ldquo;S3 bucket company-data has public access enabled, which may expose customer data&rdquo; },
+&ldquo;assignedTo&rdquo;: { &ldquo;S&rdquo;: &ldquo;<a href=mailto:analyst@example.com>analyst@example.com</a>&rdquo; },
+&ldquo;createdBy&rdquo;: { &ldquo;S&rdquo;: &ldquo;<a href=mailto:admin@example.com>admin@example.com</a>&rdquo; },
+&ldquo;createdAt&rdquo;: { &ldquo;S&rdquo;: &ldquo;2026-06-01T08:00:00Z&rdquo; },
+&ldquo;updatedAt&rdquo;: { &ldquo;S&rdquo;: &ldquo;2026-06-01T08:00:00Z&rdquo; }
+}
+Click Create item</p><p><strong>Step 3: Create the second sample record:</strong></p><p>{
+&ldquo;incidentId&rdquo;: &ldquo;INC-002&rdquo;,
+&ldquo;title&rdquo;: &ldquo;SSH Brute Force Attack&rdquo;,
+&ldquo;severity&rdquo;: &ldquo;High&rdquo;,
+&ldquo;status&rdquo;: &ldquo;Investigating&rdquo;,
+&ldquo;description&rdquo;: &ldquo;Detected 500 failed SSH login attempts from IP 203.0.113.42 within 10 minutes&rdquo;,
+&ldquo;assignedTo&rdquo;: &ldquo;<a href=mailto:analyst@example.com>analyst@example.com</a>&rdquo;,
+&ldquo;createdBy&rdquo;: &ldquo;<a href=mailto:manager@example.com>manager@example.com</a>&rdquo;,
+&ldquo;createdAt&rdquo;: &ldquo;2026-06-02T10:30:00Z&rdquo;,
+&ldquo;updatedAt&rdquo;: &ldquo;2026-06-02T11:00:00Z&rdquo;
+}
+Click Create item
+<img src=/Internship/images/5-Workshop/IRMS/section-05-012.png alt="Setup DynamoDB 12">
+<img src=/Internship/images/5-Workshop/IRMS/section-05-013.png alt="Setup DynamoDB 13"></p><h4 id=5358-verify-from-the-console>5.3.5.8 Verify from the Console</h4><p><strong>Step 1: Click table irms-incidents → tab Explore items</strong></p><p><strong>Step 2: Find the two records INC-001 and INC-002 → ✅</strong></p><p><img src=/Internship/images/5-Workshop/IRMS/section-05-014.png alt="Setup DynamoDB 14"></p><p><strong>Step 3: Test query by GSI:</strong></p><ul><li>Click Scan/Query → select Query</li><li>Index: select status-index</li><li>Partition key value: Open</li><li>Click Run</li><li>The result should return INC-001 → ✅ GSI works correctly
+<img src=/Internship/images/5-Workshop/IRMS/section-05-015.png alt="Setup DynamoDB 15"></li></ul><h4 id=5359-hybrid-deployment-with-aws-sam>5.3.5.9 Hybrid Deployment with AWS SAM</h4><p>In this workshop, the DynamoDB tables are created manually in the AWS Console first so learners can clearly understand schema design, Partition Key, Sort Key, and Global Secondary Index (GSI).
+After completing the hands-on Console steps, the IRMS project moves to a Hybrid Deployment model.
+In this model:</p><ul><li>Amazon Cognito and Amazon DynamoDB are kept from the earlier Console configuration steps.</li><li>AWS SAM deploys only the remaining system components, such as:</li><li>Amazon API Gateway</li><li>AWS Lambda</li><li>Amazon S3</li><li>Amazon SNS</li><li>Amazon EventBridge</li><li>AWS Secrets Manager
+This helps:</li><li>Avoid creating duplicate DynamoDB tables.</li><li>Keep the sample data created in section 5.</li><li>Help learners understand manual configuration while becoming familiar with Infrastructure as Code (IaC) using AWS SAM.
+DynamoDB tables used by SAM
+Instead of create a new item, the AWS SAM template references existing tables directly:</li></ul><table><thead><tr><th>Table</th><th>Purpose</th></tr></thead><tbody><tr><td>irms-incidents</td><td>Save information Incident</td></tr><tr><td>irms-timeline</td><td>Store the processing timeline</td></tr><tr><td>irms-evidence-metadata</td><td>Save metadata Evidence</td></tr><tr><td>irms-users</td><td>Save information user</td></tr></tbody></table><p>Table names are passed to Lambda through SAM Parameters and Environment Variables, so they do not need to be recreated with CloudFormation.
+Template file used
+In the IRMS source repository, the infrastructure is managed by:
+infrastructure/template.yaml
+This template is already configured for the Hybrid Deployment model, including:</p><ul><li>Use the existing Amazon Cognito User Pool.</li><li>Use the DynamoDB tables created in section 5.</li><li>Create new resources:</li><li>Amazon API Gateway</li><li>AWS Lambda Functions</li><li>Amazon S3 Buckets</li><li>Amazon SNS</li><li>Amazon EventBridge</li><li>AWS Secrets Manager
+Verify Configuration
+need to verify template before deploy with command:
+sam validate ^
+&ndash;template-file infrastructure/template.yaml ^
+&ndash;region ap-southeast-1
+Expected result:
+Template provided at &lsquo;infrastructure/template.yaml&rsquo; was successfully validated.
+<img src=/Internship/images/5-Workshop/IRMS/section-05-016.png alt="Setup DynamoDB 16"></li></ul><h4 id=53510-checklist-5>5.3.5.10 Checklist 5</h4><ul><li>✅ Successfully created 4 table DynamoDB:</li><li>irms-incidents</li><li>irms-timeline</li><li>irms-evidence-metadata</li><li>irms-users</li><li>✅ The two Global Secondary Indexes of the irms-incidents works:</li><li>status-index</li><li>assignedTo-index</li><li>✅ The Global Secondary Index of the irms-evidence-metadata works:</li><li>incidentId-index</li><li>✅ Added two sample records (<code>INC-001</code>, <code>INC-002</code>) to the <code>irms-incidents</code> table.</li><li>✅ Verified that queries through <code>status-index</code> return the correct result.</li><li>✅ Successfully validated the Hybrid SAM template for the next deployment stage.</li></ul><h3 id=536-setup-s3--storage>5.3.6 Setup S3 & Storage</h3><h4 id=5361-storage-design>5.3.6.1 Storage Design</h4><p>IRMS uses two S3 buckets with completely different purposes:
+irms-frontend-031577240048-ap-southeast-1 → store the React SPA (public through CloudFront)
+irms-evidence-031577240048-ap-southeast-1 → store evidence files (private, accessed only by Lambda)
+The reason for adding the Account ID and Region to the bucket name is that S3 bucket names are globally unique. Using Account ID + Region keeps the name unique and avoids conflicts with other users.
+Comparison of the two buckets:</p><table><thead><tr><th></th><th>irms-frontend-&mldr;</th><th>irms-evidence-&mldr;</th></tr></thead><tbody><tr><td>Public access</td><td>Blocked, only CloudFront can read</td><td>Completely blocked</td></tr><tr><td>Accessed by</td><td>CloudFront</td><td>Lambda function</td></tr><tr><td>Stored content</td><td>HTML, CSS, JS, assets</td><td>Screenshot, log, PCAP, PDF report</td></tr><tr><td>Versioning</td><td>is not needed</td><td>Enabled to protect evidence</td></tr><tr><td>CORS</td><td>is not needed</td><td>Required for presigned URL uploads from the browser</td></tr></tbody></table><h4 id=5362-evidence-upload-flow>5.3.6.2 Evidence Upload Flow</h4><p>Understand the evidence upload flow to see why the Evidence bucket needs CORS.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-text data-lang=text><span style=display:flex><span>Browser                 Lambda                    S3
+</span></span><span style=display:flex><span>   |                       |                       |
+</span></span><span style=display:flex><span>   |-- POST /evidence ----&gt;|                       |
+</span></span><span style=display:flex><span>   |   filename, type      |                       |
+</span></span><span style=display:flex><span>   |                       |-- Generate URL ------&gt;|
+</span></span><span style=display:flex><span>   |                       |&lt;-- presignedUrl ------|
+</span></span><span style=display:flex><span>   |&lt;-- presignedUrl ------|                       |
+</span></span><span style=display:flex><span>   |                                               |
+</span></span><span style=display:flex><span>   |-- PUT presignedUrl --------------------------&gt;|
+</span></span><span style=display:flex><span>   |   file binary                                 |
+</span></span><span style=display:flex><span>   |&lt;-- 200 OK ------------------------------------|
+</span></span><span style=display:flex><span>   |                       |                       |
+</span></span><span style=display:flex><span>   |-- POST /evidence/{id}-&gt;|                       |
+</span></span><span style=display:flex><span>   |   evidenceId          |-- PutItem -----------&gt;| DynamoDB
+</span></span><span style=display:flex><span>   |&lt;-- 200 OK ------------|                       |
+</span></span></code></pre></div><p>Advantages of Presigned URL: files are uploaded directly from the browser to S3 without passing through Lambda, which avoids the 6 MB Lambda payload limit and saves bandwidth.</p><h4 id=5363-verify-s3-configuration-in-templateyaml>5.3.6.3 Verify S3 Configuration in <code>template.yaml</code></h4><p>The template already exists in the repository. In this step, only read and understand the configuration; do not add new resources.</p><p>Open <code>infrastructure/template.yaml</code>, find the S3 section, and review each property.</p><p><strong>Frontend Bucket</strong></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>FrontendBucket</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>Type</span>: <span style=color:#ae81ff>AWS::S3::Bucket</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>Properties</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>BucketName</span>: !<span style=color:#ae81ff>Ref FrontendBucketName</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>PublicAccessBlockConfiguration</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>BlockPublicAcls</span>: <span style=color:#66d9ef>true</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>BlockPublicPolicy</span>: <span style=color:#66d9ef>true</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>IgnorePublicAcls</span>: <span style=color:#66d9ef>true</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>RestrictPublicBuckets</span>: <span style=color:#66d9ef>true</span>
+</span></span></code></pre></div><p>Key points to note:</p><ul><li><code>BlockPublicAcls: true</code>: no one can set a public ACL on objects.</li><li><code>BlockPublicPolicy: true</code>: no one can create a bucket policy that allows public access.</li><li>There is no <code>WebsiteConfiguration</code> because the frontend is distributed through CloudFront, not direct S3 static website hosting.</li></ul><p><strong>Evidence Bucket</strong></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>EvidenceBucket</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>Type</span>: <span style=color:#ae81ff>AWS::S3::Bucket</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>Properties</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>BucketName</span>: !<span style=color:#ae81ff>Ref EvidenceBucketName</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>PublicAccessBlockConfiguration</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>BlockPublicAcls</span>: <span style=color:#66d9ef>true</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>BlockPublicPolicy</span>: <span style=color:#66d9ef>true</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>IgnorePublicAcls</span>: <span style=color:#66d9ef>true</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>RestrictPublicBuckets</span>: <span style=color:#66d9ef>true</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>VersioningConfiguration</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>Status</span>: <span style=color:#ae81ff>Enabled</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>CorsConfiguration</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>CorsRules</span>:
+</span></span><span style=display:flex><span>        - <span style=color:#f92672>AllowedHeaders</span>:
+</span></span><span style=display:flex><span>            - <span style=color:#e6db74>&#34;*&#34;</span>
+</span></span><span style=display:flex><span>          <span style=color:#f92672>AllowedMethods</span>:
+</span></span><span style=display:flex><span>            - <span style=color:#ae81ff>PUT</span>
+</span></span><span style=display:flex><span>            - <span style=color:#ae81ff>GET</span>
+</span></span><span style=display:flex><span>          <span style=color:#f92672>AllowedOrigins</span>:
+</span></span><span style=display:flex><span>            - <span style=color:#e6db74>&#34;*&#34;</span>
+</span></span><span style=display:flex><span>          <span style=color:#f92672>MaxAge</span>: <span style=color:#ae81ff>3600</span>
+</span></span></code></pre></div><p>Key points to note:</p><ul><li><code>VersioningConfiguration: Enabled</code>: each upload with the same file name creates a new version instead of overwriting the old one, which is important for evidence integrity.</li><li><code>CorsRules</code> allows browser upload through a presigned URL.</li><li><code>MaxAge: 3600</code> lets the browser cache the CORS preflight response for one hour and reduces repeated <code>OPTIONS</code> requests.</li></ul><h4 id=5364-verify-parameters-in-templateyaml>5.3.6.4 Verify Parameters in <code>template.yaml</code></h4><p>Find the <code>Parameters</code> section and confirm that both bucket names and default values are correct.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>Parameters</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>FrontendBucketName</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>Type</span>: <span style=color:#ae81ff>String</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>Default</span>: <span style=color:#ae81ff>irms-frontend-031577240048-ap-southeast-1</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>EvidenceBucketName</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>Type</span>: <span style=color:#ae81ff>String</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>Default</span>: <span style=color:#ae81ff>irms-evidence-031577240048-ap-southeast-1</span>
+</span></span></code></pre></div><p>If both names are correct, continue.</p><p><img src=/Internship/images/5-Workshop/IRMS/section-06-001.png alt="Setup S3 & Storage 1"></p><h4 id=5365-verify-lambda-environment-variables-in-templateyaml>5.3.6.5 Verify Lambda Environment Variables in <code>template.yaml</code></h4><p>Lambda needs the Evidence bucket name to create presigned URLs. Find the <code>Globals</code> section and confirm that it contains:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>Globals</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>Function</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>Environment</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>Variables</span>:
+</span></span><span style=display:flex><span>        <span style=color:#f92672>EVIDENCE_BUCKET</span>: !<span style=color:#ae81ff>Ref EvidenceBucketName</span>
+</span></span></code></pre></div><p>If the variable is configured only for the Upload Evidence Lambda, it should look like this:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>UploadEvidenceFunction</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>Type</span>: <span style=color:#ae81ff>AWS::Serverless::Function</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>Properties</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>Environment</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>Variables</span>:
+</span></span><span style=display:flex><span>        <span style=color:#f92672>EVIDENCE_BUCKET</span>: !<span style=color:#ae81ff>Ref EvidenceBucketName</span>
+</span></span></code></pre></div><h4 id=5366-verify-samconfigtoml>5.3.6.6 Verify <code>samconfig.toml</code></h4><p>Open <code>infrastructure/samconfig.toml</code> and confirm the deployment configuration.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-toml data-lang=toml><span style=display:flex><span><span style=color:#a6e22e>version</span> = <span style=color:#ae81ff>0.1</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>[<span style=color:#a6e22e>default</span>.<span style=color:#a6e22e>deploy</span>.<span style=color:#a6e22e>parameters</span>]
+</span></span><span style=display:flex><span><span style=color:#a6e22e>stack_name</span>          = <span style=color:#e6db74>&#34;irms-dev&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>region</span>              = <span style=color:#e6db74>&#34;ap-southeast-1&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>confirm_changeset</span>   = <span style=color:#66d9ef>false</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>capabilities</span>        = <span style=color:#e6db74>&#34;CAPABILITY_IAM CAPABILITY_NAMED_IAM&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>profile</span>             = <span style=color:#e6db74>&#34;irms-shared&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>parameter_overrides</span> = [
+</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#34;Environment=dev&#34;</span>,
+</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#34;UserPoolId=ap-southeast-1_XXXXXXXXX&#34;</span>,
+</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#34;UserPoolClientId=XXXXXXXXXXXXXXXXXXXXXXXXXX&#34;</span>,
+</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#34;UserPoolArn=arn:aws:cognito-idp:ap-southeast-1:031577240048:userpool/ap-southeast-1_XXXXXXXXX&#34;</span>,
+</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#34;IncidentsTableName=irms-incidents&#34;</span>,
+</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#34;TimelineTableName=irms-timeline&#34;</span>,
+</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#34;EvidenceMetadataTableName=irms-evidence-metadata&#34;</span>,
+</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#34;UsersTableName=irms-users&#34;</span>,
+</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#34;FrontendBucketName=irms-frontend-031577240048-ap-southeast-1&#34;</span>,
+</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#34;EvidenceBucketName=irms-evidence-031577240048-ap-southeast-1&#34;</span>
+</span></span><span style=display:flex><span>]
+</span></span></code></pre></div><p>Replace the <code>XXXXXXXXX</code> placeholders with the real values saved in section 5.3.3.</p><p><img src=/Internship/images/5-Workshop/IRMS/section-06-002.png alt="Setup S3 & Storage 2"></p><h4 id=5367-validate-template>5.3.6.7 Validate Template</h4><p>After confirming all items above, run <code>sam validate</code> to verify that the template has no syntax errors.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-bash data-lang=bash><span style=display:flex><span>cd irms
+</span></span><span style=display:flex><span>sam validate ^
+</span></span><span style=display:flex><span>  --template-file infrastructure/template.yaml ^
+</span></span><span style=display:flex><span>  --region ap-southeast-1
+</span></span></code></pre></div><p>Expected result:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-text data-lang=text><span style=display:flex><span>Template provided at &#39;infrastructure/template.yaml&#39; was successfully validated.
+</span></span></code></pre></div><p><img src=/Internship/images/5-Workshop/IRMS/section-06-003.png alt="Setup S3 & Storage 3"></p><p>Common errors:</p><ul><li><code>Template format error: YAML not well-formed</code>: usually caused by incorrect indentation. Open <code>template.yaml</code> and check the line shown in the error message. Each indentation level should use two spaces, not tabs.</li><li><code>InvalidResourceException</code>: a resource is referencing another resource that does not exist in the template yet. If it references CloudFront or WAF that will be added later, confirm it with the team.</li></ul><h4 id=5368-checklist-6>5.3.6.8 Checklist 6</h4><ul><li>✅ Understand the purpose of the two buckets:
+irms-frontend-031577240048-ap-southeast-1 → React SPA through CloudFront
+irms-evidence-031577240048-ap-southeast-1 → evidence files through Lambda</li><li>✅ Understand the Presigned URL flow (Browser → Lambda gets URL → PUT directly to S3)</li><li>✅ Understand the configuration of FrontendBucket in template.yaml:
+BlockPublicAcls, BlockPublicPolicy = true</li><li>✅ Understand the configuration of EvidenceBucket in template.yaml:
+Versioning ON, CORS for PUT</li><li>✅ Confirm Parameters FrontendBucketName and EvidenceBucketName uses the correct names</li><li>✅ Confirm <code>EVIDENCE_BUCKET</code> exists in Lambda environment variables</li><li>✅ Confirm <code>samconfig.toml</code> uses <code>stack_name</code> = &ldquo;irms-dev&rdquo;</li><li>✅ <code>sam validate</code> runs successfully</li></ul><footer class=footline></footer></div></div><div id=navigation><a class="nav nav-prev" href=/Internship/5-workshop/5.2-environment-setup/ title="Environment Setup"><i class="fa fa-chevron-left"></i></a>
+<a class="nav nav-next" href=/Internship/5-workshop/5.4-application-development/ title="Application Development" style=margin-right:0><i class="fa fa-chevron-right"></i></a></div></section><div style=left:-1e3px;overflow:scroll;position:absolute;top:-1e3px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px><div style=border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px></div></div><script src=/Internship/js/clipboard.min.js?1784676896></script><script src=/Internship/js/perfect-scrollbar.min.js?1784676896></script><script src=/Internship/js/perfect-scrollbar.jquery.min.js?1784676896></script><script src=/Internship/js/jquery.sticky.js?1784676896></script><script src=/Internship/js/featherlight.min.js?1784676896></script><script src=/Internship/js/highlight.pack.js?1784676896></script><script>hljs.initHighlightingOnLoad()</script><script src=/Internship/js/modernizr.custom-3.6.0.js?1784676896></script><script src=/Internship/js/learn.js?1784676896></script><script src=/Internship/js/hugo-learn.js?1784676896></script><link href=/Internship/mermaid/mermaid.css?1784676896 rel=stylesheet><script src=/Internship/mermaid/mermaid.js?1784676896></script><script>mermaid.initialize({startOnLoad:!0})</script><script>(function(e,t,n,s,o,i,a){e.GoogleAnalyticsObject=o,(e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},e[o].l=1*new Date),(i=t.createElement(n),a=t.getElementsByTagName(n)[0]),i.async=1,i.src=s,a.parentNode.insertBefore(i,a)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-158079754-2","auto"),ga("send","pageview")</script></body></html>
