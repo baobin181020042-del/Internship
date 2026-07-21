@@ -26,7 +26,7 @@ jobs:
           extended: true
 
       - name: Build website
-        run: hugo --minify --baseURL "https://baobao181004.github.io/Internship/"
+        run: hugo --minify --baseURL "https://baobin181020042-del.github.io/Internship/"
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4

@@ -1,10 +1,10 @@
 # IRMS AWS Internship Report
 
-**Live Demo:** [View Report](https://baobao181004.github.io/Internship/) 
+**Live Demo:** [View Report](https://baobin181020042-del.github.io/Internship/) 
 
 [![AWS](https://img.shields.io/badge/AWS-Serverless-orange)](https://aws.amazon.com/)
 [![Hugo](https://img.shields.io/badge/Hugo-Workshop%20Report-blue)](https://gohugo.io/)
-[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live%20Demo-brightgreen)](https://baobao181004.github.io/Internship/)  
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live%20Demo-brightgreen)](https://baobin181020042-del.github.io/Internship/)  
 
 ## Overview
 
@@ -75,7 +75,7 @@ hugo server -D
 Build the production site:
 
 ```bash
-hugo --minify --baseURL "https://baobao181004.github.io/Internship/"
+hugo --minify --baseURL "https://baobin181020042-del.github.io/Internship/"
 ```
 
 ## Deployment
@@ -89,7 +89,7 @@ The report is deployed to GitHub Pages through the workflow:
 Live report URL:
 
 ```text
-https://baobao181004.github.io/Internship/
+https://baobin181020042-del.github.io/Internship/
 ```
 
 ## Internship Duration
