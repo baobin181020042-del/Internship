@@ -8,76 +8,32 @@ pre: " <b> 1.6. </b> "
 
 **Timeline:** 25/5 → 29/5 (5 working days)
 
-> IRMS was completed by a five-member team. The notes below focus on my individual contribution while collaborating with the team.
+## Day 1 - 25/5: S3 evidence storage concept
 
-## Day 1 - 19/5: Assisting Incident CRUD Lambda
+**Work completed:** Studied object storage, bucket policy, presigned URL, and why file upload should avoid passing large files through Lambda when possible.
 
-**Work completed:** I worked on assisting incident crud lambda as my individual contribution while coordinating with the five-member IRMS team. My focus was the AWS, integration, deployment, testing, or documentation part related to this task.
+**Result and lesson:** I recorded the checks, issues, and lessons from this task so the final report would reflect my own internship progress clearly.
 
-I also recorded the concrete checks I performed, the integration points I verified, and the issues I needed to report back to teammates. This made the entry reflect my own internship work instead of describing the whole project as if it was completed by one person.
+## Day 2 - 26/5: CloudWatch Logs
 
-**Knowledge gained:** I learned how assisting incident crud lambda connects to the wider IRMS architecture and how collaboration affects integration quality.
+**Work completed:** Practiced reading log groups, log streams, timestamps, and error traces. This helped me prepare for later debugging work.
 
-**Result:** The task produced a concrete contribution for my assigned scope and helped the team move to the next implementation step.
+**Result and lesson:** I recorded the checks, issues, and lessons from this task so the final report would reflect my own internship progress clearly.
 
-**Difficulty and lesson:** The main challenge was keeping my part aligned with the team implementation. The lesson was to communicate changes early and verify integration points carefully.
+## Day 3 - 27/5: EventBridge concepts
 
-## Day 2 - 20/5: Supporting Timeline backend
+**Work completed:** Reviewed event buses, rules, schedules, and event-driven automation patterns.
 
-**Work completed:** I worked on supporting timeline backend as my individual contribution while coordinating with the five-member IRMS team. My focus was the AWS, integration, deployment, testing, or documentation part related to this task.
+**Result and lesson:** I recorded the checks, issues, and lessons from this task so the final report would reflect my own internship progress clearly.
 
-I also recorded the concrete checks I performed, the integration points I verified, and the issues I needed to report back to teammates. This made the entry reflect my own internship work instead of describing the whole project as if it was completed by one person.
+## Day 4 - 28/5: SNS notification concepts
 
-**Knowledge gained:** I learned how supporting timeline backend connects to the wider IRMS architecture and how collaboration affects integration quality.
+**Work completed:** Studied topic, subscription, and message delivery flow for simple notification use cases.
 
-**Result:** The task produced a concrete contribution for my assigned scope and helped the team move to the next implementation step.
+**Result and lesson:** I recorded the checks, issues, and lessons from this task so the final report would reflect my own internship progress clearly.
 
-**Difficulty and lesson:** The main challenge was keeping my part aligned with the team implementation. The lesson was to communicate changes early and verify integration points carefully.
+## Day 5 - 29/5: Security notes
 
-## Day 3 - 21/5: Integrating Evidence Upload
+**Work completed:** Summarized lessons about IAM roles, secrets, tokens, and why documentation should never include real credentials.
 
-**Work completed:** I worked on integrating evidence upload as my individual contribution while coordinating with the five-member IRMS team. My focus was the AWS, integration, deployment, testing, or documentation part related to this task.
-
-I also recorded the concrete checks I performed, the integration points I verified, and the issues I needed to report back to teammates. This made the entry reflect my own internship work instead of describing the whole project as if it was completed by one person.
-
-**Knowledge gained:** I learned how integrating evidence upload connects to the wider IRMS architecture and how collaboration affects integration quality.
-
-**Result:** The task produced a concrete contribution for my assigned scope and helped the team move to the next implementation step.
-
-**Difficulty and lesson:** The main challenge was keeping my part aligned with the team implementation. The lesson was to communicate changes early and verify integration points carefully.
-
-## Day 4 - 22/5: Assisting Report Generation
-
-**Work completed:** I worked on assisting report generation as my individual contribution while coordinating with the five-member IRMS team. My focus was the AWS, integration, deployment, testing, or documentation part related to this task.
-
-I also recorded the concrete checks I performed, the integration points I verified, and the issues I needed to report back to teammates. This made the entry reflect my own internship work instead of describing the whole project as if it was completed by one person.
-
-**Knowledge gained:** I learned how assisting report generation connects to the wider IRMS architecture and how collaboration affects integration quality.
-
-**Result:** The task produced a concrete contribution for my assigned scope and helped the team move to the next implementation step.
-
-**Difficulty and lesson:** The main challenge was keeping my part aligned with the team implementation. The lesson was to communicate changes early and verify integration points carefully.
-
-## Day 5 - 23/5: Integrating Alert Handler with EventBridge
-
-**Work completed:** I worked on integrating alert handler with eventbridge as my individual contribution while coordinating with the five-member IRMS team. My focus was the AWS, integration, deployment, testing, or documentation part related to this task.
-
-I also recorded the concrete checks I performed, the integration points I verified, and the issues I needed to report back to teammates. This made the entry reflect my own internship work instead of describing the whole project as if it was completed by one person.
-
-**Knowledge gained:** I learned how integrating alert handler with eventbridge connects to the wider IRMS architecture and how collaboration affects integration quality.
-
-**Result:** The task produced a concrete contribution for my assigned scope and helped the team move to the next implementation step.
-
-**Difficulty and lesson:** The main challenge was keeping my part aligned with the team implementation. The lesson was to communicate changes early and verify integration points carefully.
-
-## Day 6 - 24/5: Backend debugging with CloudWatch
-
-**Work completed:** I worked on backend debugging with cloudwatch as my individual contribution while coordinating with the five-member IRMS team. My focus was the AWS, integration, deployment, testing, or documentation part related to this task.
-
-I also recorded the concrete checks I performed, the integration points I verified, and the issues I needed to report back to teammates. This made the entry reflect my own internship work instead of describing the whole project as if it was completed by one person.
-
-**Knowledge gained:** I learned how backend debugging with cloudwatch connects to the wider IRMS architecture and how collaboration affects integration quality.
-
-**Result:** The task produced a concrete contribution for my assigned scope and helped the team move to the next implementation step.
-
-**Difficulty and lesson:** The main challenge was keeping my part aligned with the team implementation. The lesson was to communicate changes early and verify integration points carefully.
+**Result and lesson:** I recorded the checks, issues, and lessons from this task so the final report would reflect my own internship progress clearly.

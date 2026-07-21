@@ -6,228 +6,76 @@ chapter: false
 pre: " <b> 1.12. </b> "
 ---
 
-**Mốc thời gian:** 06/07/2026 - 30/07/2026
+**Mốc thời gian:** 06/07/2026 - 21/07/2026
 
 > Dự án IRMS được thực hiện bởi nhóm 5 thành viên. Các ghi chú dưới đây tập trung vào phần đóng góp cá nhân của tôi trong quá trình phối hợp với nhóm.
 
-## Ngày 1 - 24/6: Deploy frontend lên S3
+## Ngày 1 - 6/7: Kiểm thử backend và hạ tầng AWS
 
-**Công việc đã thực hiện:** Tôi build frontend bằng `npm run build`, kiểm tra thư mục `dist/` và sync static assets lên S3 frontend bucket. Sau khi upload, tôi kiểm tra `index.html`, asset path và lỗi console trên trình duyệt. Vấn đề gặp phải là build local cũ còn sót, nên tôi build lại trước khi sync lần cuối.
+**Công việc đã thực hiện:** Tôi kiểm tra các phần backend và hạ tầng đã được nhóm triển khai, tập trung vào Cognito, API Gateway, Lambda, DynamoDB, S3 Evidence Store, EventBridge, SNS và CloudWatch Logs. Phần tôi chịu trách nhiệm chính là đảm bảo các dịch vụ AWS kết nối đúng với flow đã mô tả trong workshop.
 
-**Công cụ và dịch vụ sử dụng:** AWS Console, AWS CLI, AWS SAM, CloudFront, S3, API Gateway, Cognito, Lambda, DynamoDB, EventBridge, SNS, Secrets Manager, CloudWatch, Groq, Hugo, GitHub Pages và browser developer tools tùy theo công việc trong ngày.
+Tôi test Cognito login, lấy JWT và gọi các API được bảo vệ. Khi gặp lỗi 401 hoặc CORS, tôi kiểm tra lại authorizer, route, stage deployment và response headers. Với Lambda, tôi xem log để xác định request có đi đúng hàm không, dữ liệu có ghi vào DynamoDB đúng table không và lỗi có được trả về rõ ràng không. Tôi cũng kiểm tra luồng evidence upload bằng presigned URL để đảm bảo file đi trực tiếp lên S3, còn metadata được lưu riêng.
 
-## Ngày 2 - 25/6: Cấu hình CloudFront
+**Kiến thức đã học:** Kiểm thử serverless cần đi từ trình duyệt đến API Gateway, Lambda, database và log, vì lỗi có thể nằm ở bất kỳ tầng nào.
 
-**Công việc đã thực hiện:** Tôi kiểm tra CloudFront distribution, origin, default root object, HTTPS behavior và cache behavior. Tôi phối hợp với nhóm để đảm bảo frontend vẫn gọi backend qua API Gateway. Khó khăn chính là thời gian propagation, vì vậy tôi tách lỗi cấu hình khỏi trạng thái đang deploy.
+**Kết quả đạt được:** Các luồng chính gồm authentication, Incident CRUD, Timeline và Evidence Upload ổn định hơn để tiếp tục test end-to-end.
 
-**Công cụ và dịch vụ sử dụng:** AWS Console, AWS CLI, AWS SAM, CloudFront, S3, API Gateway, Cognito, Lambda, DynamoDB, EventBridge, SNS, Secrets Manager, CloudWatch, Groq, Hugo, GitHub Pages và browser developer tools tùy theo công việc trong ngày.
+**Khó khăn và bài học:** CORS và JWT là hai lỗi dễ gây nhầm lẫn, nên cần tách lỗi xác thực, lỗi route và lỗi backend khi debug.
 
-## Ngày 3 - 26/6: CloudFront invalidation
+## Ngày 2 - 8/7: Deploy, CloudFront và kiểm thử end-to-end
 
-**Công việc đã thực hiện:** Sau khi frontend thay đổi, tôi tạo invalidation cho `/*` và so sánh kết quả trước/sau khi clear cache. Một số trình duyệt vẫn hiển thị bundle cũ nên tôi dùng thêm hard refresh để xác minh. Bước này được đưa vào phần deployment của workshop.
+**Công việc đã thực hiện:** Tôi phối hợp với nhóm để kiểm tra bản frontend React + Vite sau khi build và deploy. Phần tôi tập trung là cấu hình API base URL, kiểm tra S3 hosting, CloudFront distribution, cache behavior và invalidation sau khi frontend thay đổi.
 
-**Công cụ và dịch vụ sử dụng:** AWS Console, AWS CLI, AWS SAM, CloudFront, S3, API Gateway, Cognito, Lambda, DynamoDB, EventBridge, SNS, Secrets Manager, CloudWatch, Groq, Hugo, GitHub Pages và browser developer tools tùy theo công việc trong ngày.
+Tôi kiểm tra `npm run build`, thư mục `dist/`, asset path và lỗi console trên trình duyệt. Sau khi upload frontend lên S3 và truy cập qua CloudFront, tôi test lại login, tạo incident, cập nhật trạng thái, upload evidence, xem timeline và gọi report. Khi gặp trường hợp trình duyệt vẫn lấy bundle cũ, tôi tạo CloudFront invalidation cho `/*` và dùng hard refresh để đối chiếu.
 
-## Ngày 4 - 27/6: End-to-end testing cùng nhóm
+```bash
+npm run build
+aws s3 sync dist/ s3://<frontend-bucket> --delete
+aws cloudfront create-invalidation --distribution-id <distribution-id> --paths "/*"
+```
 
-**Công việc đã thực hiện:** Tôi tham gia test luồng login, Incident CRUD, Timeline, Evidence Upload, Report và AI Assistant. Phần tôi tập trung là Cognito token, API Gateway routes, Lambda logs, S3 evidence upload và CloudFront access. Lỗi CORS được xử lý bằng cách kiểm tra header API Gateway và redeploy stage.
+**Kiến thức đã học:** Deploy frontend không chỉ là upload file, mà còn cần kiểm tra cache, base URL, HTTPS và khả năng gọi backend thật.
 
-**Công cụ và dịch vụ sử dụng:** AWS Console, AWS CLI, AWS SAM, CloudFront, S3, API Gateway, Cognito, Lambda, DynamoDB, EventBridge, SNS, Secrets Manager, CloudWatch, Groq, Hugo, GitHub Pages và browser developer tools tùy theo công việc trong ngày.
+**Kết quả đạt được:** Frontend có thể chạy demo ổn định hơn qua CloudFront và gọi được các API chính.
 
-## Ngày 5 - 28/6: Rà soát chi phí và tài nguyên
+**Khó khăn và bài học:** Nếu không invalidate cache, người xem có thể vẫn thấy giao diện hoặc JavaScript cũ dù source đã sửa.
 
-**Công việc đã thực hiện:** Tôi kiểm tra Billing, Cost Explorer, CloudWatch Logs, S3, Lambda, API Gateway, CloudFront, DynamoDB, Secrets Manager, SNS và EventBridge. Khó khăn là phân biệt resource của project với resource lab cũ. Bài học là cần đặt tên và tag resource nhất quán.
+## Ngày 3 - 10/7: Hoàn thiện Workshop theo flow triển khai
 
-**Công cụ và dịch vụ sử dụng:** AWS Console, AWS CLI, AWS SAM, CloudFront, S3, API Gateway, Cognito, Lambda, DynamoDB, EventBridge, SNS, Secrets Manager, CloudWatch, Groq, Hugo, GitHub Pages và browser developer tools tùy theo công việc trong ngày.
+**Công việc đã thực hiện:** Tôi cập nhật các phần Workshop để khớp với flow IRMS cuối cùng: Introduction, Environment Setup, Infrastructure Configuration, Application Development, Deployment and Testing, Frontend Integration and Web Deployment, Results/Cost/Cleanup. Mục tiêu là tóm gọn mục nhưng không làm mất nội dung kỹ thuật quan trọng.
 
-## Ngày 6 - 29/6: Chuẩn bị cleanup checklist
+Tôi rà các đoạn từng bị dính dòng hoặc lẫn tiếng Việt không dấu trong bản English. Các đoạn flow dài như Lambda, S3 presigned URL, EventBridge, Secrets Manager và AI Assistant được tách lại thành bullet, bảng hoặc code block để dễ đọc hơn. Tôi cũng kiểm tra numbering 5.1, 5.2, 5.3 và các mục con để sidebar hiển thị đúng. Những thông tin nhạy cảm như password, access key, secret key, token và API key được thay bằng placeholder.
 
-**Công việc đã thực hiện:** Tôi lập thứ tự cleanup cho CloudFront, S3 buckets, SAM stack, DynamoDB, log groups, EventBridge rules, SNS topic và Secrets Manager secret. Vấn đề là một số resource có dependency, ví dụ bucket còn object hoặc CloudFront chưa disable xong.
+**Kiến thức đã học:** Workshop tốt cần đi theo đúng thứ tự người đọc thao tác, đồng thời phải bảo mật ngay cả trong ví dụ minh họa.
 
-**Công cụ và dịch vụ sử dụng:** AWS Console, AWS CLI, AWS SAM, CloudFront, S3, API Gateway, Cognito, Lambda, DynamoDB, EventBridge, SNS, Secrets Manager, CloudWatch, Groq, Hugo, GitHub Pages và browser developer tools tùy theo công việc trong ngày.
+**Kết quả đạt được:** Nội dung Workshop dễ đọc hơn, đồng bộ hơn giữa tiếng Việt và tiếng Anh, và phản ánh đúng phần AWS mà tôi tham gia triển khai.
 
-## Ngày 7 - 30/6: Chỉnh workshop phần hạ tầng
+**Khó khăn và bài học:** Tài liệu copy từ quá trình làm việc thường bị dính câu, sai format hoặc thiếu context, nên phải kiểm tra từng trang thay vì sửa một lần chung chung.
 
-**Công việc đã thực hiện:** Tôi chỉnh các phần architecture, prerequisites, Cognito, API Gateway, DynamoDB, S3, Lambda, EventBridge, SNS và Secrets Manager. Vấn đề là numbering giữa English/Vietnamese chưa đồng bộ, nên tôi căn lại sidebar và heading.
+## Ngày 4 - 14/7: Đồng bộ báo cáo, Proposal và Worklog
 
-**Công cụ và dịch vụ sử dụng:** AWS Console, AWS CLI, AWS SAM, CloudFront, S3, API Gateway, Cognito, Lambda, DynamoDB, EventBridge, SNS, Secrets Manager, CloudWatch, Groq, Hugo, GitHub Pages và browser developer tools tùy theo công việc trong ngày.
+**Công việc đã thực hiện:** Tôi rà soát lại Proposal, Worklog, Events, Self-Assessment, Sharing and Feedback và README để nội dung thống nhất với dự án IRMS. Tôi kiểm tra lại sơ đồ kiến trúc, tên dịch vụ AWS, provider AI, thời gian thực tập, thông tin sinh viên và các link nội bộ.
 
-## Ngày 8 - 1/7: Rà soát tài liệu backend AWS
+Tôi thay sơ đồ kiến trúc mới vào cả Proposal và Workshop, sau đó kiểm tra đường dẫn ảnh trong `static/images`. Với phần tiếng Anh, tôi sửa các câu còn lẫn tiếng Việt hoặc dịch chưa tự nhiên. Với phần tiếng Việt, tôi chỉnh lỗi chính tả, xuống dòng và giọng văn để giống báo cáo thực tập cá nhân hơn. Tôi cũng rà Worklog để đảm bảo nội dung không viết như cả dự án do một mình tôi làm.
 
-**Công việc đã thực hiện:** Tôi kiểm tra bảng trách nhiệm Lambda, DynamoDB integration, EventBridge flow và CloudWatch logging. Một số code block bị render sai do thiếu fence Markdown, nên tôi sửa định dạng để nội dung không bị biến thành heading lớn.
+**Kiến thức đã học:** Một báo cáo thực tập cần thống nhất giữa nhiều phần, vì mentor có thể đối chiếu Proposal, Workshop, Worklog và kết quả triển khai.
 
-**Công cụ và dịch vụ sử dụng:** AWS Console, AWS CLI, AWS SAM, CloudFront, S3, API Gateway, Cognito, Lambda, DynamoDB, EventBridge, SNS, Secrets Manager, CloudWatch, Groq, Hugo, GitHub Pages và browser developer tools tùy theo công việc trong ngày.
+**Kết quả đạt được:** Báo cáo nhất quán hơn về timeline, kiến trúc, vai trò cá nhân và cách gọi tên dịch vụ AWS.
 
-## Ngày 9 - 2/7: Cập nhật frontend deployment
+**Khó khăn và bài học:** Khi sửa nhiều file song ngữ, cần kiểm tra cả ý nghĩa lẫn format, không chỉ dịch từng câu.
 
-**Công việc đã thực hiện:** Tôi bổ sung tài liệu build React + Vite, sync S3, deploy CloudFront và invalidation. Tôi kiểm tra ảnh trong `static/images`. Vấn đề là wording cũ còn mô tả direct S3 website, nên tôi cập nhật lại theo S3 + CloudFront.
+## Ngày 5 - 21/7: Hoàn tất báo cáo dự án
 
-**Công cụ và dịch vụ sử dụng:** AWS Console, AWS CLI, AWS SAM, CloudFront, S3, API Gateway, Cognito, Lambda, DynamoDB, EventBridge, SNS, Secrets Manager, CloudWatch, Groq, Hugo, GitHub Pages và browser developer tools tùy theo công việc trong ngày.
+**Công việc đã thực hiện:** Tôi hoàn tất rà soát cuối theo tiến độ thực tế đến ngày 21/07/2026. Công việc gồm kiểm tra Hugo build, kiểm tra live demo trên GitHub Pages, xác nhận các trang chính hiển thị được, kiểm tra link nội bộ, ảnh kiến trúc, numbering sidebar và nội dung song ngữ.
 
-## Ngày 10 - 3/7: Đồng bộ tài liệu song ngữ
+Tôi chạy production build với base URL GitHub Pages, xem lại các warning của Hugo và xác nhận không có lỗi Markdown/front matter làm hỏng trang. Tôi cũng kiểm tra lần cuối các nội dung nhạy cảm để không publish email đăng nhập, password, access key, secret key, token hoặc API key. Phần cuối cùng là cập nhật Worklog để timeline phản ánh đúng: các tuần đầu là học AWS và làm lab, còn dự án IRMS bắt đầu từ tuần có ngày 01/07.
 
-**Công việc đã thực hiện:** Tôi so sánh `_index.md` và `_index.vi.md` ở Worklog, Proposal, Workshop, Self-Assessment và Feedback. Vấn đề là một số trang English còn lẫn tiếng Việt hoặc bản Việt còn nội dung cũ. Tôi đồng bộ ý nghĩa thay vì dịch máy từng câu.
+```bash
+hugo --minify --baseURL https://mxt2003.github.io/Internship/
+```
 
-**Công cụ và dịch vụ sử dụng:** AWS Console, AWS CLI, AWS SAM, CloudFront, S3, API Gateway, Cognito, Lambda, DynamoDB, EventBridge, SNS, Secrets Manager, CloudWatch, Groq, Hugo, GitHub Pages và browser developer tools tùy theo công việc trong ngày.
+**Kiến thức đã học:** Hoàn thiện báo cáo không chỉ là viết nội dung, mà còn phải kiểm tra build, link, hình ảnh, bảo mật thông tin và sự nhất quán của toàn bộ website.
 
-## Ngày 11 - 4/7: Rà soát Proposal IRMS
+**Kết quả đạt được:** Báo cáo phản ánh đúng tiến độ thực tế, vai trò cá nhân trong nhóm và trạng thái hoàn thành dự án đến ngày 21/07/2026.
 
-**Công việc đã thực hiện:** Tôi đối chiếu Proposal với kiến trúc cuối cùng và phân công nhóm. Vấn đề là Proposal vẫn còn nhắc provider AI cũ, nên tôi cập nhật Groq là provider hiện tại và Bedrock là future enhancement.
-
-**Công cụ và dịch vụ sử dụng:** AWS Console, AWS CLI, AWS SAM, CloudFront, S3, API Gateway, Cognito, Lambda, DynamoDB, EventBridge, SNS, Secrets Manager, CloudWatch, Groq, Hugo, GitHub Pages và browser developer tools tùy theo công việc trong ngày.
-
-## Ngày 12 - 5/7: Chỉnh Worklog cá nhân
-
-**Công việc đã thực hiện:** Tôi viết lại Worklog theo vai trò cá nhân trong nhóm 5 người, tập trung vào AWS infrastructure, deployment, testing và documentation. Vấn đề là nội dung cũ lặp lại nhiều, nên tôi thay bằng task, công cụ, lỗi và bài học cụ thể.
-
-**Công cụ và dịch vụ sử dụng:** AWS Console, AWS CLI, AWS SAM, CloudFront, S3, API Gateway, Cognito, Lambda, DynamoDB, EventBridge, SNS, Secrets Manager, CloudWatch, Groq, Hugo, GitHub Pages và browser developer tools tùy theo công việc trong ngày.
-
-## Ngày 13 - 6/7: Chạy Hugo build
-
-**Công việc đã thực hiện:** Tôi chạy Hugo build để kiểm tra Markdown, shortcode, front matter và image references. Build pass chưa đủ, nên tôi mở thêm một số trang để kiểm tra hiển thị. Bài học là validation cần có cả build và visual check.
-
-**Công cụ và dịch vụ sử dụng:** AWS Console, AWS CLI, AWS SAM, CloudFront, S3, API Gateway, Cognito, Lambda, DynamoDB, EventBridge, SNS, Secrets Manager, CloudWatch, Groq, Hugo, GitHub Pages và browser developer tools tùy theo công việc trong ngày.
-
-## Ngày 14 - 7/7: Kiểm tra chức năng cuối
-
-**Công việc đã thực hiện:** Tôi đối chiếu workshop với demo flow: Cognito, API Gateway, Incident CRUD, Timeline, Evidence Upload, Report, Alert Handler và AI Assistant. Vấn đề là API examples chưa đồng bộ, nên tôi cập nhật theo endpoint cuối cùng.
-
-**Công cụ và dịch vụ sử dụng:** AWS Console, AWS CLI, AWS SAM, CloudFront, S3, API Gateway, Cognito, Lambda, DynamoDB, EventBridge, SNS, Secrets Manager, CloudWatch, Groq, Hugo, GitHub Pages và browser developer tools tùy theo công việc trong ngày.
-
-## Ngày 15 - 8/7: Dọn resource test
-
-**Công việc đã thực hiện:** Tôi kiểm tra resource test và ghi cleanup guidance. Các dịch vụ liên quan gồm S3, CloudFront, Lambda, CloudWatch, DynamoDB, EventBridge, SNS và Secrets Manager. Bài học là cần có kế hoạch cleanup trước final demo.
-
-**Công cụ và dịch vụ sử dụng:** AWS Console, AWS CLI, AWS SAM, CloudFront, S3, API Gateway, Cognito, Lambda, DynamoDB, EventBridge, SNS, Secrets Manager, CloudWatch, Groq, Hugo, GitHub Pages và browser developer tools tùy theo công việc trong ngày.
-
-## Ngày 16 - 9/7: Hoàn thiện layout báo cáo
-
-**Công việc đã thực hiện:** Tôi rà soát format, paragraph, ảnh, sidebar numbering và lỗi song ngữ. Một số section name cũ và nội dung copy từ template được chỉnh lại trong khi vẫn giữ cấu trúc Hugo ban đầu.
-
-**Công cụ và dịch vụ sử dụng:** AWS Console, AWS CLI, AWS SAM, CloudFront, S3, API Gateway, Cognito, Lambda, DynamoDB, EventBridge, SNS, Secrets Manager, CloudWatch, Groq, Hugo, GitHub Pages và browser developer tools tùy theo công việc trong ngày.
-
-## Ngày 17 - 10/7: Chuẩn bị bản final đầu tiên
-
-**Công việc đã thực hiện:** Tôi build Hugo và kiểm tra 7 mục lớn của report. Vấn đề còn lại là tài liệu chưa phản ánh đầy đủ final AI implementation, nên tôi ghi lại các điểm cần chỉnh trong giai đoạn gia hạn.
-
-**Công cụ và dịch vụ sử dụng:** AWS Console, AWS CLI, AWS SAM, CloudFront, S3, API Gateway, Cognito, Lambda, DynamoDB, EventBridge, SNS, Secrets Manager, CloudWatch, Groq, Hugo, GitHub Pages và browser developer tools tùy theo công việc trong ngày.
-
-## Ngày 18 - 11/7: Khảo sát Bedrock như provider tương lai
-
-**Công việc đã thực hiện:** Tôi xem Bedrock có thể nằm sau provider abstraction như thế nào nhưng không ghi là đã deploy. Vấn đề là tránh mâu thuẫn giữa Proposal và Workshop, nên tôi phân biệt rõ implemented architecture và future option.
-
-**Công cụ và dịch vụ sử dụng:** AWS Console, AWS CLI, AWS SAM, CloudFront, S3, API Gateway, Cognito, Lambda, DynamoDB, EventBridge, SNS, Secrets Manager, CloudWatch, Groq, Hugo, GitHub Pages và browser developer tools tùy theo công việc trong ngày.
-
-## Ngày 19 - 12/7: Lập kế hoạch cập nhật Groq
-
-**Công việc đã thực hiện:** Tôi map lại AI flow từ frontend đến API Gateway, Lambda, Groq, JSON response và fallback. Vấn đề là nhiều trang còn wording cũ, nên tôi lập danh sách cleanup cho các reference provider.
-
-**Công cụ và dịch vụ sử dụng:** AWS Console, AWS CLI, AWS SAM, CloudFront, S3, API Gateway, Cognito, Lambda, DynamoDB, EventBridge, SNS, Secrets Manager, CloudWatch, Groq, Hugo, GitHub Pages và browser developer tools tùy theo công việc trong ngày.
-
-## Ngày 20 - 13/7: Cập nhật Secrets Manager guidance
-
-**Công việc đã thực hiện:** Tôi rà lại tài liệu secret handling và nhấn mạnh frontend không có API key. Vấn đề là không được publish secrets hoặc password thật, nên tôi dùng placeholder trong mọi ví dụ.
-
-**Công cụ và dịch vụ sử dụng:** AWS Console, AWS CLI, AWS SAM, CloudFront, S3, API Gateway, Cognito, Lambda, DynamoDB, EventBridge, SNS, Secrets Manager, CloudWatch, Groq, Hugo, GitHub Pages và browser developer tools tùy theo công việc trong ngày.
-
-## Ngày 21 - 14/7: Kiểm tra AI endpoint examples
-
-**Công việc đã thực hiện:** Tôi rà soát `/ai/analyze`, `/ai/explain` và `/ai/chat`, gồm request body, response fields, provider name, model và fallback flag. Vấn đề là field name chưa đồng bộ, nên tôi chuẩn hóa example JSON.
-
-**Công cụ và dịch vụ sử dụng:** AWS Console, AWS CLI, AWS SAM, CloudFront, S3, API Gateway, Cognito, Lambda, DynamoDB, EventBridge, SNS, Secrets Manager, CloudWatch, Groq, Hugo, GitHub Pages và browser developer tools tùy theo công việc trong ngày.
-
-## Ngày 22 - 15/7: Rà soát Cognito và API Gateway security
-
-**Công việc đã thực hiện:** Tôi kiểm tra Cognito JWT authorizer, Authorization header và protected routes. Các demo password được thay bằng `YOUR_PASSWORD` hoặc `YOUR_TEMP_PASSWORD`. Bài học là tài liệu cũng phải tuân thủ nguyên tắc bảo mật.
-
-**Công cụ và dịch vụ sử dụng:** AWS Console, AWS CLI, AWS SAM, CloudFront, S3, API Gateway, Cognito, Lambda, DynamoDB, EventBridge, SNS, Secrets Manager, CloudWatch, Groq, Hugo, GitHub Pages và browser developer tools tùy theo công việc trong ngày.
-
-## Ngày 23 - 16/7: Cập nhật sơ đồ kiến trúc
-
-**Công việc đã thực hiện:** Tôi thay sơ đồ kiến trúc trong Proposal và Workshop bằng bản cuối có Groq. Tôi kiểm tra path và hash sau khi copy. Vấn đề là browser cache nên cần hard refresh để thấy ảnh mới.
-
-**Công cụ và dịch vụ sử dụng:** AWS Console, AWS CLI, AWS SAM, CloudFront, S3, API Gateway, Cognito, Lambda, DynamoDB, EventBridge, SNS, Secrets Manager, CloudWatch, Groq, Hugo, GitHub Pages và browser developer tools tùy theo công việc trong ngày.
-
-## Ngày 24 - 17/7: Publish report lên GitHub Pages
-
-**Công việc đã thực hiện:** Tôi cấu hình GitHub Pages, thêm Live Demo link, build Hugo với production baseURL, push branch và kiểm tra URL trả HTTP 200. Vấn đề là workflow phải nằm ở root repo mới chạy.
-
-**Công cụ và dịch vụ sử dụng:** AWS Console, AWS CLI, AWS SAM, CloudFront, S3, API Gateway, Cognito, Lambda, DynamoDB, EventBridge, SNS, Secrets Manager, CloudWatch, Groq, Hugo, GitHub Pages và browser developer tools tùy theo công việc trong ngày.
-
-## Ngày 25 - 18/7: Bắt đầu final consistency review
-
-**Công việc đã thực hiện:** Tôi rà Proposal, Worklog, Workshop, Results và config để kiểm Groq, thời gian thực tập, metadata, credentials và wording. Bài học là phải xem report như một sản phẩm thống nhất.
-
-**Công cụ và dịch vụ sử dụng:** AWS Console, AWS CLI, AWS SAM, CloudFront, S3, API Gateway, Cognito, Lambda, DynamoDB, EventBridge, SNS, Secrets Manager, CloudWatch, Groq, Hugo, GitHub Pages và browser developer tools tùy theo công việc trong ngày.
-
-## Ngày 26 - 19/7: Chỉnh cost analysis
-
-**Công việc đã thực hiện:** Tôi chỉnh wording chi phí để không claim credit/free-tier offset nếu không có bằng chứng. Nội dung tập trung vào Lambda, API Gateway, CloudFront, S3, DynamoDB, Secrets Manager và Groq development usage.
-
-**Công cụ và dịch vụ sử dụng:** AWS Console, AWS CLI, AWS SAM, CloudFront, S3, API Gateway, Cognito, Lambda, DynamoDB, EventBridge, SNS, Secrets Manager, CloudWatch, Groq, Hugo, GitHub Pages và browser developer tools tùy theo công việc trong ngày.
-
-## Ngày 27 - 20/7: Kiểm tra environment variables
-
-**Công việc đã thực hiện:** Tôi đồng bộ `AIProvider`, `GroqSecretName`, `GroqModel`, `GroqTimeoutSeconds` trong bảng, ví dụ Python và deployment notes. Vấn đề là không để lẫn nhiều naming style.
-
-**Công cụ và dịch vụ sử dụng:** AWS Console, AWS CLI, AWS SAM, CloudFront, S3, API Gateway, Cognito, Lambda, DynamoDB, EventBridge, SNS, Secrets Manager, CloudWatch, Groq, Hugo, GitHub Pages và browser developer tools tùy theo công việc trong ngày.
-
-## Ngày 28 - 21/7: Proofread English pages
-
-**Công việc đã thực hiện:** Tôi đọc các trang English để sửa ngữ pháp và câu hướng dẫn chưa tự nhiên. Tôi giữ nguyên giải thích kỹ thuật, chỉ chỉnh cách diễn đạt cho chuyên nghiệp hơn.
-
-**Công cụ và dịch vụ sử dụng:** AWS Console, AWS CLI, AWS SAM, CloudFront, S3, API Gateway, Cognito, Lambda, DynamoDB, EventBridge, SNS, Secrets Manager, CloudWatch, Groq, Hugo, GitHub Pages và browser developer tools tùy theo công việc trong ngày.
-
-## Ngày 29 - 22/7: Đồng bộ bản tiếng Việt
-
-**Công việc đã thực hiện:** Tôi đối chiếu bản Việt với nội dung English sau khi cập nhật final implementation. Tôi không đổi cấu trúc hoặc theme, chỉ đồng bộ ý nghĩa và sửa chỗ lệch nội dung.
-
-**Công cụ và dịch vụ sử dụng:** AWS Console, AWS CLI, AWS SAM, CloudFront, S3, API Gateway, Cognito, Lambda, DynamoDB, EventBridge, SNS, Secrets Manager, CloudWatch, Groq, Hugo, GitHub Pages và browser developer tools tùy theo công việc trong ngày.
-
-## Ngày 30 - 23/7: Kiểm tra image references
-
-**Công việc đã thực hiện:** Tôi kiểm tra ảnh trong Proposal và Workshop sau khi thay sơ đồ. Vấn đề là hai phần dùng hai path khác nhau, nên cần cập nhật cả hai file ảnh.
-
-**Công cụ và dịch vụ sử dụng:** AWS Console, AWS CLI, AWS SAM, CloudFront, S3, API Gateway, Cognito, Lambda, DynamoDB, EventBridge, SNS, Secrets Manager, CloudWatch, Groq, Hugo, GitHub Pages và browser developer tools tùy theo công việc trong ngày.
-
-## Ngày 31 - 24/7: Rà soát API documentation
-
-**Công việc đã thực hiện:** Tôi kiểm tra các endpoint `/incidents`, `/evidence`, `/reports`, `/ai/analyze`, `/ai/explain`, `/ai/chat`. Vấn đề là tài liệu cũ chỉ có một endpoint AI, nên tôi bổ sung đủ ba endpoint.
-
-**Công cụ và dịch vụ sử dụng:** AWS Console, AWS CLI, AWS SAM, CloudFront, S3, API Gateway, Cognito, Lambda, DynamoDB, EventBridge, SNS, Secrets Manager, CloudWatch, Groq, Hugo, GitHub Pages và browser developer tools tùy theo công việc trong ngày.
-
-## Ngày 32 - 25/7: Điều chỉnh theo feedback
-
-**Công việc đã thực hiện:** Tôi chỉnh các phần mentor feedback liên quan đến clarity, professional tone và architecture accuracy. Route 53, WAF và Bedrock được ghi rõ là Future Enhancement nếu chưa deploy thật.
-
-**Công cụ và dịch vụ sử dụng:** AWS Console, AWS CLI, AWS SAM, CloudFront, S3, API Gateway, Cognito, Lambda, DynamoDB, EventBridge, SNS, Secrets Manager, CloudWatch, Groq, Hugo, GitHub Pages và browser developer tools tùy theo công việc trong ngày.
-
-## Ngày 33 - 26/7: Final Hugo validation
-
-**Công việc đã thực hiện:** Tôi chạy `hugo --minify --baseURL https://mxt2003.github.io/Internship/` để kiểm build production. Vấn đề là lỗi chỉ xuất hiện khi dùng production baseURL, nên tôi đưa bước này vào checklist cuối.
-
-**Công cụ và dịch vụ sử dụng:** AWS Console, AWS CLI, AWS SAM, CloudFront, S3, API Gateway, Cognito, Lambda, DynamoDB, EventBridge, SNS, Secrets Manager, CloudWatch, Groq, Hugo, GitHub Pages và browser developer tools tùy theo công việc trong ngày.
-
-## Ngày 34 - 27/7: Kiểm tra GitHub Pages output
-
-**Công việc đã thực hiện:** Tôi so sánh live demo với local build, kiểm navigation, language switch, ảnh và các section chính. Vấn đề là cache trình duyệt, nên tôi dùng hard refresh và kiểm deployed static files.
-
-**Công cụ và dịch vụ sử dụng:** AWS Console, AWS CLI, AWS SAM, CloudFront, S3, API Gateway, Cognito, Lambda, DynamoDB, EventBridge, SNS, Secrets Manager, CloudWatch, Groq, Hugo, GitHub Pages và browser developer tools tùy theo công việc trong ngày.
-
-## Ngày 35 - 28/7: Polish final report
-
-**Công việc đã thực hiện:** Tôi chỉnh transition giữa Proposal, Workshop, Results, Self-Assessment và Feedback. Tôi giảm câu lặp và làm văn phong kỹ thuật nhất quán hơn.
-
-**Công cụ và dịch vụ sử dụng:** AWS Console, AWS CLI, AWS SAM, CloudFront, S3, API Gateway, Cognito, Lambda, DynamoDB, EventBridge, SNS, Secrets Manager, CloudWatch, Groq, Hugo, GitHub Pages và browser developer tools tùy theo công việc trong ngày.
-
-## Ngày 36 - 29/7: Chuẩn bị final verification notes
-
-**Công việc đã thực hiện:** Tôi lập checklist: không còn old AI provider, Groq documented, credentials replaced, dates updated, Hugo build success và GitHub Pages live. Tôi dựa trên search/build output thay vì nhớ thủ công.
-
-**Công cụ và dịch vụ sử dụng:** AWS Console, AWS CLI, AWS SAM, CloudFront, S3, API Gateway, Cognito, Lambda, DynamoDB, EventBridge, SNS, Secrets Manager, CloudWatch, Groq, Hugo, GitHub Pages và browser developer tools tùy theo công việc trong ngày.
-
-## Ngày 37 - 30/7: Hoàn tất báo cáo thực tập
-
-**Công việc đã thực hiện:** Tôi hoàn tất final review, xác nhận report phản ánh đóng góp cá nhân trong nhóm 5 người, kiểm live demo, source branch và Hugo build. Bài học cuối là documentation phải đi cùng implementation đến ngày nộp.
-
-**Công cụ và dịch vụ sử dụng:** AWS Console, AWS CLI, AWS SAM, CloudFront, S3, API Gateway, Cognito, Lambda, DynamoDB, EventBridge, SNS, Secrets Manager, CloudWatch, Groq, Hugo, GitHub Pages và browser developer tools tùy theo công việc trong ngày.
+**Khó khăn và bài học:** Càng về cuối càng dễ sửa một chỗ làm lệch chỗ khác, nên cần kiểm tra theo checklist thay vì chỉ nhìn bằng mắt.

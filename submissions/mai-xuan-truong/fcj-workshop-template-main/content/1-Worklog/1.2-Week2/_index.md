@@ -8,52 +8,32 @@ pre: " <b> 1.2. </b> "
 
 **Timeline:** 27/4 → 1/5 (5 working days)
 
-## Day 1 - 26/4: IAM study
+## Day 1 - 27/4: VPC basics
 
-**Work completed:** Completed the IAM lab to understand identity and access management in AWS, including IAM User, Group, Policy, and Role.
+**Work completed:** Studied VPC, subnet, route table, internet gateway, and security group concepts. I focused on how network boundaries affect application access.
 
-**Knowledge gained:** Learned that users represent people, groups simplify permission management, policies define permissions in JSON, and roles provide temporary access.
+**Result and lesson:** I recorded the checks, issues, and lessons from this task so the final report would reflect my own internship progress clearly.
 
-**Result:** Built a security foundation required before working with other AWS services.
+## Day 2 - 28/4: EC2 and networking lab
 
-**Difficulty and lesson:** The main challenge was handling new AWS concepts carefully. The lesson was to verify configuration, permissions, region, and cost before moving to the next task.
+**Work completed:** Practiced connecting EC2 with security group rules and checked common access issues such as blocked ports or wrong key files.
 
-## Day 2 - 27/4: EC2 practice
+**Result and lesson:** I recorded the checks, issues, and lessons from this task so the final report would reflect my own internship progress clearly.
 
-**Work completed:** Practiced creating an EC2 instance, selecting an AMI, instance type, key pair, and security group, then connecting through SSH.
+## Day 3 - 29/4: RDS and database concepts
 
-**Knowledge gained:** Understood EC2 as a cloud virtual server that can be started, stopped, rebooted, and configured like a physical server.
+**Work completed:** Reviewed managed database concepts, basic RDS configuration, backup ideas, and why managed services reduce operation work.
 
-**Result:** Created a test instance and identified what to check when opening access ports.
+**Result and lesson:** I recorded the checks, issues, and lessons from this task so the final report would reflect my own internship progress clearly.
 
-**Difficulty and lesson:** The main challenge was handling new AWS concepts carefully. The lesson was to verify configuration, permissions, region, and cost before moving to the next task.
+## Day 4 - 30/4: Serverless introduction
 
-## Day 3 - 28/4: VPC and Site-to-Site VPN
+**Work completed:** Read about Lambda, API Gateway, DynamoDB, and CloudWatch Logs as preparation for later serverless workshops.
 
-**Work completed:** Worked through the Amazon VPC and Site-to-Site VPN workshop, covering VPCs, subnets, route tables, Internet Gateway, NAT Gateway, and network security layers.
+**Result and lesson:** I recorded the checks, issues, and lessons from this task so the final report would reflect my own internship progress clearly.
 
-**Knowledge gained:** Understood VPC as a private network on AWS, with public subnets for Internet-facing resources and private subnets for internal resources.
+## Day 5 - 1/5: Learning summary
 
-**Result:** Gained a clearer view of networking foundations for cloud system design.
+**Work completed:** Collected notes from IAM, S3, EC2, VPC, RDS, and serverless services. I also marked questions to review with the team later.
 
-**Difficulty and lesson:** The main challenge was handling new AWS concepts carefully. The lesson was to verify configuration, permissions, region, and cost before moving to the next task.
-
-## Day 4 - 29/4: S3 and storage
-
-**Work completed:** Studied Amazon S3 concepts such as buckets, objects, storage classes, versioning, and access policies, and related them to IRMS evidence storage needs.
-
-**Knowledge gained:** Learned that S3 is suitable for static files, logs, investigation evidence, and static website hosting.
-
-**Result:** Learned how to create buckets, upload objects, and configure basic access controls.
-
-**Difficulty and lesson:** The main challenge was handling new AWS concepts carefully. The lesson was to verify configuration, permissions, region, and cost before moving to the next task.
-
-## Day 5 - 30/4: Week 2 summary
-
-**Work completed:** Reviewed IAM, EC2, VPC, and S3 labs and organized notes into reusable knowledge groups for the main project.
-
-**Knowledge gained:** Recognized that AWS services work together: IAM controls access, VPC controls networking, EC2 provides compute, and S3 stores data.
-
-**Result:** Built a stronger base for reading serverless architecture documents and selecting a project topic.
-
-**Difficulty and lesson:** The main challenge was handling new AWS concepts carefully. The lesson was to verify configuration, permissions, region, and cost before moving to the next task.
+**Result and lesson:** I recorded the checks, issues, and lessons from this task so the final report would reflect my own internship progress clearly.

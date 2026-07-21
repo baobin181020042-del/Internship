@@ -8,76 +8,32 @@ pre: " <b> 1.4. </b> "
 
 **Timeline:** 11/5 → 15/5 (5 working days)
 
-> IRMS was completed by a five-member team. The notes below focus on my individual contribution while collaborating with the team.
+## Day 1 - 11/5: Route 53 and DNS
 
-## Day 1 - 7/5: Team discussion and IRMS topic selection
+**Work completed:** Studied DNS routing, hosted zones, records, and how users reach a web application through a domain name.
 
-**Work completed:** I joined the five-member team discussion to select IRMS as the project topic. My individual contribution was evaluating the AWS serverless direction and identifying suitable services such as API Gateway, Lambda, DynamoDB, S3, and CloudFront.
+**Result and lesson:** I recorded the checks, issues, and lessons from this task so the final report would reflect my own internship progress clearly.
 
-I also recorded the concrete checks I performed, the integration points I verified, and the issues I needed to report back to teammates. This made the entry reflect my own internship work instead of describing the whole project as if it was completed by one person.
+## Day 2 - 12/5: CloudFront concepts
 
-**Knowledge gained:** I learned how to select a topic based on team capability, internship timeline, and realistic AWS demo scope.
+**Work completed:** Reviewed CDN behavior, cache, origin, invalidation, and HTTPS usage. I noted common deployment issues caused by stale cache.
 
-**Result:** The team agreed on IRMS, and I took primary responsibility for AWS infrastructure, deployment, and testing.
+**Result and lesson:** I recorded the checks, issues, and lessons from this task so the final report would reflect my own internship progress clearly.
 
-**Difficulty and lesson:** The initial scope was broad. The lesson was to divide responsibilities clearly so the project did not look like one person owned everything.
+## Day 3 - 13/5: WAF and web protection
 
-## Day 2 - 8/5: Collaborative requirement analysis
+**Work completed:** Read about AWS WAF, managed rules, and the role of edge security in protecting web applications.
 
-**Work completed:** I collaborated with the team to analyze user roles such as Admin, Security Manager, Security Analyst, and Viewer. I focused on authentication, authorization, and how APIs should be protected by Cognito.
+**Result and lesson:** I recorded the checks, issues, and lessons from this task so the final report would reflect my own internship progress clearly.
 
-I also recorded the concrete checks I performed, the integration points I verified, and the issues I needed to report back to teammates. This made the entry reflect my own internship work instead of describing the whole project as if it was completed by one person.
+## Day 4 - 14/5: Static web hosting review
 
-**Knowledge gained:** I learned how to convert business requirements into technical functions, especially RBAC and secure API access.
+**Work completed:** Practiced the idea of frontend hosting using S3 and CloudFront, including how static assets are served to users.
 
-**Result:** We produced an MVP requirement list and I identified the infrastructure items I needed to prepare.
+**Result and lesson:** I recorded the checks, issues, and lessons from this task so the final report would reflect my own internship progress clearly.
 
-**Difficulty and lesson:** The challenge was that security features could expand quickly. I learned to keep the MVP practical before adding advanced features.
+## Day 5 - 15/5: Weekly documentation
 
-## Day 3 - 9/5: Contributing to serverless architecture design
+**Work completed:** Converted scattered notes into a short worklog entry and listed services that may be useful for the final project.
 
-**Work completed:** I joined the architecture design work for IRMS. I proposed using CloudFront for frontend delivery, API Gateway as the entry point, Lambda for business logic, and DynamoDB for core data.
-
-I also recorded the concrete checks I performed, the integration points I verified, and the issues I needed to report back to teammates. This made the entry reflect my own internship work instead of describing the whole project as if it was completed by one person.
-
-**Knowledge gained:** I learned how serverless services work together and why this model fits a low-cost internship project.
-
-**Result:** We had an initial architecture that the team could use to divide backend, frontend, and documentation tasks.
-
-**Difficulty and lesson:** The lesson was that an architecture diagram must show service responsibilities, not only list AWS services.
-
-## Day 4 - 10/5: Assisting DynamoDB data design
-
-**Work completed:** I worked with teammates responsible for business logic to identify data for Incident, Timeline, Users, and EvidenceMetadata. My focus was checking how Lambda would read and write DynamoDB based on access patterns.
-
-I also recorded the concrete checks I performed, the integration points I verified, and the issues I needed to report back to teammates. This made the entry reflect my own internship work instead of describing the whole project as if it was completed by one person.
-
-**Knowledge gained:** I learned to design DynamoDB around access patterns instead of relational database habits.
-
-**Result:** We produced a draft data model for API design and later Lambda implementation.
-
-**Difficulty and lesson:** The challenge was balancing simplicity with dashboard query needs, so I documented items to test later.
-
-## Day 5 - 11/5: API design contribution
-
-**Work completed:** I participated in reviewing endpoints for incident, timeline, evidence, report, and alert flows. My individual focus was checking methods, paths, and how API Gateway would map requests to Lambda.
-
-I also recorded the concrete checks I performed, the integration points I verified, and the issues I needed to report back to teammates. This made the entry reflect my own internship work instead of describing the whole project as if it was completed by one person.
-
-**Knowledge gained:** I learned that a stable API contract helps backend and frontend work in parallel with fewer mismatches.
-
-**Result:** We had an initial endpoint table and response convention for later API testing.
-
-**Difficulty and lesson:** The lesson was to agree on naming early because changing paths after frontend integration costs time.
-
-## Day 6 - 12/5: Preparing proposal content for my scope
-
-**Work completed:** I worked with the team on the IRMS proposal. I wrote and reviewed the parts related to AWS architecture, service mapping, serverless deployment, and cloud operation flow.
-
-I also recorded the concrete checks I performed, the integration points I verified, and the issues I needed to report back to teammates. This made the entry reflect my own internship work instead of describing the whole project as if it was completed by one person.
-
-**Knowledge gained:** I learned how to present my technical contribution inside a shared team proposal.
-
-**Result:** The proposal had clearer architecture and AWS service sections, which later supported the workshop documentation.
-
-**Difficulty and lesson:** I needed to avoid writing as if one person did everything, so I adjusted the wording to reflect a team project.
+**Result and lesson:** I recorded the checks, issues, and lessons from this task so the final report would reflect my own internship progress clearly.

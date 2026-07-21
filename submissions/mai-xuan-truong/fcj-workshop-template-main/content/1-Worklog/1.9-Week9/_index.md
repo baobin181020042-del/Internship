@@ -8,76 +8,32 @@ pre: " <b> 1.9. </b> "
 
 **Timeline:** 15/6 → 19/6 (5 working days)
 
-> IRMS was completed by a five-member team. The notes below focus on my individual contribution while collaborating with the team.
+## Day 1 - 15/6: Incident management research
 
-## Day 1 - 6/6: Testing Incident CRUD
+**Work completed:** Studied incident lifecycle ideas such as creation, status updates, assignment, evidence, timeline, and reporting.
 
-**Work completed:** I worked on testing incident crud as my individual contribution while coordinating with the five-member IRMS team. My focus was the AWS, integration, deployment, testing, or documentation part related to this task.
+**Result and lesson:** I recorded the checks, issues, and lessons from this task so the final report would reflect my own internship progress clearly.
 
-I also recorded the concrete checks I performed, the integration points I verified, and the issues I needed to report back to teammates. This made the entry reflect my own internship work instead of describing the whole project as if it was completed by one person.
+## Day 2 - 16/6: Data model preparation
 
-**Knowledge gained:** I learned how testing incident crud connects to the wider IRMS architecture and how collaboration affects integration quality.
+**Work completed:** Drafted possible entities for incident, timeline, evidence metadata, users, and reports as preparation for the team project.
 
-**Result:** The task produced a concrete contribution for my assigned scope and helped the team move to the next implementation step.
+**Result and lesson:** I recorded the checks, issues, and lessons from this task so the final report would reflect my own internship progress clearly.
 
-**Difficulty and lesson:** The main challenge was keeping my part aligned with the team implementation. The lesson was to communicate changes early and verify integration points carefully.
+## Day 3 - 17/6: API design preparation
 
-## Day 2 - 7/6: Testing Timeline
+**Work completed:** Outlined possible API routes and request/response structures for a future incident response system.
 
-**Work completed:** I worked on testing timeline as my individual contribution while coordinating with the five-member IRMS team. My focus was the AWS, integration, deployment, testing, or documentation part related to this task.
+**Result and lesson:** I recorded the checks, issues, and lessons from this task so the final report would reflect my own internship progress clearly.
 
-I also recorded the concrete checks I performed, the integration points I verified, and the issues I needed to report back to teammates. This made the entry reflect my own internship work instead of describing the whole project as if it was completed by one person.
+## Day 4 - 18/6: Report and alert flow preparation
 
-**Knowledge gained:** I learned how testing timeline connects to the wider IRMS architecture and how collaboration affects integration quality.
+**Work completed:** Reviewed how scheduled reports and automated alerts could be implemented with serverless services.
 
-**Result:** The task produced a concrete contribution for my assigned scope and helped the team move to the next implementation step.
+**Result and lesson:** I recorded the checks, issues, and lessons from this task so the final report would reflect my own internship progress clearly.
 
-**Difficulty and lesson:** The main challenge was keeping my part aligned with the team implementation. The lesson was to communicate changes early and verify integration points carefully.
+## Day 5 - 19/6: Project preparation summary
 
-## Day 3 - 8/6: Testing Evidence Upload
+**Work completed:** Collected the AWS service notes and prepared questions for the team discussion before starting the real project implementation.
 
-**Work completed:** I worked on testing evidence upload as my individual contribution while coordinating with the five-member IRMS team. My focus was the AWS, integration, deployment, testing, or documentation part related to this task.
-
-I also recorded the concrete checks I performed, the integration points I verified, and the issues I needed to report back to teammates. This made the entry reflect my own internship work instead of describing the whole project as if it was completed by one person.
-
-**Knowledge gained:** I learned how testing evidence upload connects to the wider IRMS architecture and how collaboration affects integration quality.
-
-**Result:** The task produced a concrete contribution for my assigned scope and helped the team move to the next implementation step.
-
-**Difficulty and lesson:** The main challenge was keeping my part aligned with the team implementation. The lesson was to communicate changes early and verify integration points carefully.
-
-## Day 4 - 9/6: Fixing CORS with the team
-
-**Work completed:** I worked on fixing cors with the team as my individual contribution while coordinating with the five-member IRMS team. My focus was the AWS, integration, deployment, testing, or documentation part related to this task.
-
-I also recorded the concrete checks I performed, the integration points I verified, and the issues I needed to report back to teammates. This made the entry reflect my own internship work instead of describing the whole project as if it was completed by one person.
-
-**Knowledge gained:** I learned how fixing cors with the team connects to the wider IRMS architecture and how collaboration affects integration quality.
-
-**Result:** The task produced a concrete contribution for my assigned scope and helped the team move to the next implementation step.
-
-**Difficulty and lesson:** The main challenge was keeping my part aligned with the team implementation. The lesson was to communicate changes early and verify integration points carefully.
-
-## Day 5 - 10/6: Testing Report API
-
-**Work completed:** I worked on testing report api as my individual contribution while coordinating with the five-member IRMS team. My focus was the AWS, integration, deployment, testing, or documentation part related to this task.
-
-I also recorded the concrete checks I performed, the integration points I verified, and the issues I needed to report back to teammates. This made the entry reflect my own internship work instead of describing the whole project as if it was completed by one person.
-
-**Knowledge gained:** I learned how testing report api connects to the wider IRMS architecture and how collaboration affects integration quality.
-
-**Result:** The task produced a concrete contribution for my assigned scope and helped the team move to the next implementation step.
-
-**Difficulty and lesson:** The main challenge was keeping my part aligned with the team implementation. The lesson was to communicate changes early and verify integration points carefully.
-
-## Day 6 - 11/6: Testing Alert Handler
-
-**Work completed:** I worked on testing alert handler as my individual contribution while coordinating with the five-member IRMS team. My focus was the AWS, integration, deployment, testing, or documentation part related to this task.
-
-I also recorded the concrete checks I performed, the integration points I verified, and the issues I needed to report back to teammates. This made the entry reflect my own internship work instead of describing the whole project as if it was completed by one person.
-
-**Knowledge gained:** I learned how testing alert handler connects to the wider IRMS architecture and how collaboration affects integration quality.
-
-**Result:** The task produced a concrete contribution for my assigned scope and helped the team move to the next implementation step.
-
-**Difficulty and lesson:** The main challenge was keeping my part aligned with the team implementation. The lesson was to communicate changes early and verify integration points carefully.
+**Result and lesson:** I recorded the checks, issues, and lessons from this task so the final report would reflect my own internship progress clearly.

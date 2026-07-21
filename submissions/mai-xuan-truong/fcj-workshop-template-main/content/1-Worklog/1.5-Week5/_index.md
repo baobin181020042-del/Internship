@@ -8,76 +8,32 @@ pre: " <b> 1.5. </b> "
 
 **Timeline:** 18/5 → 22/5 (5 working days)
 
-> IRMS was completed by a five-member team. The notes below focus on my individual contribution while collaborating with the team.
+## Day 1 - 18/5: Cognito study
 
-## Day 1 - 13/5: Responsible for Cognito configuration
+**Work completed:** Studied user pools, app clients, login flow, JWT tokens, and the difference between authentication and authorization.
 
-**Work completed:** I worked on responsible for cognito configuration as my individual contribution while coordinating with the five-member IRMS team. My focus was the AWS, integration, deployment, testing, or documentation part related to this task.
+**Result and lesson:** I recorded the checks, issues, and lessons from this task so the final report would reflect my own internship progress clearly.
 
-I also recorded the concrete checks I performed, the integration points I verified, and the issues I needed to report back to teammates. This made the entry reflect my own internship work instead of describing the whole project as if it was completed by one person.
+## Day 2 - 19/5: API Gateway study
 
-**Knowledge gained:** I learned how responsible for cognito configuration connects to the wider IRMS architecture and how collaboration affects integration quality.
+**Work completed:** Reviewed REST API concepts, routes, stages, CORS, request/response format, and integration with Lambda.
 
-**Result:** The task produced a concrete contribution for my assigned scope and helped the team move to the next implementation step.
+**Result and lesson:** I recorded the checks, issues, and lessons from this task so the final report would reflect my own internship progress clearly.
 
-**Difficulty and lesson:** The main challenge was keeping my part aligned with the team implementation. The lesson was to communicate changes early and verify integration points carefully.
+## Day 3 - 20/5: Lambda study
 
-## Day 2 - 14/5: Setting up API Gateway skeleton
+**Work completed:** Practiced reading Lambda handler structure, environment variables, logs, IAM roles, and retry/error behavior.
 
-**Work completed:** I worked on setting up api gateway skeleton as my individual contribution while coordinating with the five-member IRMS team. My focus was the AWS, integration, deployment, testing, or documentation part related to this task.
+**Result and lesson:** I recorded the checks, issues, and lessons from this task so the final report would reflect my own internship progress clearly.
 
-I also recorded the concrete checks I performed, the integration points I verified, and the issues I needed to report back to teammates. This made the entry reflect my own internship work instead of describing the whole project as if it was completed by one person.
+## Day 4 - 21/5: DynamoDB study
 
-**Knowledge gained:** I learned how setting up api gateway skeleton connects to the wider IRMS architecture and how collaboration affects integration quality.
+**Work completed:** Reviewed partition keys, sort keys, item structure, query/scan difference, and how NoSQL design depends on access patterns.
 
-**Result:** The task produced a concrete contribution for my assigned scope and helped the team move to the next implementation step.
+**Result and lesson:** I recorded the checks, issues, and lessons from this task so the final report would reflect my own internship progress clearly.
 
-**Difficulty and lesson:** The main challenge was keeping my part aligned with the team implementation. The lesson was to communicate changes early and verify integration points carefully.
+## Day 5 - 22/5: Service mapping notes
 
-## Day 3 - 15/5: Supporting DynamoDB setup
+**Work completed:** Created a service mapping note that connected Cognito, API Gateway, Lambda, DynamoDB, S3, and CloudWatch into a possible serverless pattern.
 
-**Work completed:** I worked on supporting dynamodb setup as my individual contribution while coordinating with the five-member IRMS team. My focus was the AWS, integration, deployment, testing, or documentation part related to this task.
-
-I also recorded the concrete checks I performed, the integration points I verified, and the issues I needed to report back to teammates. This made the entry reflect my own internship work instead of describing the whole project as if it was completed by one person.
-
-**Knowledge gained:** I learned how supporting dynamodb setup connects to the wider IRMS architecture and how collaboration affects integration quality.
-
-**Result:** The task produced a concrete contribution for my assigned scope and helped the team move to the next implementation step.
-
-**Difficulty and lesson:** The main challenge was keeping my part aligned with the team implementation. The lesson was to communicate changes early and verify integration points carefully.
-
-## Day 4 - 16/5: Preparing S3 Evidence storage
-
-**Work completed:** I worked on preparing s3 evidence storage as my individual contribution while coordinating with the five-member IRMS team. My focus was the AWS, integration, deployment, testing, or documentation part related to this task.
-
-I also recorded the concrete checks I performed, the integration points I verified, and the issues I needed to report back to teammates. This made the entry reflect my own internship work instead of describing the whole project as if it was completed by one person.
-
-**Knowledge gained:** I learned how preparing s3 evidence storage connects to the wider IRMS architecture and how collaboration affects integration quality.
-
-**Result:** The task produced a concrete contribution for my assigned scope and helped the team move to the next implementation step.
-
-**Difficulty and lesson:** The main challenge was keeping my part aligned with the team implementation. The lesson was to communicate changes early and verify integration points carefully.
-
-## Day 5 - 17/5: Reviewing IAM permissions
-
-**Work completed:** I worked on reviewing iam permissions as my individual contribution while coordinating with the five-member IRMS team. My focus was the AWS, integration, deployment, testing, or documentation part related to this task.
-
-I also recorded the concrete checks I performed, the integration points I verified, and the issues I needed to report back to teammates. This made the entry reflect my own internship work instead of describing the whole project as if it was completed by one person.
-
-**Knowledge gained:** I learned how reviewing iam permissions connects to the wider IRMS architecture and how collaboration affects integration quality.
-
-**Result:** The task produced a concrete contribution for my assigned scope and helped the team move to the next implementation step.
-
-**Difficulty and lesson:** The main challenge was keeping my part aligned with the team implementation. The lesson was to communicate changes early and verify integration points carefully.
-
-## Day 6 - 18/5: Week 5 infrastructure review
-
-**Work completed:** I worked on week 5 infrastructure review as my individual contribution while coordinating with the five-member IRMS team. My focus was the AWS, integration, deployment, testing, or documentation part related to this task.
-
-I also recorded the concrete checks I performed, the integration points I verified, and the issues I needed to report back to teammates. This made the entry reflect my own internship work instead of describing the whole project as if it was completed by one person.
-
-**Knowledge gained:** I learned how week 5 infrastructure review connects to the wider IRMS architecture and how collaboration affects integration quality.
-
-**Result:** The task produced a concrete contribution for my assigned scope and helped the team move to the next implementation step.
-
-**Difficulty and lesson:** The main challenge was keeping my part aligned with the team implementation. The lesson was to communicate changes early and verify integration points carefully.
+**Result and lesson:** I recorded the checks, issues, and lessons from this task so the final report would reflect my own internship progress clearly.
