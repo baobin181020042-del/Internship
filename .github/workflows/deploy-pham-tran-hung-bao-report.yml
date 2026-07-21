@@ -1,0 +1,44 @@
+name: Deploy Pham Tran Hung Bao internship report
+
+on:
+  push:
+    branches:
+      - intern/pham-tran-hung-bao
+    paths:
+      - "submissions/pham-tran-hung-bao/fcj-workshop-template-main/**"
+      - ".github/workflows/deploy-pham-tran-hung-bao-report.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: submissions/pham-tran-hung-bao/fcj-workshop-template-main
+
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: "0.160.1"
+          extended: true
+
+      - name: Build website
+        run: hugo --minify --baseURL "https://baobao181004.github.io/Internship/"
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./submissions/pham-tran-hung-bao/fcj-workshop-template-main/public
+          publish_branch: gh-pages
+          force_orphan: true

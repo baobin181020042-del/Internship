@@ -1,10 +1,10 @@
 # IRMS AWS Internship Report
 
-**Live Demo:** [View Report](https://mxt2003.github.io/Internship/)
+**Live Demo:** [View Report](https://baobao181004.github.io/Internship/) 
 
 [![AWS](https://img.shields.io/badge/AWS-Serverless-orange)](https://aws.amazon.com/)
 [![Hugo](https://img.shields.io/badge/Hugo-Workshop%20Report-blue)](https://gohugo.io/)
-[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live%20Demo-brightgreen)](https://mxt2003.github.io/Internship/)
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live%20Demo-brightgreen)](https://baobao181004.github.io/Internship/)  
 
 ## Overview
 
@@ -47,9 +47,9 @@ The published report includes seven main sections:
 Internship/
 |-- README.md
 |-- .github/workflows/
-|   `-- deploy-mai-xuan-truong-report.yml
+|   `-- deploy-pham-tran-hung-bao-report.yml
 `-- submissions/
-    `-- mai-xuan-truong/
+    `-- pham-tran-hung-bao/
         `-- fcj-workshop-template-main/
             |-- config.toml
             |-- content/
@@ -62,20 +62,20 @@ Internship/
 The Hugo site is located at:
 
 ```text
-submissions/mai-xuan-truong/fcj-workshop-template-main
+submissions/pham-tran-hung-bao/fcj-workshop-template-main
 ```
 
 Run the report locally:
 
 ```bash
-cd submissions/mai-xuan-truong/fcj-workshop-template-main
+cd submissions/pham-tran-hung-bao/fcj-workshop-template-main
 hugo server -D
 ```
 
 Build the production site:
 
 ```bash
-hugo --minify --baseURL "https://mxt2003.github.io/Internship/"
+hugo --minify --baseURL "https://baobao181004.github.io/Internship/"
 ```
 
 ## Deployment
@@ -83,13 +83,13 @@ hugo --minify --baseURL "https://mxt2003.github.io/Internship/"
 The report is deployed to GitHub Pages through the workflow:
 
 ```text
-.github/workflows/deploy-mai-xuan-truong-report.yml
+.github/workflows/deploy-pham-tran-hung-bao-report.yml
 ```
 
 Live report URL:
 
 ```text
-https://mxt2003.github.io/Internship/
+https://baobao181004.github.io/Internship/
 ```
 
 ## Internship Duration
@@ -98,5 +98,5 @@ April 17, 2026 - July 30, 2026
 
 ## Author
 
-**Mai Xuan Truong**  
+**Pham Tran Hung Bao**  
 FCAJ Cloud Intern - Cybersecurity specialization

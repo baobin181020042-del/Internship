@@ -5,7 +5,7 @@
 - **Thứ**: Thứ Hai
 - **Tuần thực tập**: Tuần thứ 1/8
 - **Thời gian làm việc**: 8:00 - 17:00
-- **Mood**: 😊 Excited và hơi nervous cho ngày đầu tiên
+- **Mood**: 😊 Excited và hơi nervous cho ngày đầu tiến
 
 ## 🎯 Mục tiêu ngày hôm nay
 - [x] Tham gia orientation meeting và hiểu rõ chương trình
