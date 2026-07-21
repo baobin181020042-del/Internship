@@ -6,7 +6,7 @@ on:
       - intern/pham-tran-hung-bao
     paths:
       - "submissions/pham-tran-hung-bao/fcj-workshop-template-main/**"
-      - ".github/workflows/deploy-pham-tran-hung-bao-report.yml"
+      - ".github/workflows /deploy-pham-tran-hung-bao-report.yml"
   workflow_dispatch:
 
 permissions:
