@@ -30,7 +30,7 @@ Kiro CLI -> MCP Server -> CloudWatch -> RDS Logs -> AI summarizes the result -> 
 
 This reduces a lot of manual work when checking system health or investigating database-related incidents.
 
-![RDS log analysis architecture with Kiro, MCP, and CloudWatch](/Internship/images/3-BlogsTranslated/blog-diagram-03.jpeg)
+![RDS log analysis architecture with Kiro, MCP, and CloudWatch](/internship01/images/3-BlogsTranslated/blog-diagram-03.jpeg)
 
 ### 3.2.2 What I Learned
 
@@ -59,3 +59,4 @@ I see this as a clear example of how AI is changing system operations. In the pa
 From this article, I learned that the future skill set of a Cloud Engineer may go beyond simply knowing how to use AWS services. Engineers also need to know how to combine AI with cloud services in a way that is safe, controlled, and useful for improving operational efficiency.
 
 **Reference:** [Amazon RDS log analysis using natural language queries with Kiro and MCP](https://aws.amazon.com/vi/blogs/database/amazon-rds-log-analysis-natural-language-queries-with-kiro-and-mcp/)
+
